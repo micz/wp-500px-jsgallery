@@ -41,7 +41,7 @@ add_shortcode( 'jsg500px', 'jsg500px_shortcode' );
  * ENQUEUE SCRIPTS
  */
 function wp5jsgal_enqueue_scripts() {
-    if ( !is_admin() ) :
+    if ( is_page() ) :
         wp_enqueue_script(
             'galleriffic',
             plugins_url( 'js/jquery.galleriffic.js' , __FILE__ ),
