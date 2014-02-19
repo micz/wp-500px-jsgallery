@@ -52,6 +52,18 @@ function wp5jsgal_enqueue_scripts() {
             plugins_url( 'js/jquery.history.js' , __FILE__ ),
             array('jquery')
         );
+        wp_enqueue_script(
+            'wp5jsgal-rss500px',
+            plugins_url( 'js/rss500px.js' , __FILE__ ),
+            array('jquery')
+        );
+        wp_enqueue_script(
+            'wp5jsgal-main',
+            plugins_url( 'js/wp-500px-jsgallery.js' , __FILE__ ),
+            array('jquery','wp5jsgal-rss500px'),
+            false, //script version
+            true //loaded before the body closing tag
+        );
     endif;
 }
 
