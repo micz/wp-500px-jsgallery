@@ -15,13 +15,14 @@ jQuery(document).ready(function(){
             feedList +=wp5jsgal_getImage(entries[i]);
         }
         //jQuery('.feed > ul').append(feedList);
-        jQuery('div#thumbs > ul').append(feedList);
-var gallery = jQuery('#thumbs').galleriffic({
-        imageContainerSel:         '#slideshow',
-		captionContainerSel:       '#caption',
-		controlsContainerSel:      '#controls',
-		loadingContainerSel:       '#loading'
-    });
+        jQuery('div#thumbs > ul.thumbs').append(feedList);
+        var gallery = jQuery('#thumbs').galleriffic({
+            imageContainerSel:         '#slideshow',
+		        captionContainerSel:       '#caption',
+		        controlsContainerSel:      '#controls',
+		        loadingContainerSel:       '#loading',
+		        enableHistory:             true,
+        });
     });
 
     //var gallery = jQuery('#thumbs').galleriffic({});

@@ -63,6 +63,10 @@ add_shortcode( 'jsg500px', 'jsg500px_shortcode' );
  */
 function wp5jsgal_enqueue_scripts() {
     if ( is_page() ) :
+        wp_enqueue_style(
+            'wp5jsgal-css',
+            plugins_url( 'css/wp-500px-jsgallery.css' , ___FILE___ )
+        );
         wp_enqueue_script(
             'galleriffic',
             plugins_url( 'js/jquery.galleriffic.js' , ___FILE___ ),
