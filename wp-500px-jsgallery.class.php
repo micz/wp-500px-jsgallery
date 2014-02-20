@@ -33,14 +33,26 @@ if (!class_exists('WP500pxjsGallery')) {
 	  
 	  //Output shortcode
 	  function getShortcode($atts){
+	    $output='<div id="thumbs"><ul class="thumbs noscript">';
+      //Print images
+      
+      $output.='</ul></div>';
+      return $output;
 	    return 'testme!!';
 	  }
 	
+	  function getImageHTML($imgData){
+	    $output='<li>
+            <a class="thumb" name="optionalCustomIdentifier" href="'.$imgData['thumb_url'].'" title="'.$imgData['title'].'">
+                <img src="'.$imgData['thumb_url'].'" alt="'.$imgData['title'].'" />
+            </a>
+            <div class="caption">'.$imgData['caption'].'</div>
+        </li>';
+      return $output;
+	  }
 	
 	
+	} //END WP500pxjsGallery
 	
-	}
-	
-}
-
+} //END if class_exists('WP500pxjsGallery')
 ?>

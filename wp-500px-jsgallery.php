@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: 500px jsGallery
+Plugin Name: WP 500px jsGallery
 Plugin URI: http://micz.it
 Description: .
 Author: Mic
@@ -10,6 +10,7 @@ License: GPL2
 */
 
 /* Copyright 2012 Mic (email: m@micz.it)
+Plugin Info: http://micz.it
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
@@ -26,15 +27,20 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 
-
+include_once('wp-500px-jsgallery.class.php');
 
 
 //Shortcode [jsg500px]
 function jsg500px_shortcode($atts){
-	return "foo and bar";
+  global $wp500pxjsgallery;
+	return $wp500pxjsgallery->getShortcode($atts);
 }
 add_shortcode( 'jsg500px', 'jsg500px_shortcode' );
 
+
+/*function wp5jsgal_init(){
+  
+}*/
 
 
 /**
@@ -50,6 +56,11 @@ function wp5jsgal_enqueue_scripts() {
         wp_enqueue_script(
             'history',
             plugins_url( 'js/jquery.history.js' , __FILE__ ),
+            array('jquery')
+        );
+        wp_enqueue_script(
+            'opacityrollover',
+            plugins_url( 'js/jquery.opacityrollover.js' , __FILE__ ),
             array('jquery')
         );
         wp_enqueue_script(
@@ -69,4 +80,6 @@ function wp5jsgal_enqueue_scripts() {
 
 
 add_action('wp_enqueue_scripts', 'wp5jsgal_enqueue_scripts');
+
+$wp500pxjsgallery=new WP500pxjsGallery();
 ?>
