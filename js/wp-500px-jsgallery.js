@@ -16,6 +16,14 @@ jQuery(document).ready(function(){
         }
         //jQuery('.feed > ul').append(feedList);
         jQuery('div#thumbs > ul').append(feedList);
+var gallery = jQuery('#thumbs').galleriffic({
+        imageContainerSel:         '#slideshow',
+		captionContainerSel:       '#caption',
+		controlsContainerSel:      '#controls',
+		loadingContainerSel:       '#loading'
     });
+    });
+
+    //var gallery = jQuery('#thumbs').galleriffic({});
 
 });

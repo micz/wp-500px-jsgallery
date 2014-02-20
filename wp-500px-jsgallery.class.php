@@ -33,12 +33,16 @@ if (!class_exists('WP500pxjsGallery')) {
 	  
 	  //Output shortcode
 	  function getShortcode($atts){
-	    $output='<div id="thumbs"><ul class="thumbs noscript">';
+	    $output='<div id="controls"></div>
+<div id="loading"></div>
+<div id="slideshow"></div>
+<div id="caption"></div>
+<div id="thumbs"><ul class="thumbs noscript">';
       //Print images
       
       $output.='</ul></div>';
       return $output;
-	    return 'testme!!';
+	   // return 'testme!!';
 	  }
 	
 	  function getImageHTML($imgData){
