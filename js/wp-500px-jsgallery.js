@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
 
     wp5jsgal_rss500px('micz', function(feed){ 
-        var contentimg = $(unescape($(this).find('content').text())).find("img").attr("src");
+        var contentimg = jQuery(unescape(jQuery(this).find('content').text())).find("img").attr("src");
         // var title = $(this).find("title").text();
         // var link = $(this).find("link").text();
         // var imgSrc = $(this).find('description a img').attr("src");
