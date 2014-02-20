@@ -25,10 +25,25 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
+ 
+// Fix the __FILE__ problem with symlinks.
+// Now just use ___FILE___ instead of __FILE__
 
+$___FILE___ = __FILE__;
+ 
+if ( isset( $plugin ) ) {
+$___FILE___ = $plugin;
+}
+else if ( isset( $mu_plugin ) ) {
+$___FILE___ = $mu_plugin;
+}
+else if ( isset( $network_plugin ) ) {
+$___FILE___ = $network_plugin;
+}
+ 
+define( '___FILE___', $___FILE___ );
 
 include_once('wp-500px-jsgallery.class.php');
-
 
 //Shortcode [jsg500px]
 function jsg500px_shortcode($atts){
@@ -50,27 +65,27 @@ function wp5jsgal_enqueue_scripts() {
     if ( is_page() ) :
         wp_enqueue_script(
             'galleriffic',
-            plugins_url( 'js/jquery.galleriffic.js' , __FILE__ ),
+            plugins_url( 'js/jquery.galleriffic.js' , ___FILE___ ),
             array('jquery')
         );
         wp_enqueue_script(
             'history',
-            plugins_url( 'js/jquery.history.js' , __FILE__ ),
+            plugins_url( 'js/jquery.history.js' , ___FILE___ ),
             array('jquery')
         );
         wp_enqueue_script(
             'opacityrollover',
-            plugins_url( 'js/jquery.opacityrollover.js' , __FILE__ ),
+            plugins_url( 'js/jquery.opacityrollover.js' , ___FILE___ ),
             array('jquery')
         );
         wp_enqueue_script(
             'wp5jsgal-rss500px',
-            plugins_url( 'js/rss500px.js' , __FILE__ ),
+            plugins_url( 'js/rss500px.js' , ___FILE___ ),
             array('jquery')
         );
         wp_enqueue_script(
             'wp5jsgal-main',
-            plugins_url( 'js/wp-500px-jsgallery.js' , __FILE__ ),
+            plugins_url( 'js/wp-500px-jsgallery.js' , ___FILE___ ),
             array('jquery','wp5jsgal-rss500px'),
             false, //script version
             true //loaded before the body closing tag
