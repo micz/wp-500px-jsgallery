@@ -51,6 +51,7 @@ $wp500pxjsgallery=new WP500pxjsGallery();
  * ENQUEUE SCRIPTS
  */
 function wp5jsgal_enqueue_scripts() {
+  global $wp500pxjsgallery;
     if ( is_page() ) :
         wp_enqueue_style(
             'wp5jsgal-css',
@@ -83,6 +84,9 @@ function wp5jsgal_enqueue_scripts() {
             false, //script version
             true //loaded before the body closing tag
         );
+        //js params
+        $jsparams=array('_500px_user'=>$wp500pxjsgallery->options['500px_user']);
+        wp_localize_script('wp5jsgal-main','wp5jsgal_options',$jsparams);
     endif;
 }
 

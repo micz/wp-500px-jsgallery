@@ -22,10 +22,14 @@ if (!class_exists('WP500pxjsGallery')) {
 	 * main class for WP 500px jsGallery
 	 *
 	 */
+
 	class WP500pxjsGallery {
+	
+	  public $options=array();
 	
 	  // Class Constructor
 	  function __construct() {
+  	  $this->options = get_option('wp5jsgal_options');
       add_action('admin_init', array('WP500pxjsGallery','register_settings'));
       add_action('admin_menu', array('WP500pxjsGallery','admin_add_page'));
       add_shortcode( 'jsg500px', array('WP500pxjsGallery','getShortcode'));
@@ -33,22 +37,22 @@ if (!class_exists('WP500pxjsGallery')) {
 	  
   
 //Settings page
-	  function register_settings(){
+	  static function register_settings(){
 	    register_setting('wp5jsgal_options','wp5jsgal_options',array('WP500pxjsGallery','options_validate'));
   	  add_settings_section('wp5jsgal_main', 'Main Settings', array('WP500pxjsGallery','main_section_text'), 'wp5jsgal_settings_page');
 	    add_settings_field('wp5jsgal_user','500px User',null,'wp5jsgal_settings_page','default');
 	  }
 	  
-	  function admin_add_page(){
+	  static function admin_add_page(){
       add_options_page('WP 500px jsGallery Settings', 'WP 500px jsGallery', 'manage_options', 'wp5jsgal_settings_page', array('WP500pxjsGallery','output_settings_page'));
     }
 	  
-    function main_section_text() {
+    static function main_section_text() {
       echo '<p>Main description of this section here.</p>';
     }
 	  
-	  function output_settings_page(){?>
-<div>
+	  static function output_settings_page(){
+?><div>
 <h2>WP 500px jsGallery Settings</h2>
 Options relating to the WP 500px jsGallery Plugin.
 <form action="options.php" method="post">
@@ -67,17 +71,17 @@ Options relating to the WP 500px jsGallery Plugin.
 </form></div>
 	  <?}
 	  
-function options_validate($input) {
+  static function options_validate($input) {
     // The username must be safe text with no HTML tags
     $newinput['500px_user'] =  trim(wp_filter_nohtml_kses($input['500px_user']));
    
     return $newinput;
-}
+  }
 //Settings page - END
 
 
 	  //Output shortcode [jsg500px]
-	  function getShortcode($atts){
+	  static function getShortcode($atts){
 	    $output='<div id="wp500pxgallery-main"><div id="wp500pxgallery" class="wp500pxcontent">
 					<div id="wp500pxcontrols" class="500pxcontrols"></div>
 					<div class="slideshow-container">
