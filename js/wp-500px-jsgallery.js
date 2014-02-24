@@ -33,7 +33,6 @@ jQuery(document).ready(function(){
        	// We only want these styles applied when javascript is enabled
 		  	jQuery('div.wp500pxnavigation').css({'width' : '315px', 'float' : 'left'});
 				jQuery('div.wp500pxcontent').css({'display':'block','float':'right','width': '64%'});
-				//jQuery('.noscript').css('display','none');
 				
 				jQuery('div.entry-content').css('max-width', '1000px');
 
@@ -47,8 +46,7 @@ jQuery(document).ready(function(){
 					exemptionSelector: '.selected',
 				});
 				
-								/**** Functions to support integration of galleriffic with the jquery.history plugin ****/
-
+/**** Functions to support integration of galleriffic with the jquery.history plugin ****/
 				// PageLoad function
 				// This function is called when:
 				// 1. after calling $.historyInit();
@@ -82,7 +80,6 @@ jQuery(document).ready(function(){
 
 					return false;
 				});
-
-				/****************************************************************************************/
+/****************************************************************************************/
     });
 });

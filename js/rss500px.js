@@ -18,12 +18,17 @@ function wp5jsgal_getThumbURL(image_url){
   return image_url.replace('4.jpg','2.jpg');
 }
 
+function wp5jsgal_getImageCaption(contentimg){
+  return "caption";
+}
+
 function wp5jsgal_getImage(img){
   var image_url=wp5jsgal_extractImageURL(img.content);
   var thumb_url=wp5jsgal_getThumbURL(image_url);
+  var image_caption=wp5jsgal_getImageCaption(img.content);
   //var photopage_url=img.link;
   //img.id500px=photopage_url.substr(photopage_url.lastIndexOf("/")+1,photopage_url.length);
   //return  '<li><a class="thumb" name="'+img.id500px+'" href="'+img.link+'" title="' + img.title + '"><img src="'+img.contentimg+'" alt="' + img.title + '" /></a><div class="caption">' +img.contentSnippet+ '</div></li>';
-  return  '<li><a class="thumb" href="'+image_url+'" title="' + img.title + '"><img src="'+thumb_url+'" alt="' + img.title + '" /></a><div class="caption">caption</div></li>';
+  return  '<li><a class="thumb" href="'+image_url+'" title="' + img.title + '"><img src="'+thumb_url+'" alt="' + img.title + '" /></a><div class="caption">'+image_caption+'</div></li>';
 }
 
