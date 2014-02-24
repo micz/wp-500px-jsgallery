@@ -60,9 +60,9 @@ Options relating to the WP 500px jsGallery Plugin.
 	  
 function options_validate($input) {
     // The username must be safe text with no HTML tags
-    $input['500px_user'] =  wp_filter_nohtml_kses($input['500px_user']);
+    $newinput['500px_user'] =  trim(wp_filter_nohtml_kses($input['500px_user']));
    
-    return $input;
+    return $newinput;
 }
 //Settings page - END
 
