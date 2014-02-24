@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
 
-    wp5jsgal_rss500px('micz', function(feed){ 
+    wp5jsgal_rss500px('Marcus-Jooste', function(feed){ 
         var contentimg = jQuery(unescape(jQuery(this).find('content').text())).find("img").attr("src");
     
         var entries = feed.entries, feedList = '';
