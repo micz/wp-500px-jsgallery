@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: WP 500px jsGallery
-Plugin URI: http://micz.it
+Plugin URI: http://micz.it/wordpress-500px-jsgallery/
 Description: .
-Author: Mic
+Author: Mic (m@micz.it)
 Version: 0.1
 Author URI: http://micz.it
 License: GPL2
