@@ -52,9 +52,18 @@ if (!class_exists('WP500pxjsGallery')) {
 <h2>WP 500px jsGallery Settings</h2>
 Options relating to the WP 500px jsGallery Plugin.
 <form action="options.php" method="post">
-<? settings_fields('wp5jsgal_options');?>
-<? do_settings_sections('wp5jsgal_settings_page');?>
-<input name="Submit" type="submit" value="<?esc_attr_e('Save Changes');?>" />
+<?php settings_fields('wp5jsgal_options');?>
+<?php $options = get_option('wp5jsgal_options'); ?>
+<?php do_settings_sections('wp5jsgal_settings_page');?>
+<table class="form-table">
+    <tr valign="top"><th scope="row">500px Username</th>
+        <td><input name="wp5jsgal_options[500px_user]" type="text" value="<?php echo $options['500px_user']; ?>"/></td>
+    </tr>
+   <?/*?> <tr valign="top"><th scope="row">Some text</th>
+        <td><input type="text" name="ozh_sample[500px_user]" value="<?php echo $options['500px_user']; ?>" /></td>
+    </tr><?*/?>
+</table>
+<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes');?>"/>
 </form></div>
 	  <?}
 	  
