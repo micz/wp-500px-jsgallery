@@ -45,18 +45,7 @@ define( '___FILE___', $___FILE___ );
 
 include_once('wp-500px-jsgallery.class.php');
 
-//Shortcode [jsg500px]
-function jsg500px_shortcode($atts){
-  global $wp500pxjsgallery;
-	return $wp500pxjsgallery->getShortcode($atts);
-}
-add_shortcode( 'jsg500px', 'jsg500px_shortcode' );
-
-
-/*function wp5jsgal_init(){
-  
-}*/
-
+$wp500pxjsgallery=new WP500pxjsGallery();
 
 /**
  * ENQUEUE SCRIPTS
@@ -99,6 +88,4 @@ function wp5jsgal_enqueue_scripts() {
 
 
 add_action('wp_enqueue_scripts', 'wp5jsgal_enqueue_scripts');
-
-$wp500pxjsgallery=new WP500pxjsGallery();
 ?>

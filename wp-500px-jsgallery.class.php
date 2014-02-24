@@ -26,12 +26,41 @@ if (!class_exists('WP500pxjsGallery')) {
 	
 	  // Class Constructor
 	  function __construct() {
-	  
-	  //TODO: options handling
-	    
+      add_action('admin_init', array('WP500pxjsGallery','register_settings'));
+      add_action('admin_menu', array('WP500pxjsGallery','admin_add_page'));
+      add_shortcode( 'jsg500px', array('WP500pxjsGallery','getShortcode'));
 	  }
 	  
-	  //Output shortcode
+  
+//Settings page
+	  function register_settings(){
+	    register_setting('wp5jsgal_settings_page','wp5jsgal_user',null);
+  	  add_settings_section('wp5jsgal_main', 'Main Settings', array('WP500pxjsGallery','plugin_section_text'), 'wp5jsgal_settings_page');
+	    add_settings_field('wp5jsgal_user','500px User',null,'wp5jsgal_settings_page','default');
+	  }
+	  
+	  function admin_add_page(){
+      add_options_page('WP 500px jsGallery Settings', 'WP 500px jsG', 'manage_options', 'wp5jsgal_settings_page', array('WP500pxjsGallery','output_settings_page'));
+    }
+	  
+    function plugin_section_text() {
+      echo '<p>Main description of this section here.</p>';
+    }
+	  
+	  function output_settings_page(){
+	    echo '<div>
+<h2>WP 500px jsGallery Settings</h2>
+Options relating to the WP 500px jsGallery Plugin.
+<form action="options.php" method="post">';
+settings_fields('wp5jsgal_main');
+do_settings_sections('wp5jsgal_settings_page');
+echo'<input name="Submit" type="submit" value="'.esc_attr('Save Changes').'" />
+</form></div>';
+	  }
+//Settings page - END
+
+
+	  //Output shortcode [jsg500px]
 	  function getShortcode($atts){
 	    $output='<div id="wp500pxgallery-main"><div id="wp500pxgallery" class="wp500pxcontent">
 					<div id="wp500pxcontrols" class="500pxcontrols"></div>
@@ -47,7 +76,7 @@ if (!class_exists('WP500pxjsGallery')) {
       return $output;
 	  }
 	
-	  function getImageHTML($imgData){
+	  /*function getImageHTML($imgData){
 	    $output='<li>
             <a class="thumb" name="optionalCustomIdentifier" href="'.$imgData['thumb_url'].'" title="'.$imgData['title'].'">
                 <img src="'.$imgData['thumb_url'].'" alt="'.$imgData['title'].'" />
@@ -55,7 +84,7 @@ if (!class_exists('WP500pxjsGallery')) {
             <div class="caption">'.$imgData['caption'].'</div>
         </li>';
       return $output;
-	  }
+	  }*/
 	
 	
 	} //END WP500pxjsGallery
