@@ -65,6 +65,7 @@ div.wp500pxslideshow a.advance-link:hover, div.wp500pxslideshow a.advance-link:a
 div.wp500pxslideshow img {
 	vertical-align: middle;
 	border: 1px solid #ccc;
+	max-width: 540px;
 }
 div.download {
 	float: right;
