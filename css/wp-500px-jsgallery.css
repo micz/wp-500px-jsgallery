@@ -1,21 +1,21 @@
-div.content {
+div.500pxcontent {
 	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
 	/*display: none;*/
 	float: right;
-	width: 550px; 
+	/*width: 550px; */
 }
-div.content a, div.navigation a {
+div.500pxcontent a, div.500pxnavigation a {
 	text-decoration: none;
 	color: #777;
 }
-div.content a:focus, div.content a:hover, div.content a:active {
+div.500pxcontent a:focus, div.500pxcontent a:hover, div.500pxcontent a:active {
 	text-decoration: underline;
 }
-div.controls {
+div.500pxcontrols {
 	margin-top: 5px;
 	height: 23px;
 }
-div.controls a {
+div.500pxcontrols a {
 	padding: 5px;
 }
 div.ss-controls {
@@ -27,7 +27,7 @@ div.nav-controls {
 div.slideshow-container {
 	position: relative;
 	clear: both;
-	/*height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
 }
 div.loader {
 	position: absolute;
@@ -37,35 +37,35 @@ div.loader {
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 550px;
-	/*height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
 }
-div.slideshow {
+div.500pxslideshow {
 
 }
-div.slideshow span.image-wrapper {
+div.500pxslideshow span.image-wrapper {
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-div.slideshow a.advance-link {
+div.500pxslideshow a.advance-link {
 	display: block;
 	width: 550px;
 	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
 	line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
 	text-align: center;
 }
-div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.slideshow a.advance-link:visited {
+div.500pxslideshow a.advance-link:hover, div.500pxslideshow a.advance-link:active, div.500pxslideshow a.advance-link:visited {
 	text-decoration: none;
 }
-div.slideshow img {
+div.500pxslideshow img {
 	vertical-align: middle;
 	border: 1px solid #ccc;
 }
 div.download {
 	float: right;
 }
-div.caption-container {
+div.500pxcaption-container {
 	position: relative;
 	clear: left;
 	height: 75px;
@@ -77,7 +77,7 @@ span.image-caption {
 	top: 0;
 	left: 0;
 }
-div.caption {
+div.500pxcaption {
 	padding: 12px;
 }
 div.image-title {
@@ -88,7 +88,7 @@ div.image-desc {
 	line-height: 1.3em;
 	padding-top: 12px;
 }
-div.navigation {
+div.500pxnavigation {
 	/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
 }
 ul.thumbs {
@@ -120,11 +120,11 @@ ul.thumbs img {
 div.pagination {
 	clear: both;
 }
-div.navigation div.top {
+div.500pxnavigation div.top {
 	margin-bottom: 12px;
 	height: 11px;
 }
-div.navigation div.bottom {
+div.500pxnavigation div.bottom {
 	margin-top: 12px;
 }
 div.pagination a, div.pagination span.current, div.pagination span.ellipsis {

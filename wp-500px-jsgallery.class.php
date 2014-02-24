@@ -33,15 +33,15 @@ if (!class_exists('WP500pxjsGallery')) {
 	  
 	  //Output shortcode
 	  function getShortcode($atts){
-	    $output='<div id="500pxgallery" class="content">
-					<div id="500pxcontrols" class="controls"></div>
+	    $output='<div id="500pxgallery" class="500pxcontent">
+					<div id="500pxcontrols" class="500pxcontrols"></div>
 					<div class="slideshow-container">
 						<div id="500pxloading" class="loader"></div>
 						<div id="500pxslideshow" class="slideshow"></div>
 					</div>
-					<div id="500pxcaption" class="caption-container"></div>
+					<div id="500pxcaption" class="500pxcaption-container"></div>
 				</div>
-				<div id="500pxthumbs" class="navigation"><ul class="thumbs noscript">';
+				<div id="500pxthumbs" class="500pxnavigation"><ul class="thumbs noscript">';
       $output.='</ul></div>';
       return $output;
 	   // return 'testme!!';
