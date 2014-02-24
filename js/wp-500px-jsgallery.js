@@ -13,6 +13,7 @@ jQuery(document).ready(function(){
         
         var gallery = jQuery('div#wp500pxthumbs').galleriffic({
             numThumbs:                 10,
+            enableTopPager:            true,
             imageContainerSel:         '#wp500pxslideshow',
 		        captionContainerSel:       '#wp500pxcaption',
 		        controlsContainerSel:      '#wp500pxcontrols',
