@@ -9,7 +9,7 @@ Author URI: http://micz.it
 License: GPL2
 */
 
-/* Copyright 2012 Mic (email: m@micz.it)
+/* Copyright 2014 Mic (email: m@micz.it)
 Plugin Info: http://micz.it
 
 This program is free software; you can redistribute it and/or modify
