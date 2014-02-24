@@ -6,7 +6,8 @@
  *   http://www.opensource.org/licenses/mit-license.php
  *
  * Much thanks to primary contributer Ponticlaro (http://www.ponticlaro.com)
- * Patched for img duplication as see in http://code.google.com/p/galleriffic/issues/detail?id=95#c15
+ *
+ * [Mic, m@micz.it] Patched for img duplication as see in http://code.google.com/p/galleriffic/issues/detail?id=95#c15
  */
 ;(function($) {
 	// Globally keep track of all images by their unique hash.  Each item is an image data object.
