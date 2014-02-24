@@ -10,7 +10,9 @@ jQuery(document).ready(function(){
         }
 
         jQuery('div#wp500pxthumbs > ul.thumbs').append(feedList);
+        
         var gallery = jQuery('div#wp500pxthumbs').galleriffic({
+            numThumbs:                 10,
             imageContainerSel:         '#wp500pxslideshow',
 		        captionContainerSel:       '#wp500pxcaption',
 		        controlsContainerSel:      '#wp500pxcontrols',
@@ -18,18 +20,30 @@ jQuery(document).ready(function(){
 		        enableHistory:             true,
 		        onSlideChange:             function(prevIndex, nextIndex) {
 						// 'this' refers to the gallery, which is an extension of $('#thumbs')
-						this.find('ul.thumbs').children()
-							.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
-							.eq(nextIndex).fadeTo('fast', 1.0);
+					  	this.find('ul.thumbs').children()
+							  .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+							  .eq(nextIndex).fadeTo('fast', 1.0);
 					  },
 					  onPageTransitionOut:       function(callback) {
 						  this.fadeTo('fast', 0.0, callback);
 					  },
 					  onPageTransitionIn:        function() {
 						  this.fadeTo('fast', 1.0);
-					  }
-        });
+					  },
+					  onTransitionOut:           function(slide, caption, isSync, callback) {
+						  slide.fadeTo(this.getDefaultTransitionDuration(isSync), 0.0, callback);
+						  caption.fadeTo(this.getDefaultTransitionDuration(isSync), 0.0, callback);
+					  },
+					  onTransitionIn:            function(slide, caption, isSync) {
+						  var duration = this.getDefaultTransitionDuration(isSync);
+						  slide.fadeTo(duration, 1.0);
+						  caption.fadeTo(duration, 1.0);
 
+						  var slideImage = slide.find('img');
+						  jQuery('div.slideshow-container').css('min-height',slideImage.height()+'px');
+					  },
+        });
+        
        	// We only want these styles applied when javascript is enabled
 		  	jQuery('div.wp500pxnavigation').css({'width' : '315px', 'float' : 'left'});
 				jQuery('div.wp500pxcontent').css({'display':'block','float':'right','width': '64%'});
