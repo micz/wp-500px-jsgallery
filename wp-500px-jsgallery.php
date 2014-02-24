@@ -72,11 +72,11 @@ function wp5jsgal_enqueue_scripts() {
             plugins_url( 'js/jquery.galleriffic.js' , ___FILE___ ),
             array('jquery')
         );
-       /* wp_enqueue_script(
+        wp_enqueue_script(
             'history',
             plugins_url( 'js/jquery.history.js' , ___FILE___ ),
             array('jquery')
-        );*/
+        );
         wp_enqueue_script(
             'opacityrollover',
             plugins_url( 'js/jquery.opacityrollover.js' , ___FILE___ ),
