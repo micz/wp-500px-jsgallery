@@ -18,14 +18,14 @@ function wp5jsgal_getThumbURL(image_url){
   return image_url.replace('4.jpg','2.jpg');
 }
 
-function wp5jsgal_getImageCaption(contentimg){
-  return "caption";
+function wp5jsgal_getImageCaption(img){
+  return 'See at full size on 500px: <a href="'+img.link+'">'+img.link+'</a>';
 }
 
 function wp5jsgal_getImage(img){
   var image_url=wp5jsgal_extractImageURL(img.content);
   var thumb_url=wp5jsgal_getThumbURL(image_url);
-  var image_caption=wp5jsgal_getImageCaption(img.content);
+  var image_caption=wp5jsgal_getImageCaption(img);
   //var photopage_url=img.link;
   //img.id500px=photopage_url.substr(photopage_url.lastIndexOf("/")+1,photopage_url.length);
   //return  '<li><a class="thumb" name="'+img.id500px+'" href="'+img.link+'" title="' + img.title + '"><img src="'+img.contentimg+'" alt="' + img.title + '" /></a><div class="caption">' +img.contentSnippet+ '</div></li>';
