@@ -33,6 +33,7 @@ if (!class_exists('WP500pxjsGallery')) {
       add_action('admin_init', array('WP500pxjsGallery','register_settings'));
       add_action('admin_menu', array('WP500pxjsGallery','admin_add_page'));
       add_shortcode( 'jsg500px', array('WP500pxjsGallery','getShortcode'));
+      add_filter('plugin_action_links',array('WP500pxjsGallery','add_settings_link'));
 	  }
 	  
   
@@ -77,6 +78,12 @@ Options relating to the WP 500px jsGallery Plugin.
    
     return $newinput;
   }
+  
+  static function add_settings_link($links){
+    $settings_link = '<a href="options-general.php?page=wp5jsgal_settings_page">Settings</a>';
+  	array_push($links,$settings_link);
+  	return $links;
+}
 //Settings page - END
 
 
