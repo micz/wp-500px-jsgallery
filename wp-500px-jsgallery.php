@@ -54,9 +54,15 @@ function wp5jsgal_enqueue_scripts() {
   global $wp500pxjsgallery;
     if ( is_page() ) :
         wp_enqueue_style(
-            'wp5jsgal-css',
+            'wp5jsgal-main-style',
             plugins_url( 'css/wp-500px-jsgallery.css' , ___FILE___ )
         );
+        if (file_exists(get_stylesheet_directory().'/wp-500px-jsgallery.css')){ //Conditionally loading a theme css
+          wp_enqueue_style(
+              'wp5jsgal-theme-style',
+              get_stylesheet_directory_uri().'/wp-500px-jsgallery.css'
+          );
+        }
         wp_enqueue_script(
             'galleriffic',
             plugins_url( 'js/jquery.galleriffic.js' , ___FILE___ ),
@@ -84,7 +90,7 @@ function wp5jsgal_enqueue_scripts() {
             false, //script version
             true //loaded before the body closing tag
         );
-        //js params
+        //passing js params
         $jsparams=array('_500px_user'=>$wp500pxjsgallery->options['500px_user']);
         wp_localize_script('wp5jsgal-main','wp5jsgal_options',$jsparams);
     endif;
