@@ -34,29 +34,36 @@ if (!class_exists('WP500pxjsGallery')) {
   
 //Settings page
 	  function register_settings(){
-	    register_setting('wp5jsgal_settings_page','wp5jsgal_user',null);
-  	  add_settings_section('wp5jsgal_main', 'Main Settings', array('WP500pxjsGallery','plugin_section_text'), 'wp5jsgal_settings_page');
+	    register_setting('wp5jsgal_options','wp5jsgal_options',array('WP500pxjsGallery','options_validate'));
+  	  add_settings_section('wp5jsgal_main', 'Main Settings', array('WP500pxjsGallery','main_section_text'), 'wp5jsgal_settings_page');
 	    add_settings_field('wp5jsgal_user','500px User',null,'wp5jsgal_settings_page','default');
 	  }
 	  
 	  function admin_add_page(){
-      add_options_page('WP 500px jsGallery Settings', 'WP 500px jsG', 'manage_options', 'wp5jsgal_settings_page', array('WP500pxjsGallery','output_settings_page'));
+      add_options_page('WP 500px jsGallery Settings', 'WP 500px jsGallery', 'manage_options', 'wp5jsgal_settings_page', array('WP500pxjsGallery','output_settings_page'));
     }
 	  
-    function plugin_section_text() {
+    function main_section_text() {
       echo '<p>Main description of this section here.</p>';
     }
 	  
-	  function output_settings_page(){
-	    echo '<div>
+	  function output_settings_page(){?>
+<div>
 <h2>WP 500px jsGallery Settings</h2>
 Options relating to the WP 500px jsGallery Plugin.
-<form action="options.php" method="post">';
-settings_fields('wp5jsgal_main');
-do_settings_sections('wp5jsgal_settings_page');
-echo'<input name="Submit" type="submit" value="'.esc_attr('Save Changes').'" />
-</form></div>';
-	  }
+<form action="options.php" method="post">
+<? settings_fields('wp5jsgal_options');?>
+<? do_settings_sections('wp5jsgal_settings_page');?>
+<input name="Submit" type="submit" value="<?esc_attr_e('Save Changes');?>" />
+</form></div>
+	  <?}
+	  
+function options_validate($input) {
+    // The username must be safe text with no HTML tags
+    $input['500px_user'] =  wp_filter_nohtml_kses($input['500px_user']);
+   
+    return $input;
+}
 //Settings page - END
 
 
