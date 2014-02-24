@@ -1,21 +1,25 @@
-div.500pxcontent {
+div.wp500pxgallery-footer{
+  clear:both;
+}
+
+div.wp500pxcontent {
 	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
 	/*display: none;*/
 	float: right;
 	/*width: 550px; */
 }
-div.500pxcontent a, div.500pxnavigation a {
+div.wp500pxcontent a, div.wp500pxnavigation a {
 	text-decoration: none;
 	color: #777;
 }
-div.500pxcontent a:focus, div.500pxcontent a:hover, div.500pxcontent a:active {
+div.wp500pxcontent a:focus, div.wp500pxcontent a:hover, div.wp500pxcontent a:active {
 	text-decoration: underline;
 }
-div.500pxcontrols {
+div.wp500pxcontrols {
 	margin-top: 5px;
 	height: 23px;
 }
-div.500pxcontrols a {
+div.wp500pxcontrols a {
 	padding: 5px;
 }
 div.ss-controls {
@@ -39,33 +43,33 @@ div.loader {
 	width: 550px;
 	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
 }
-div.500pxslideshow {
+div.wp500pxslideshow {
 
 }
-div.500pxslideshow span.image-wrapper {
+div.wp500pxslideshow span.image-wrapper {
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-div.500pxslideshow a.advance-link {
+div.wp500pxslideshow a.advance-link {
 	display: block;
 	width: 550px;
 	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
 	line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
 	text-align: center;
 }
-div.500pxslideshow a.advance-link:hover, div.500pxslideshow a.advance-link:active, div.500pxslideshow a.advance-link:visited {
+div.wp500pxslideshow a.advance-link:hover, div.wp500pxslideshow a.advance-link:active, div.wp500pxslideshow a.advance-link:visited {
 	text-decoration: none;
 }
-div.500pxslideshow img {
+div.wp500pxslideshow img {
 	vertical-align: middle;
 	border: 1px solid #ccc;
 }
 div.download {
 	float: right;
 }
-div.500pxcaption-container {
+div.wp500pxcaption-container {
 	position: relative;
 	clear: left;
 	height: 75px;
@@ -77,7 +81,7 @@ span.image-caption {
 	top: 0;
 	left: 0;
 }
-div.500pxcaption {
+div.wp500pxcaption {
 	padding: 12px;
 }
 div.image-title {
@@ -88,7 +92,7 @@ div.image-desc {
 	line-height: 1.3em;
 	padding-top: 12px;
 }
-div.500pxnavigation {
+div.wp500pxnavigation {
 	/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
 }
 ul.thumbs {
@@ -120,11 +124,11 @@ ul.thumbs img {
 div.pagination {
 	clear: both;
 }
-div.500pxnavigation div.top {
+div.wp500pxnavigation div.top {
 	margin-bottom: 12px;
 	height: 11px;
 }
-div.500pxnavigation div.bottom {
+div.wp500pxnavigation div.bottom {
 	margin-top: 12px;
 }
 div.pagination a, div.pagination span.current, div.pagination span.ellipsis {

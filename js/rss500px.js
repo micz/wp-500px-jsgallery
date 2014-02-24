@@ -10,7 +10,7 @@ function wp5jsgal_rss500px(user,callback){
 
 function wp5jsgal_extractImageURL(contentimg){
   var dummy_el = jQuery('<div></div>');
-  dummy_el.html('<html><head><title>titleTest</title></head><body>'+contentimg+'</body>');
+  dummy_el.html('<html><head><title>dummyhtml</title></head><body>'+contentimg+'</body>');
   return jQuery('img',dummy_el).attr('src'); 
 }
 
