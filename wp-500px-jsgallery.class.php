@@ -69,7 +69,7 @@ if (!class_exists('WP500pxjsGallery')) {
         <td><input type="text" name="ozh_sample[500px_user]" value="<?php echo $options['500px_user']; ?>" /></td>
     </tr><?*/?>
 </table>
-<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes','wp5jsgal');?>"/>
+<input name="Submit" class="button button-primary" type="submit" value="<?php esc_attr_e('Save Changes','wp5jsgal');?>"/>
 </form></div>
 	  <?}
 	  
