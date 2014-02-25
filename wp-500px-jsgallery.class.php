@@ -26,44 +26,49 @@ if (!class_exists('WP500pxjsGallery')) {
 	class WP500pxjsGallery {
 	
 	  public $options=array();
+	  public $that;
 	
 	  // Class Constructor
-	  function __construct() {
+	  public function __construct() {
+	    global $that;
+	    $that=$this;
   	  $this->options = get_option('wp5jsgal_options');
-      add_action('admin_init', array('WP500pxjsGallery','register_settings'));
-      add_action('admin_menu', array('WP500pxjsGallery','admin_add_page'));
-      add_shortcode('jsg500px', array('WP500pxjsGallery','getShortcode'));
-      add_filter('plugin_action_links',array('WP500pxjsGallery','add_settings_link'));
+      add_action('admin_init', array($that,'register_settings'));
+      add_action('admin_menu', array($that,'admin_add_page'));
+      add_shortcode('jsg500px', array($that,'getShortcode'));
+      add_filter('plugin_action_links',array($that,'add_settings_link'));
       load_plugin_textdomain('wp5jsgal',false,basename(dirname( __FILE__ )).'/lang/');
 	  }
 	  
   
 //Settings page
-	  static function register_settings(){
-	    register_setting('wp5jsgal_options','wp5jsgal_options',array('WP500pxjsGallery','options_validate'));
-  	  add_settings_section('wp5jsgal_main', 'Main Settings', array('WP500pxjsGallery','main_section_text'), 'wp5jsgal_settings_page');
+	  public function register_settings(){
+	    global $that;
+	    register_setting('wp5jsgal_options','wp5jsgal_options',array($that,'options_validate'));
+  	  add_settings_section('wp5jsgal_main', 'Main Settings', array($that,'main_section_text'), 'wp5jsgal_settings_page');
 	    add_settings_field('wp5jsgal_user','500px User',null,'wp5jsgal_settings_page','default');
 	  }
 	  
-	  static function admin_add_page(){
-      add_options_page(__('WP 500px jsGallery Settings','wp5jsgal'),__('WP 500px jsGallery','wp5jsgal'), 'manage_options', 'wp5jsgal_settings_page', array('WP500pxjsGallery','output_settings_page'));
+	  public function admin_add_page(){
+	    global $that;
+      add_options_page(__('WP 500px jsGallery Settings','wp5jsgal'),__('WP 500px jsGallery','wp5jsgal'), 'manage_options', 'wp5jsgal_settings_page', array($that,'output_settings_page'));
     }
 	  
-    static function main_section_text() {
+    public function main_section_text() {
       echo '<p>'.__('Main description of this section here.','wp5jsgal').'</p>';
     }
 	  
-	  static function output_settings_page(){
+	  public function output_settings_page(){
 ?><div>
 <h2><?_e('WP 500px jsGallery Settings','wp5jsgal');?></h2>
 <?_e('Options relating to the WP 500px jsGallery Plugin.','wp5jsgal');?>
 <form action="options.php" method="post">
 <?php settings_fields('wp5jsgal_options');?>
-<?php $options = get_option('wp5jsgal_options'); ?>
+<?php //$options = get_option('wp5jsgal_options'); // Using $this->option?>
 <?php do_settings_sections('wp5jsgal_settings_page');?>
 <table class="form-table">
     <tr valign="top"><th scope="row"><?_e('500px Username','wp5jsgal');?></th>
-        <td><input name="wp5jsgal_options[500px_user]" type="text" value="<?php echo $options['500px_user']; ?>"/></td>
+        <td><input name="wp5jsgal_options[500px_user]" type="text" value="<?php echo $this->options['500px_user']; ?>"/></td>
     </tr>
    <?/*?> <tr valign="top"><th scope="row">Some text</th>
         <td><input type="text" name="ozh_sample[500px_user]" value="<?php echo $options['500px_user']; ?>" /></td>
@@ -73,14 +78,14 @@ if (!class_exists('WP500pxjsGallery')) {
 </form></div>
 	  <?}
 	  
-  static function options_validate($input) {
+  public function options_validate($input) {
     // The username must be safe text with no HTML tags
     $newinput['500px_user'] =  trim(wp_filter_nohtml_kses($input['500px_user']));
    
     return $newinput;
   }
   
-  static function add_settings_link($links){
+  public function add_settings_link($links){
     $settings_link = '<a href="options-general.php?page=wp5jsgal_settings_page">'.__('Settings','wp5jsgal').'</a>';
   	array_push($links,$settings_link);
   	return $links;
@@ -89,7 +94,7 @@ if (!class_exists('WP500pxjsGallery')) {
 
 
 	  //Output shortcode [jsg500px]
-	  static function getShortcode($atts){
+	 public function getShortcode($atts){
 	    $output='<div id="wp500pxgallery-main"><div id="wp500pxgallery" class="wp500pxcontent">
 					<div id="wp500pxcontrols" class="500pxcontrols"></div>
 					<div class="slideshow-container">
@@ -104,7 +109,7 @@ if (!class_exists('WP500pxjsGallery')) {
       return $output;
 	  }
 	
-	  /*function getImageHTML($imgData){
+	  /*public function getImageHTML($imgData){
 	    $output='<li>
             <a class="thumb" name="optionalCustomIdentifier" href="'.$imgData['thumb_url'].'" title="'.$imgData['title'].'">
                 <img src="'.$imgData['thumb_url'].'" alt="'.$imgData['title'].'" />

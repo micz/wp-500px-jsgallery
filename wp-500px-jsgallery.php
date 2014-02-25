@@ -44,8 +44,12 @@ $___FILE___ = $network_plugin;
 define( '___FILE___', $___FILE___ );
 
 include_once('wp-500px-jsgallery.class.php');
+$wp500pxjsgallery='';
 
-$wp500pxjsgallery=new WP500pxjsGallery();
+function wp5jsgal_plugin_init(){
+  global $wp500pxjsgallery;
+  $wp500pxjsgallery=new WP500pxjsGallery();
+}
 
 /**
  * ENQUEUE SCRIPTS
@@ -96,6 +100,6 @@ function wp5jsgal_enqueue_scripts() {
     endif;
 }
 
-
+add_action('init', 'wp5jsgal_plugin_init');
 add_action('wp_enqueue_scripts', 'wp5jsgal_enqueue_scripts');
 ?>
