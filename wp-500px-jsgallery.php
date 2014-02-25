@@ -95,11 +95,12 @@ function wp5jsgal_enqueue_scripts() {
             true //loaded before the body closing tag
         );
         //passing js params
-        $jsparams=array('_500px_user'=>$wp500pxjsgallery->options['500px_user']);
+        $jsparams=array((WP500pxjsGallery::_500px_user)=>$wp500pxjsgallery->options[(WP500pxjsGallery::_500px_user)]);
         wp_localize_script('wp5jsgal-main','wp5jsgal_options',$jsparams);
     endif;
 }
 
-add_action('init', 'wp5jsgal_plugin_init');
+
 add_action('wp_enqueue_scripts', 'wp5jsgal_enqueue_scripts');
+add_action('init', 'wp5jsgal_plugin_init');
 ?>

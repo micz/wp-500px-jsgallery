@@ -27,6 +27,9 @@ if (!class_exists('WP500pxjsGallery')) {
 	
 	  public $options=array();
 	  public $that;
+	  
+	  //Constants
+	  const _500px_user='_500px_user';
 	
 	  // Class Constructor
 	  public function __construct() {
@@ -68,7 +71,7 @@ if (!class_exists('WP500pxjsGallery')) {
 <?php do_settings_sections('wp5jsgal_settings_page');?>
 <table class="form-table">
     <tr valign="top"><th scope="row"><?_e('500px Username','wp5jsgal');?></th>
-        <td><input name="wp5jsgal_options[500px_user]" type="text" value="<?php echo $this->options['500px_user']; ?>"/></td>
+        <td><input name="wp5jsgal_options[<?=self::_500px_user?>]" type="text" value="<?php echo $this->options[self::_500px_user]; ?>"/></td>
     </tr>
    <?/*?> <tr valign="top"><th scope="row">Some text</th>
         <td><input type="text" name="ozh_sample[500px_user]" value="<?php echo $options['500px_user']; ?>" /></td>
@@ -80,7 +83,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  
   public function options_validate($input) {
     // The username must be safe text with no HTML tags
-    $newinput['500px_user'] =  trim(wp_filter_nohtml_kses($input['500px_user']));
+    $newinput[self::_500px_user] =  trim(wp_filter_nohtml_kses($input[self::_500px_user]));
    
     return $newinput;
   }
