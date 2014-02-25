@@ -32,8 +32,9 @@ if (!class_exists('WP500pxjsGallery')) {
   	  $this->options = get_option('wp5jsgal_options');
       add_action('admin_init', array('WP500pxjsGallery','register_settings'));
       add_action('admin_menu', array('WP500pxjsGallery','admin_add_page'));
-      add_shortcode( 'jsg500px', array('WP500pxjsGallery','getShortcode'));
+      add_shortcode('jsg500px', array('WP500pxjsGallery','getShortcode'));
       add_filter('plugin_action_links',array('WP500pxjsGallery','add_settings_link'));
+      load_plugin_textdomain('wp5jsgal',false,basename(dirname( __FILE__ )).'/lang/');
 	  }
 	  
   
@@ -45,30 +46,30 @@ if (!class_exists('WP500pxjsGallery')) {
 	  }
 	  
 	  static function admin_add_page(){
-      add_options_page('WP 500px jsGallery Settings', 'WP 500px jsGallery', 'manage_options', 'wp5jsgal_settings_page', array('WP500pxjsGallery','output_settings_page'));
+      add_options_page(__('WP 500px jsGallery Settings','wp5jsgal'),__('WP 500px jsGallery','wp5jsgal'), 'manage_options', 'wp5jsgal_settings_page', array('WP500pxjsGallery','output_settings_page'));
     }
 	  
     static function main_section_text() {
-      echo '<p>Main description of this section here.</p>';
+      echo '<p>'.__('Main description of this section here.','wp5jsgal').'</p>';
     }
 	  
 	  static function output_settings_page(){
 ?><div>
-<h2>WP 500px jsGallery Settings</h2>
-Options relating to the WP 500px jsGallery Plugin.
+<h2><?_e('WP 500px jsGallery Settings','wp5jsgal');?></h2>
+<?_e('Options relating to the WP 500px jsGallery Plugin.','wp5jsgal');?>
 <form action="options.php" method="post">
 <?php settings_fields('wp5jsgal_options');?>
 <?php $options = get_option('wp5jsgal_options'); ?>
 <?php do_settings_sections('wp5jsgal_settings_page');?>
 <table class="form-table">
-    <tr valign="top"><th scope="row">500px Username</th>
+    <tr valign="top"><th scope="row"><?_e('500px Username','wp5jsgal');?></th>
         <td><input name="wp5jsgal_options[500px_user]" type="text" value="<?php echo $options['500px_user']; ?>"/></td>
     </tr>
    <?/*?> <tr valign="top"><th scope="row">Some text</th>
         <td><input type="text" name="ozh_sample[500px_user]" value="<?php echo $options['500px_user']; ?>" /></td>
     </tr><?*/?>
 </table>
-<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes');?>"/>
+<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes','wp5jsgal');?>"/>
 </form></div>
 	  <?}
 	  
@@ -80,7 +81,7 @@ Options relating to the WP 500px jsGallery Plugin.
   }
   
   static function add_settings_link($links){
-    $settings_link = '<a href="options-general.php?page=wp5jsgal_settings_page">Settings</a>';
+    $settings_link = '<a href="options-general.php?page=wp5jsgal_settings_page">'.__('Settings','wp5jsgal').'</a>';
   	array_push($links,$settings_link);
   	return $links;
 }
