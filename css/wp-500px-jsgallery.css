@@ -3,10 +3,9 @@ div.wp500pxgallery-footer{
 }
 
 div.wp500pxcontent {
-	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
-	/*display: none;*/
 	float: right;
-	/*width: 550px; */
+	display:block;
+	width:64%;
 }
 div.wp500pxcontent a, div.wp500pxnavigation a {
 	text-decoration: none;
@@ -94,7 +93,8 @@ div.image-desc {
 	padding-top: 12px;
 }
 div.wp500pxnavigation {
-	/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
+width:315px;
+float:left;
 }
 ul.thumbs {
 	clear: both;
