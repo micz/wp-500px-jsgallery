@@ -56,9 +56,9 @@ text-align: center;
 width: 100%;
 }
 div#wp500pxlinkprofile{
-float:left;
-text-align: center;
-width: 100%;
+float:right;
+text-align:right;
+width:auto;
 }
 div.wp500pxslideshow {
 }
