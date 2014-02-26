@@ -102,13 +102,13 @@ if (!class_exists('WP500pxjsGallery')) {
 	    $output='';
       if($this->options[self::_500px_user]==''){ //no 500px username set
         if(current_user_can('manage_options')){ //the current user can manage options
-          return '<p><span style="color:red;font-weight:bold;">'.esc_html__('To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px username in the plugin settings!').'<span></p>';
+          return '<p><span style="color:red;font-weight:bold;">'.esc_html__('To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px username in the plugin settings!','wp5jsgal').'<span></p>';
         }else{ //the current can NOT manage options
           return '';
         }
       }else{ //500px username set
         $output='<div id="wp500pxgallery-main">
-            <div id="wp500pxloading" class="loader"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...').'</div>
+            <div id="wp500pxloading" class="loader"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...','wp5jsgal').'</div>
             <div id="wp500pxgallery" class="wp500pxcontent">
             <div id="wp500pxcontrols" class="500pxcontrols"></div>
             <div class="slideshow-container">
@@ -118,7 +118,9 @@ if (!class_exists('WP500pxjsGallery')) {
             <div id="wp500pxcaption" class="wp500pxcaption-container"></div>
           </div>
           <div id="wp500pxthumbs" class="wp500pxnavigation"><ul class="thumbs noscript">';
-        $output.='</ul><div class="wp500pxgallery-footer"></div></div><div class="wp500pxgallery-footer"></div></div>';
+        $output.='</ul><div class="wp500pxgallery-footer"></div></div><div class="wp500pxgallery-footer"></div>';
+        //$output.='<div id="500pxlinkprofile">'.esc_html__('Loading images...','wp5jsgal').'</div>';
+        $output.='</div>';
       } //END if 500px username set
       return $output;
 	  }
@@ -126,12 +128,12 @@ if (!class_exists('WP500pxjsGallery')) {
 	 public function getJsLang(){
 	    $jslang=array();
       $jslang['image_link_desc']=esc_attr__('See at full size on 500px:','wp5jsgal');
-      $jslang['gal_playLinkText']=esc_attr__('Play');
-      $jslang['gal_pauseLinkText']=esc_attr__('Pause');
-      $jslang['gal_prevLinkText']=esc_attr__('Previous');
-      $jslang['gal_nextLinkText']=esc_attr__('Next');
-      $jslang['gal_nextPageLinkText']=esc_attr__('Next &rsaquo;');
-      $jslang['gal_prevPageLinkText']=esc_attr__('&lsaquo; Prev');
+      $jslang['gal_playLinkText']=esc_attr__('Play','wp5jsgal');
+      $jslang['gal_pauseLinkText']=esc_attr__('Pause','wp5jsgal');
+      $jslang['gal_prevLinkText']=esc_attr__('Previous','wp5jsgal');
+      $jslang['gal_nextLinkText']=esc_attr__('Next','wp5jsgal');
+      $jslang['gal_nextPageLinkText']=esc_attr__('Next &rsaquo;','wp5jsgal');
+      $jslang['gal_prevPageLinkText']=esc_attr__('&lsaquo; Prev','wp5jsgal');
       return $jslang;
 	 }
 	
