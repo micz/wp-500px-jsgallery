@@ -112,6 +112,18 @@ if (!class_exists('WP500pxjsGallery')) {
       return $output;
 	  }
 	
+	 public function getJsLang(){
+	    $jslang=array();
+      $jslang['image_link_desc']=esc_attr__('See at full size on 500px:','wp5jsgal');
+      $jslang['gal_playLinkText']=esc_attr__('Play');
+      $jslang['gal_pauseLinkText']=esc_attr__('Pause');
+      $jslang['gal_prevLinkText']=esc_attr__('Previous');
+      $jslang['gal_nextLinkText']=esc_attr__('Next');
+      $jslang['gal_nextPageLinkText']=esc_attr__('Next &rsaquo;');
+      $jslang['gal_prevPageLinkText']=esc_attr__('&lsaquo; Prev');
+      return $jslang;
+	 }
+	
 	  /*public function getImageHTML($imgData){
 	    $output='<li>
             <a class="thumb" name="optionalCustomIdentifier" href="'.$imgData['thumb_url'].'" title="'.$imgData['title'].'">

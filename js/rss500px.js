@@ -19,16 +19,13 @@ function wp5jsgal_getThumbURL(image_url){
 }
 
 function wp5jsgal_getImageCaption(img){
-  return 'See at full size on 500px: <a href="'+img.link+'">'+img.link+'</a>';
+  return wp5jsgal_langs.image_link_desc+' <a href="'+img.link+'">'+img.link+'</a>';
 }
 
 function wp5jsgal_getImage(img){
   var image_url=wp5jsgal_extractImageURL(img.content);
   var thumb_url=wp5jsgal_getThumbURL(image_url);
   var image_caption=wp5jsgal_getImageCaption(img);
-  //var photopage_url=img.link;
-  //img.id500px=photopage_url.substr(photopage_url.lastIndexOf("/")+1,photopage_url.length);
-  //return  '<li><a class="thumb" name="'+img.id500px+'" href="'+img.link+'" title="' + img.title + '"><img src="'+img.contentimg+'" alt="' + img.title + '" /></a><div class="caption">' +img.contentSnippet+ '</div></li>';
   return  '<li><a class="thumb" href="'+image_url+'" title="' + img.title + '"><img src="'+thumb_url+'" alt="' + img.title + '" /></a><div class="caption">'+image_caption+'</div></li>';
 }
 

@@ -5,6 +5,7 @@ Plugin URI: http://micz.it/wordpress-500px-jsgallery/
 Description: .
 Author: Mic (m@micz.it)
 Version: 0.1
+Text Domain: wp5jsgal
 Author URI: http://micz.it
 License: GPL2
 */
@@ -95,8 +96,11 @@ function wp5jsgal_enqueue_scripts() {
             true //loaded before the body closing tag
         );
         //passing js params
-        $jsparams=array((WP500pxjsGallery::_500px_user)=>$wp500pxjsgallery->options[(WP500pxjsGallery::_500px_user)]);
+        $jsparams=array();
+        $jsparams[(WP500pxjsGallery::_500px_user)]=$wp500pxjsgallery->options[(WP500pxjsGallery::_500px_user)];
         wp_localize_script('wp5jsgal-main','wp5jsgal_options',$jsparams);
+        //localizing js scripts
+        wp_localize_script('wp5jsgal-rss500px','wp5jsgal_langs',$wp500pxjsgallery->getJsLang());
     endif;
 }
 
