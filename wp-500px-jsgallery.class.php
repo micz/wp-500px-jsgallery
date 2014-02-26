@@ -125,7 +125,7 @@ if (!class_exists('WP500pxjsGallery')) {
   }
 
   public function getDefaultOptions($options){
-    if(intval($options[self::_page_thumbs])==0)$options[self::_page_thumbs]=10;
+    if(intval($options[self::_page_thumbs])==0)$options[self::_page_thumbs]=5;
     
     return $options;
   }
@@ -158,7 +158,7 @@ if (!class_exists('WP500pxjsGallery')) {
         $output='<div id="wp500pxgallery-main">
             <div id="wp500pxloading" class="loader"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...','wp5jsgal').'</div>
             <div id="wp500pxgallery" class="wp500pxcontent">
-            <div id="wp500pxcontrols" class="500pxcontrols"></div>
+            <div id="wp500pxcontrols" class="wp500pxcontrols"></div>
             <div class="slideshow-container">
 	            <div id="wp500pxslideshow" class="wp500pxslideshow"></div>
 	            <div class="wp500pxgallery-footer"></div>

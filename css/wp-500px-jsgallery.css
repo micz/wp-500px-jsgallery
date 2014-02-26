@@ -33,6 +33,7 @@ div.wp500pxcontent a:focus, div.wp500pxcontent a:hover, div.wp500pxcontent a:act
 }
 div.wp500pxcontrols {
 	margin-top: 5px;
+	margin-bottom: 9px;
 	height: 23px;
 }
 div.wp500pxcontrols a {
@@ -47,7 +48,7 @@ div.nav-controls {
 div.slideshow-container {
 	position: relative;
 	clear: both;
-	height: 502px;
+	min-height: 440px;
 }
 div.loader {
 float:left;
@@ -60,20 +61,18 @@ text-align: center;
 width: 100%;
 }
 div.wp500pxslideshow {
-
 }
 div.wp500pxslideshow span.image-wrapper {
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
+	line-height:1em;
 }
 div.wp500pxslideshow a.advance-link {
 	display: block;
-	width: 550px;
-	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
-	line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
 	text-align: center;
+	line-height:1em;
 }
 div.wp500pxslideshow a.advance-link:hover, div.wp500pxslideshow a.advance-link:active, div.wp500pxslideshow a.advance-link:visited {
 	text-decoration: none;
@@ -81,10 +80,7 @@ div.wp500pxslideshow a.advance-link:hover, div.wp500pxslideshow a.advance-link:a
 div.wp500pxslideshow img {
 	vertical-align: middle;
 	border: 1px solid #ccc;
-	max-width: 540px;
-}
-div.download {
-	float: right;
+	max-width: 640px;
 }
 div.wp500pxcaption-container {
 	position: relative;
@@ -94,7 +90,7 @@ div.wp500pxcaption-container {
 span.image-caption {
 	display: block;
 	position: absolute;
-	width: 550px;
+	width: 640px;
 	top: 0;
 	left: 0;
 }
@@ -110,7 +106,7 @@ div.image-desc {
 	padding-top: 12px;
 }
 div.wp500pxnavigation {
-width:315px;
+width:32%;
 float:left;
 }
 ul.thumbs {
@@ -143,8 +139,8 @@ div.pagination {
 	clear: both;
 }
 div.wp500pxnavigation div.top {
-	margin-bottom: 12px;
-	height: 11px;
+	margin-bottom: 0px;
+	height: 31px;
 }
 div.wp500pxnavigation div.bottom {
 	margin-top: 12px;
