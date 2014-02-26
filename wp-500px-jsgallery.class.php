@@ -54,24 +54,25 @@ if (!class_exists('WP500pxjsGallery')) {
 	  
 	  public function admin_add_page(){
 	    global $that;
-      add_options_page(__('WP 500px jsGallery Settings','wp5jsgal'),__('WP 500px jsGallery','wp5jsgal'), 'manage_options', 'wp5jsgal_settings_page', array($that,'output_settings_page'));
+      add_options_page(esc_html__('WP 500px jsGallery Settings','wp5jsgal'),esc_html__('WP 500px jsGallery','wp5jsgal'), 'manage_options', 'wp5jsgal_settings_page', array($that,'output_settings_page'));
     }
 	  
     public function main_section_text() {
-      echo '<p>'.__('Main description of this section here.','wp5jsgal').'</p>';
+      echo '<p>'.esc_html__('Main description of this section here.','wp5jsgal').'</p>';
     }
 	  
 	  public function output_settings_page(){
 ?><div>
 <h2><?_e('WP 500px jsGallery Settings','wp5jsgal');?></h2>
-<?_e('Options relating to the WP 500px jsGallery Plugin.','wp5jsgal');?>
+<?esc_html_e('Options relating to the WP 500px jsGallery Plugin.','wp5jsgal');?>
 <form action="options.php" method="post">
 <?php settings_fields('wp5jsgal_options');?>
-<?php //$options = get_option('wp5jsgal_options'); // Using $this->option?>
+<?php //$options = get_option('wp5jsgal_options'); // Using $this->options?>
 <?php do_settings_sections('wp5jsgal_settings_page');?>
 <table class="form-table">
     <tr valign="top"><th scope="row"><?_e('500px Username','wp5jsgal');?></th>
-        <td><input name="wp5jsgal_options[<?=self::_500px_user?>]" type="text" value="<?php echo $this->options[self::_500px_user]; ?>"/></td>
+        <td><input name="wp5jsgal_options[<?=self::_500px_user?>]" type="text" value="<?php echo $this->options[self::_500px_user]; ?>"<?if($this->options[self::_500px_user]==''){echo 'style="border:2px solid red;"';}?>/>
+        <?if($this->options[self::_500px_user]==''){echo '<br/><span style="color:red;font-weight:bold;">'.esc_html__('You must specify a 500px username!').'<span>';}?></td>
     </tr>
    <?/*?> <tr valign="top"><th scope="row">Some text</th>
         <td><input type="text" name="ozh_sample[500px_user]" value="<?php echo $options['500px_user']; ?>" /></td>
@@ -98,17 +99,26 @@ if (!class_exists('WP500pxjsGallery')) {
 
 	  //Output shortcode [jsg500px]
 	 public function getShortcode($atts){
-	    $output='<div id="wp500pxgallery-main"><div id="wp500pxgallery" class="wp500pxcontent">
-					<div id="wp500pxcontrols" class="500pxcontrols"></div>
-					<div class="slideshow-container">
-						<div id="wp500pxloading" class="loader"></div>
-						<div id="wp500pxslideshow" class="wp500pxslideshow"></div>
-						<div class="wp500pxgallery-footer"></div>
-					</div>
-					<div id="wp500pxcaption" class="wp500pxcaption-container"></div>
-				</div>
-				<div id="wp500pxthumbs" class="wp500pxnavigation"><ul class="thumbs noscript">';
-      $output.='</ul><div class="wp500pxgallery-footer"></div></div><div class="wp500pxgallery-footer"></div></div>';
+	    $output='';
+      if($this->options[self::_500px_user]==''){ //no 500px username set
+        if(current_user_can('manage_options')){ //the current user can manage options
+          return '<p><span style="color:red;font-weight:bold;">'.esc_html__('To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px username in the plugin settings!').'<span></p>';
+        }else{ //the current can NOT manage options
+          return '';
+        }
+      }else{ //500px username set
+        $output='<div id="wp500pxgallery-main"><div id="wp500pxgallery" class="wp500pxcontent">
+            <div id="wp500pxcontrols" class="500pxcontrols"></div>
+            <div class="slideshow-container">
+	            <div id="wp500pxloading" class="loader"></div>
+	            <div id="wp500pxslideshow" class="wp500pxslideshow"></div>
+	            <div class="wp500pxgallery-footer"></div>
+            </div>
+            <div id="wp500pxcaption" class="wp500pxcaption-container"></div>
+          </div>
+          <div id="wp500pxthumbs" class="wp500pxnavigation"><ul class="thumbs noscript">';
+        $output.='</ul><div class="wp500pxgallery-footer"></div></div><div class="wp500pxgallery-footer"></div></div>';
+      } //END if 500px username set
       return $output;
 	  }
 	
