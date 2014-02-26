@@ -7,7 +7,9 @@
  *
  * Much thanks to primary contributer Ponticlaro (http://www.ponticlaro.com)
  *
- * [Mic, m@micz.it] Patched for img duplication as see in http://code.google.com/p/galleriffic/issues/detail?id=95#c15
+ * [Mic, m@micz.it]
+ * 24/02/2014 Patched for img duplication as see in http://code.google.com/p/galleriffic/issues/detail?id=95#c15
+ * 26/02/2014 Patched to remove a &nbsp; before the image
  */
 ;(function($) {
 	// Globally keep track of all images by their unique hash.  Each item is an image data object.
@@ -630,7 +632,7 @@
 
 				// Construct new hidden span for the image
 				var newSlide = this.$imageContainer
-					.append('<span class="image-wrapper current"><a class="advance-link" rel="history" href="#'+this.data[nextIndex].hash+'" title="'+imageData.title+'">&nbsp;</a></span>')
+					.append('<span class="image-wrapper current"><a class="advance-link" rel="history" href="#'+this.data[nextIndex].hash+'" title="'+imageData.title+'"></a></span>')
 					.find('span.current').css('opacity', '0');
 				
 				newSlide.find('a')
