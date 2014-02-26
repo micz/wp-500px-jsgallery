@@ -51,6 +51,10 @@ jQuery(document).ready(function(){
 					  },
         });
         
+        //Eventually set thumbs h & w
+        if((wp5jsgal_options._thumb_h!='')&&(wp5jsgal_options._thumb_h!=0))jQuery('ul.thumbs img').css('height',wp5jsgal_options._thumb_h+'px');
+        if((wp5jsgal_options._thumb_w!='')&&(wp5jsgal_options._thumb_w!=0))jQuery('ul.thumbs img').css('width',wp5jsgal_options._thumb_w+'px');
+        
 				// Initially set opacity on thumbs and add
 				// additional styling for hover effect on thumbs
 				var onMouseOutOpacity = 0.67;

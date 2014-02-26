@@ -35,6 +35,8 @@ if (!class_exists('WP500pxjsGallery')) {
 	  const _500px_user='_500px_user';
 	  const _page_thumbs='_page_thumbs';
 	  const _pages='_pages';
+	  const _thumb_h='_thumb_h';
+	  const _thumb_w='_thumb_w';
 	
 	  // Class Constructor
 	  public function __construct() {
@@ -82,6 +84,9 @@ if (!class_exists('WP500pxjsGallery')) {
    <tr valign="top"><th scope="row"><?esc_html_e('Number of thumbnails per page','wp5jsgal');?></th>
         <td><input type="text" name="wp5jsgal_options[<?=self::_page_thumbs?>]" value="<?php echo $this->options[self::_page_thumbs]; ?>"/></td>
     </tr>
+   <tr valign="top"><th scope="row"><?esc_html_e('Thumbnails dimension','wp5jsgal');?></th>
+        <td><?esc_html_e('Height','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_thumb_h?>]" value="<?php echo $this->options[self::_thumb_h]; ?>"/><br/><?esc_html_e('Width','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_thumb_w?>]" value="<?php echo $this->options[self::_thumb_w]; ?>"/></td>
+    </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Gallery page','wp5jsgal');?></th>
         <td><input type="text" name="wp5jsgal_options[<?=self::_pages?>]" value="<?php echo $this->options[self::_pages]; ?>"/>
         <br/><?esc_html_e('To optimize your website, you could write here the page id or page permalink on which you have activated the 500px gallery with the shortcode.','wp5jsgal');?><br/>
@@ -94,9 +99,13 @@ if (!class_exists('WP500pxjsGallery')) {
 	  
   public function options_validate($input) {
     // The username must be safe text with no HTML tags
-    $newinput[self::_500px_user] =  trim(wp_filter_nohtml_kses($input[self::_500px_user]));
-    $newinput[self::_page_thumbs] =  intval(trim($input[self::_page_thumbs]));
+    $newinput[self::_500px_user] = trim(wp_filter_nohtml_kses($input[self::_500px_user]));
+    $newinput[self::_page_thumbs] = intval(trim($input[self::_page_thumbs]));
     $newinput[self::_pages] =  trim(wp_filter_nohtml_kses($input[self::_pages]));
+    $newinput[self::_thumb_h] = intval(trim($input[self::_thumb_h]));
+    if($newinput[self::_thumb_h]==0)$newinput[self::_thumb_h]='';
+    $newinput[self::_thumb_w] = intval(trim($input[self::_thumb_w]));
+    if($newinput[self::_thumb_w]==0)$newinput[self::_thumb_w]='';
     return $newinput;
   }
 

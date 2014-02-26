@@ -26,6 +26,6 @@ function wp5jsgal_getImage(img){
   var image_url=wp5jsgal_extractImageURL(img.content);
   var thumb_url=wp5jsgal_getThumbURL(image_url);
   var image_caption=wp5jsgal_getImageCaption(img);
-  return  '<li><a class="thumb" href="'+image_url+'" title="' + img.title + '"><img src="'+thumb_url+'" alt="' + img.title + '" /></a><div class="caption">'+image_caption+'</div></li>';
+  return  '<li><a class="thumb" href="'+image_url+'" title="' + img.title + '"><img src="'+thumb_url+'" alt="' + img.title + '"/></a><div class="caption">'+image_caption+'</div></li>';
 }
 
