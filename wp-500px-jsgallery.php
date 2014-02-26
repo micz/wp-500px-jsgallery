@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: WP 500px jsGallery
-Plugin URI: http://micz.it/wordpress-500px-jsgallery/
-Description: .
+Plugin URI: http://micz.it/wordpress-plugin-500px-jsgallery/
+Description: Add your 500px photo gallery to a page.
 Author: Mic (m@micz.it)
-Version: 0.1
+Version: 1.0
 Text Domain: wp5jsgal
 Author URI: http://micz.it
-License: GPL2
+License: GPLv2 or later
 */
 
 /* Copyright 2014 Mic (email: m@micz.it)
