@@ -71,29 +71,33 @@ function wp5jsgal_enqueue_scripts() {
         wp_enqueue_script(
             'galleriffic',
             plugins_url( 'js/jquery.galleriffic.js' , ___FILE___ ),
-            array('jquery')
+            array('jquery'),
+            WP500pxjsGallery::version
         );
         wp_enqueue_script(
             'history',
             plugins_url( 'js/jquery.history.js' , ___FILE___ ),
-            array('jquery')
+            array('jquery'),
+            WP500pxjsGallery::version
         );
         wp_enqueue_script(
             'opacityrollover',
             plugins_url( 'js/jquery.opacityrollover.js' , ___FILE___ ),
-            array('jquery')
+            array('jquery'),
+            WP500pxjsGallery::version
         );
         wp_enqueue_script(
             'wp5jsgal-rss500px',
             plugins_url( 'js/rss500px.js' , ___FILE___ ),
-            array('jquery')
+            array('jquery'),
+            WP500pxjsGallery::version
         );
         if($wp500pxjsgallery->options[WP500pxjsGallery::_500px_user]!=''){
           wp_enqueue_script(
               'wp5jsgal-main',
               plugins_url( 'js/wp-500px-jsgallery.js' , ___FILE___ ),
               array('jquery','wp5jsgal-rss500px'),
-              false, //script version
+              WP500pxjsGallery::version, //script version
               true //loaded before the body closing tag
           );
         }

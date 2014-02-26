@@ -29,6 +29,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public $that;
 	  
 	  //Constants
+	  const version='1.0.0alpha';
 	  const _500px_user='_500px_user';
 	
 	  // Class Constructor
@@ -97,7 +98,7 @@ if (!class_exists('WP500pxjsGallery')) {
 //Settings page - END
 
 
-	  //Output shortcode [jsg500px]
+//Output shortcode [jsg500px]
 	 public function getShortcode($atts){
 	    $output='';
       if($this->options[self::_500px_user]==''){ //no 500px username set
