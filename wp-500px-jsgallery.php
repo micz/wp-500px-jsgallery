@@ -113,6 +113,8 @@ function wp5jsgal_enqueue_scripts() {
         $jsparams[(WP500pxjsGallery::_page_thumbs)]=$wp500pxjsgallery->options[(WP500pxjsGallery::_page_thumbs)];
         $jsparams[(WP500pxjsGallery::_thumb_h)]=$wp500pxjsgallery->options[(WP500pxjsGallery::_thumb_h)];
         $jsparams[(WP500pxjsGallery::_thumb_w)]=$wp500pxjsgallery->options[(WP500pxjsGallery::_thumb_w)];
+        $jsparams[(WP500pxjsGallery::_image_h)]=$wp500pxjsgallery->options[(WP500pxjsGallery::_image_h)];
+        $jsparams[(WP500pxjsGallery::_image_w)]=$wp500pxjsgallery->options[(WP500pxjsGallery::_image_w)];
         wp_localize_script('wp5jsgal-rss500px','wp5jsgal_options',$jsparams);
         //localizing js scripts
         wp_localize_script('wp5jsgal-rss500px','wp5jsgal_langs',$wp500pxjsgallery->getJsLang());
