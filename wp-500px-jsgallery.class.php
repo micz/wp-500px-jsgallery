@@ -119,7 +119,7 @@ if (!class_exists('WP500pxjsGallery')) {
           </div>
           <div id="wp500pxthumbs" class="wp500pxnavigation"><ul class="thumbs noscript">';
         $output.='</ul><div class="wp500pxgallery-footer"></div></div><div class="wp500pxgallery-footer"></div>';
-        //$output.='<div id="500pxlinkprofile">'.esc_html__('Loading images...','wp5jsgal').'</div>';
+        $output.='<div id="wp500pxlinkprofile">'.esc_html__('Browse all images on 500px:','wp5jsgal').' <a href="http://500px.com/'.$this->options[self::_500px_user].'/">http://500px.com/'.$this->options[self::_500px_user].'/</a></div>';
         $output.='</div>';
       } //END if 500px username set
       return $output;
