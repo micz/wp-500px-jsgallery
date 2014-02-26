@@ -107,10 +107,11 @@ if (!class_exists('WP500pxjsGallery')) {
           return '';
         }
       }else{ //500px username set
-        $output='<div id="wp500pxgallery-main"><div id="wp500pxgallery" class="wp500pxcontent">
+        $output='<div id="wp500pxgallery-main">
+            <div id="wp500pxloading" class="loader"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...').'</div>
+            <div id="wp500pxgallery" class="wp500pxcontent">
             <div id="wp500pxcontrols" class="500pxcontrols"></div>
             <div class="slideshow-container">
-	            <div id="wp500pxloading" class="loader"></div>
 	            <div id="wp500pxslideshow" class="wp500pxslideshow"></div>
 	            <div class="wp500pxgallery-footer"></div>
             </div>

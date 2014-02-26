@@ -54,8 +54,6 @@ jQuery(document).ready(function(){
        	// We only want these styles applied when javascript is enabled
 		  	jQuery('div.wp500pxnavigation').css({'width' : '315px', 'float' : 'left'});
 				jQuery('div.wp500pxcontent').css({'display':'block','float':'right','width': '64%'});
-				
-				jQuery('div.entry-content').css('max-width', '1000px');
 
 				// Initially set opacity on thumbs and add
 				// additional styling for hover effect on thumbs

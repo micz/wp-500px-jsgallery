@@ -31,17 +31,12 @@ div.nav-controls {
 div.slideshow-container {
 	position: relative;
 	clear: both;
-	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+	height: 502px;
 }
 div.loader {
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-image: url('loader.gif');
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 550px;
-	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+float:left;
+text-align: center;
+width: 100%;
 }
 div.wp500pxslideshow {
 
