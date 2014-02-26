@@ -19,6 +19,7 @@ jQuery(document).ready(function(){
 		        controlsContainerSel:      '#wp500pxcontrols',
 		        loadingContainerSel:       '#wp500pxloading',
 		        enableHistory:             true,
+		        numThumbs:                 wp5jsgal_options._max_thumbs, 
             playLinkText:              wp5jsgal_langs.playLinkText,
             pauseLinkText:             wp5jsgal_langs.pauseLinkText,
             prevLinkText:              wp5jsgal_langs.prevLinkText,

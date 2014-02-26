@@ -28,20 +28,27 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public $options=array();
 	  public $that;
 	  
-	  //Constants
 	  const version='1.0.0alpha';
+	  
+	  //Options constants
 	  const _500px_user='_500px_user';
+	  const _max_thumbs='_max_thumbs';
 	
 	  // Class Constructor
 	  public function __construct() {
 	    global $that;
 	    $that=$this;
-  	  $this->options = get_option('wp5jsgal_options');
+  	  $this->options = $this->getDefaultOptions(get_option('wp5jsgal_options'));
       add_action('admin_init', array($that,'register_settings'));
       add_action('admin_menu', array($that,'admin_add_page'));
       add_shortcode('jsg500px', array($that,'getShortcode'));
       add_filter('plugin_action_links',array($that,'add_settings_link'));
       load_plugin_textdomain('wp5jsgal',false,basename(dirname( __FILE__ )).'/lang/');
+	  }
+	  
+	  public function getDefaultOptions($options){
+	    
+	    return $options;
 	  }
 	  
   
@@ -71,13 +78,13 @@ if (!class_exists('WP500pxjsGallery')) {
 <?php //$options = get_option('wp5jsgal_options'); // Using $this->options?>
 <?php do_settings_sections('wp5jsgal_settings_page');?>
 <table class="form-table">
-    <tr valign="top"><th scope="row"><?_e('500px Username','wp5jsgal');?></th>
+    <tr valign="top"><th scope="row"><?esc_html_e('500px Username','wp5jsgal');?></th>
         <td><input name="wp5jsgal_options[<?=self::_500px_user?>]" type="text" value="<?php echo $this->options[self::_500px_user]; ?>"<?if($this->options[self::_500px_user]==''){echo 'style="border:2px solid red;"';}?>/>
-        <?if($this->options[self::_500px_user]==''){echo '<br/><span style="color:red;font-weight:bold;">'.esc_html__('You must specify a 500px username!').'<span>';}?></td>
+        <?if($this->options[self::_500px_user]==''){echo '<br/><span style="color:red;font-weight:bold;">'.esc_html__('You must specify a 500px username!','wp5jsgal').'<span>';}?></td>
     </tr>
-   <?/*?> <tr valign="top"><th scope="row">Some text</th>
-        <td><input type="text" name="ozh_sample[500px_user]" value="<?php echo $options['500px_user']; ?>" /></td>
-    </tr><?*/?>
+   <tr valign="top"><th scope="row"><?esc_html_e('Max number of thumbnails','wp5jsgal');?></th>
+        <td><input type="text" name="wp5jsgal_options[<?=self::_max_thumbs?>]" value="<?php echo $this->options[self::_max_thumbs]; ?>"/></td>
+    </tr>
 </table>
 <input name="Submit" class="button button-primary" type="submit" value="<?php esc_attr_e('Save Changes','wp5jsgal');?>"/>
 </form></div>
@@ -86,7 +93,8 @@ if (!class_exists('WP500pxjsGallery')) {
   public function options_validate($input) {
     // The username must be safe text with no HTML tags
     $newinput[self::_500px_user] =  trim(wp_filter_nohtml_kses($input[self::_500px_user]));
-   
+    $newinput[self::_max_thumbs] =  intval(trim($input[self::_max_thumbs]));
+    
     return $newinput;
   }
   

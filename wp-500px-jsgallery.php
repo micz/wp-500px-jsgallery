@@ -104,6 +104,7 @@ function wp5jsgal_enqueue_scripts() {
         //passing js params
         $jsparams=array();
         $jsparams[(WP500pxjsGallery::_500px_user)]=$wp500pxjsgallery->options[(WP500pxjsGallery::_500px_user)];
+        $jsparams[(WP500pxjsGallery::_max_thumbs)]=$wp500pxjsgallery->options[(WP500pxjsGallery::_max_thumbs)];
         wp_localize_script('wp5jsgal-main','wp5jsgal_options',$jsparams);
         //localizing js scripts
         wp_localize_script('wp5jsgal-rss500px','wp5jsgal_langs',$wp500pxjsgallery->getJsLang());
