@@ -27,12 +27,14 @@ if (!class_exists('WP500pxjsGallery')) {
 	
 	  public $options=array();
 	  public $that;
+	  public $scripts_loaded;
 	  
 	  const version='1.0.0alpha';
 	  
 	  //Options constants
 	  const _500px_user='_500px_user';
 	  const _page_thumbs='_page_thumbs';
+	  const _pages='_pages';
 	
 	  // Class Constructor
 	  public function __construct() {
@@ -44,6 +46,7 @@ if (!class_exists('WP500pxjsGallery')) {
       add_shortcode('jsg500px', array($that,'getShortcode'));
       add_filter('plugin_action_links',array($that,'add_settings_link'));
       load_plugin_textdomain('wp5jsgal',false,basename(dirname( __FILE__ )).'/lang/');
+      $scripts_loaded=false;
 	  }
 	  
 //Settings page
@@ -79,6 +82,11 @@ if (!class_exists('WP500pxjsGallery')) {
    <tr valign="top"><th scope="row"><?esc_html_e('Number of thumbnails per page','wp5jsgal');?></th>
         <td><input type="text" name="wp5jsgal_options[<?=self::_page_thumbs?>]" value="<?php echo $this->options[self::_page_thumbs]; ?>"/></td>
     </tr>
+   <tr valign="top"><th scope="row"><?esc_html_e('Gallery page','wp5jsgal');?></th>
+        <td><input type="text" name="wp5jsgal_options[<?=self::_pages?>]" value="<?php echo $this->options[self::_pages]; ?>"/>
+        <br/><?esc_html_e('To optimize your website, you could write here the page id or page permalink on which you have activated the 500px gallery with the shortcode.','wp5jsgal');?><br/>
+        <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on that page.','wp5jsgal');?></td>
+    </tr>
 </table>
 <input name="Submit" class="button button-primary" type="submit" value="<?php esc_attr_e('Save Changes','wp5jsgal');?>"/>
 </form></div>
@@ -88,7 +96,7 @@ if (!class_exists('WP500pxjsGallery')) {
     // The username must be safe text with no HTML tags
     $newinput[self::_500px_user] =  trim(wp_filter_nohtml_kses($input[self::_500px_user]));
     $newinput[self::_page_thumbs] =  intval(trim($input[self::_page_thumbs]));
-    
+    $newinput[self::_pages] =  trim(wp_filter_nohtml_kses($input[self::_pages]));
     return $newinput;
   }
 
@@ -109,6 +117,13 @@ if (!class_exists('WP500pxjsGallery')) {
 //Output shortcode [jsg500px]
 	 public function getShortcode($atts){
 	    $output='';
+      if($this->scripts_loaded==false){ //the user is not loading the scripts in this page
+        if(current_user_can('manage_options')){ //the current user can manage options
+          return '<p><span style="color:red;font-weight:bold;">'.esc_html__('You\'ve set the wrong page id or permalink in the plugin settings, so the WP 500px jsGallery Plugin scripts are not loaded in this page!','wp5jsgal').'<span></p>';
+        }else{ //the current can NOT manage options
+          return '';
+        }
+      }
       if($this->options[self::_500px_user]==''){ //no 500px username set
         if(current_user_can('manage_options')){ //the current user can manage options
           return '<p><span style="color:red;font-weight:bold;">'.esc_html__('To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px username in the plugin settings!','wp5jsgal').'<span></p>';
@@ -155,8 +170,7 @@ if (!class_exists('WP500pxjsGallery')) {
         </li>';
       return $output;
 	  }*/
-	
-	
+
 	} //END WP500pxjsGallery
 	
 } //END if class_exists('WP500pxjsGallery')
