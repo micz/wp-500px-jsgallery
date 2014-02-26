@@ -50,8 +50,8 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public function register_settings(){
 	    global $that;
 	    register_setting('wp5jsgal_options','wp5jsgal_options',array($that,'options_validate'));
-  	  add_settings_section('wp5jsgal_main', 'Main Settings', array($that,'main_section_text'), 'wp5jsgal_settings_page');
-	    add_settings_field('wp5jsgal_user','500px User',null,'wp5jsgal_settings_page','default');
+  	  add_settings_section('wp5jsgal_main', esc_html__('Main Settings','wp5jsgal'), array($that,'main_section_text'), 'wp5jsgal_settings_page');
+	    add_settings_field('wp5jsgal_user',esc_html__('500px User','wp5jsgal'),null,'wp5jsgal_settings_page','default');
 	  }
 	  
 	  public function admin_add_page(){
