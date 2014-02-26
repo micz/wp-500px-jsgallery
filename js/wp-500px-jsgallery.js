@@ -12,14 +12,13 @@ jQuery(document).ready(function(){
         jQuery('div#wp500pxthumbs > ul.thumbs').append(feedList);
         
         var gallery = jQuery('div#wp500pxthumbs').galleriffic({
-            numThumbs:                 10,
+            numThumbs:                 +wp5jsgal_options._page_thumbs,
             enableTopPager:            true,
             imageContainerSel:         '#wp500pxslideshow',
 		        captionContainerSel:       '#wp500pxcaption',
 		        controlsContainerSel:      '#wp500pxcontrols',
 		        loadingContainerSel:       '#wp500pxloading',
 		        enableHistory:             true,
-		        numThumbs:                 wp5jsgal_options._max_thumbs, 
             playLinkText:              wp5jsgal_langs.playLinkText,
             pauseLinkText:             wp5jsgal_langs.pauseLinkText,
             prevLinkText:              wp5jsgal_langs.prevLinkText,
