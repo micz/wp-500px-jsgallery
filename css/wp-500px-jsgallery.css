@@ -84,6 +84,7 @@ div.wp500pxslideshow img {
 }
 div.wp500pxcaption-container {
 	position: relative;
+	height: 25px;
 }
 span.image-caption {
 	display: block;
