@@ -78,19 +78,19 @@ function wp5jsgal_enqueue_scripts() {
             'galleriffic',
             plugins_url( 'js/jquery.galleriffic.js' , ___FILE___ ),
             array('jquery'),
-            WP500pxjsGallery::version
+            '2.0.1micz'
         );
         wp_enqueue_script(
             'history',
             plugins_url( 'js/jquery.history.js' , ___FILE___ ),
             array('jquery'),
-            WP500pxjsGallery::version
+            '1.0.0'
         );
         wp_enqueue_script(
             'opacityrollover',
             plugins_url( 'js/jquery.opacityrollover.js' , ___FILE___ ),
             array('jquery'),
-            WP500pxjsGallery::version
+            '1.0.0'
         );
         wp_enqueue_script(
             'wp5jsgal-rss500px',
