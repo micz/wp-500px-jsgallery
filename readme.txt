@@ -31,6 +31,12 @@ It's possible also to define a custom css in your template folder to customize c
 
 No. The gallery can be added only on a page using the [jsg500px] shortcode.
 
+= Can I add the gallery to more than one page? =
+
+Yes, but it will be the same 500px.com user gallery and you'll need to let WordPress load the scripts on every page.
+If you use the gallery on only one page, you can load the needed scripts only on that page (there is an option for this in the settings page).
+In a future relaese is planned to pass the 500px.com username also as a shortcode parameter and let you configure more than one page to load the scripts on.
+
 = Why I didn't see all my 500px photos? =
 
 The photos displayed are only the last ones, as published in the user feed by 500px.com.
@@ -50,4 +56,3 @@ The photos displayed are only the last ones, as published in the user feed by 50
 
 = 1.0 =
 First release.
-
