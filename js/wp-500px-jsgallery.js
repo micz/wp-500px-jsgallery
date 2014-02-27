@@ -16,7 +16,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 jQuery(document).ready(function(){
-/*Marcus-Jooste*/
+
+    jQuery('div#wp500pxnojs').remove();
+    jQuery('div#wp500pxloading').show();
+
     wp5jsgal_rss500px(wp5jsgal_options._500px_user, function(feed){ 
         var contentimg = jQuery(unescape(jQuery(this).find('content').text())).find("img").attr("src");
     

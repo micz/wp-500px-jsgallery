@@ -162,8 +162,9 @@ if (!class_exists('WP500pxjsGallery')) {
           return '';
         }
       }else{ //500px username set
-        $output='<div id="wp500pxgallery-main">
-            <div id="wp500pxloading" class="loader"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...','wp5jsgal').'</div>
+        $output='<div id="wp500pxnojs" style="color:red;font-weight:bold;">'.esc_html__('The WP 500px jsGallery is not working because Javascript is disabled.','wp5jsgal').'</div>
+        <div id="wp500pxgallery-main">
+            <div id="wp500pxloading" class="loader" style="display:none;"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...','wp5jsgal').'</div>
             <div id="wp500pxgallery" class="wp500pxcontent">
             <div id="wp500pxcontrols" class="wp500pxcontrols"></div>
             <div class="slideshow-container">
