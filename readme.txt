@@ -1,7 +1,7 @@
 === WP 500px jsGallery ===
 Contributors: micz
 Donate link: http://micz.it/wordpress-plugin-500px-jsgallery/
-Tags: gallery, 500px, jquery, javascript, galleriffic
+Tags: gallery, 500px, jquery, javascript, galleriffic, photos, photo, 500px.com
 Requires at least: 3.8.1
 Tested up to: 3.8.1
 Stable tag: 1.0
