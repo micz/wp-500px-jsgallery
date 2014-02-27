@@ -39,12 +39,12 @@ jQuery(document).ready(function(){
 		        controlsContainerSel:      '#wp500pxcontrols',
 		        loadingContainerSel:       '#wp500pxloading',
 		        enableHistory:             true,
-            playLinkText:              wp5jsgal_langs.playLinkText,
-            pauseLinkText:             wp5jsgal_langs.pauseLinkText,
-            prevLinkText:              wp5jsgal_langs.prevLinkText,
-            nextLinkText:              wp5jsgal_langs.nextLinkText,
-            nextPageLinkText:          wp5jsgal_langs.nextPageLinkText,
-            prevPageLinkText:          wp5jsgal_langs.prevPageLinkText,
+            playLinkText:              wp5jsgal_langs.gal_playLinkText,
+            pauseLinkText:             wp5jsgal_langs.gal_pauseLinkText,
+            prevLinkText:              wp5jsgal_langs.gal_prevLinkText,
+            nextLinkText:              wp5jsgal_langs.gal_nextLinkText,
+            nextPageLinkText:          wp5jsgal_langs.gal_nextPageLinkText,
+            prevPageLinkText:          wp5jsgal_langs.gal_prevPageLinkText,
 		        onSlideChange:             function(prevIndex, nextIndex) {
 						// 'this' refers to the gallery, which is an extension of $('#thumbs')
 					  	this.find('ul.thumbs').children()
