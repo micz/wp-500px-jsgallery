@@ -39,7 +39,7 @@ In a future relaese is planned to pass the 500px.com username also as a shortcod
 
 = Why I didn't see all my 500px photos? =
 
-The photos displayed are only the last ones, as published in the user feed by 500px.com.
+The photos displayed are only the latest ones, as published in the user feed by 500px.com.
 
 
 == Screenshots ==
