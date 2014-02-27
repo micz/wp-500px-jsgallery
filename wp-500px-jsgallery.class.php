@@ -67,13 +67,19 @@ if (!class_exists('WP500pxjsGallery')) {
     }
 	  
     public function main_section_text() {
-      echo '<p>'.esc_html__('Main description of this section here.','wp5jsgal').'</p>';
+      $output='<p>';
+      $output.='<b>'.esc_html__('How to use this plugin:','wp5jsgal').'</b><br/>';
+      $output.=esc_html__('1. Set the 500px username and save the changes.','wp5jsgal').'<br/>';
+      $output.=esc_html__('2. Use the [jsg500px] shortcode in the page you want to show the 500px gallery on.','wp5jsgal').'<br/>';
+      $output.='</p>';
+      echo $output;
     }
 	  
 	  public function output_settings_page(){
 ?><div>
 <h2><?_e('WP 500px jsGallery Settings','wp5jsgal');?></h2>
-<?esc_html_e('Options relating to the WP 500px jsGallery Plugin.','wp5jsgal');?>
+<?esc_html_e('Modify here the plugin\'s options.','wp5jsgal');?><br/>
+<b><?esc_html_e('The only mandatory option is the 500px username.','wp5jsgal');?></b>
 <form action="options.php" method="post">
 <?php settings_fields('wp5jsgal_options');?>
 <?php //$options = get_option('wp5jsgal_options'); // Using $this->options?>
@@ -90,17 +96,17 @@ if (!class_exists('WP500pxjsGallery')) {
         <td><?esc_html_e('Height','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_thumb_h?>]" value="<?php echo $this->options[self::_thumb_h]; ?>"/> <?esc_html_e('px','wp5jsgal');?><br/>
         <?esc_html_e('Width','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_thumb_w?>]" value="<?php echo $this->options[self::_thumb_w]; ?>"/> <?esc_html_e('px','wp5jsgal');?><br/>
         <?esc_html_e('The dimensions could be set with the custom css, instead of with these options.','wp5jsgal');?><br/>
-        <?esc_html_e('You can set only one dimension, the other will be proportional.','wp5jsgal');?></td>
+        <?esc_html_e('You can also set only one dimension, the other will be proportional.','wp5jsgal');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Image dimensions','wp5jsgal');?></th>
         <td><?esc_html_e('Max Height','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_image_h?>]" value="<?php echo $this->options[self::_image_h]; ?>"/> <?esc_html_e('px','wp5jsgal');?><br/>
         <?esc_html_e('Max Width','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_image_w?>]" value="<?php echo $this->options[self::_image_w]; ?>"/> <?esc_html_e('px','wp5jsgal');?><br/>
         <?esc_html_e('The dimensions could be set with the custom css, instead of with these options.','wp5jsgal');?><br/>
-        <?esc_html_e('You can set only one dimension, the other will be proportional.','wp5jsgal');?></td>
+        <?esc_html_e('You can also set only one dimension, the other will be proportional.','wp5jsgal');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Gallery page','wp5jsgal');?></th>
         <td><input type="text" name="wp5jsgal_options[<?=self::_pages?>]" value="<?php echo $this->options[self::_pages]; ?>"/>
-        <br/><?esc_html_e('To optimize your website, you could write here the page id or page permalink on which you have activated the 500px gallery with the shortcode.','wp5jsgal');?><br/>
+        <br/><?esc_html_e('To optimize your website loading times, you could write here the page id or page permalink on which you have activated the 500px gallery with the shortcode.','wp5jsgal');?><br/>
         <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on that page.','wp5jsgal');?></td>
     </tr>
 </table>
