@@ -80,6 +80,7 @@ if (!class_exists('WP500pxjsGallery')) {
 <h2><?_e('WP 500px jsGallery Settings','wp5jsgal');?></h2>
 <?esc_html_e('Modify here the plugin\'s options.','wp5jsgal');?><br/>
 <b><?esc_html_e('The only mandatory option is the 500px username.','wp5jsgal');?></b>
+<br/><?esc_html_e('You can also use a custom CSS file to modify the 500px gallery look and feel. Check the instruction in the plugin readme.txt file.','wp5jsgal');?>
 <form action="options.php" method="post">
 <?php settings_fields('wp5jsgal_options');?>
 <?php //$options = get_option('wp5jsgal_options'); // Using $this->options?>
