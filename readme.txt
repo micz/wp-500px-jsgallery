@@ -20,7 +20,7 @@ It's possible also to define a custom css in your template folder to customize c
 
 == Installation ==
 
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory.
+1. Upload the folder `wp-500px-jsgallery` and all its files to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Put your 500px.com username in the plugin settings page.
 
@@ -61,9 +61,9 @@ First release.
 == Using a custom CSS file ==
 
 You can customize the look of the gallery using a custom CSS file.
-The file must be named 'wp-500px-jsgallery.css' and copied in your theme root folder, the same where is stored the theme 'style.css' file.
+The file must be named `wp-500px-jsgallery.css` and copied in your theme root folder, the same where is stored the theme `style.css` file.
 This custom file will be loaded after the standard plugin css file, so you can modify only the elements you need, the other elements will be displayed as usual.
-You can check the standard 'wp-500px-jsgallery.css' to see which css elements the gallery is composed of.
+You can check the standard `wp-500px-jsgallery.css` to see which css elements the gallery is composed of.
 
 If you need to modify only the thumbnails or image dimensions, you could do this via a custom css or using the dedicated options in the plugin settings page.
 
