@@ -49,7 +49,7 @@ if (!class_exists('WP500pxjsGallery')) {
       add_action('admin_menu', array($that,'admin_add_page'));
       add_shortcode('jsg500px', array($that,'getShortcode'));
       add_filter('plugin_action_links',array($that,'add_settings_link'));
-      load_plugin_textdomain('wp5jsgal',false,basename(dirname( __FILE__ )).'/lang/');
+      load_plugin_textdomain('wp5jsgal',false,basename(dirname( ___FILE___ )).'/lang/');
       $scripts_loaded=false;
 	  }
 	  
