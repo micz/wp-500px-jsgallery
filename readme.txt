@@ -23,6 +23,7 @@ It's possible also to define a custom css in your template folder to customize c
 1. Upload the folder `wp-500px-jsgallery` and all its files to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Put your 500px.com username in the plugin settings page.
+1. Insert the shortcode [jsg500px] in the page you want to show the gallery.
 
 
 == Frequently Asked Questions ==
