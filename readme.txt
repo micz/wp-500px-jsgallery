@@ -1,6 +1,6 @@
 === WP 500px jsGallery ===
 Contributors: micz
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=UHN4SXPGEXWQL&lc=IT&item_name=wp%2d500px%2djsgallery&item_number=wp%2d500px%2djsgallery&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
+Donate link: http://micz.it/wordpress-plugin-500px-jsgallery/
 Tags: gallery, 500px, jquery, javascript, galleriffic, photos, photo, 500px.com
 Requires at least: 3.8.1
 Tested up to: 3.8.1
