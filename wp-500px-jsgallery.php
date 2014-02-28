@@ -3,8 +3,8 @@
 Plugin Name: WP 500px jsGallery
 Plugin URI: http://micz.it/wordpress-plugin-500px-jsgallery/
 Description: Add your 500px photo gallery to a page.
-Author: Mic (m@micz.it)
-Version: 1.0
+Author: Mic [m@micz.it]
+Version: 1.1
 Text Domain: wp5jsgal
 Author URI: http://micz.it
 License: GPLv2 or later
