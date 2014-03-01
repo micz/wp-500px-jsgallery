@@ -51,7 +51,7 @@ The photos displayed are only the latest ones, as published in the user feed by 
 == Changelog ==
 
 = 1.0.2 =
-* Added z-index to prev/next navigation controls. 
+* Added css z-index to prev/next navigation controls that were not clickable.
 
 = 1.0.1 =
 * Better installing instruction and descriptions.
@@ -63,7 +63,7 @@ The photos displayed are only the latest ones, as published in the user feed by 
 == Upgrade Notice ==
 
 = 1.0.2 =
-* Added z-index to prev/next navigation controls.
+* Added css z-index to prev/next navigation controls that were not clickable.
 
 = 1.0.1 =
 * Better installing instruction and descriptions.
