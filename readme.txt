@@ -50,6 +50,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 == Changelog ==
 
+= 1.0.2 =
+* Added z-index to prev/next navigation controls. 
+
 = 1.0.1 =
 * Better installing instruction and descriptions.
 * Fixed a bug with the settings link in the plugin admin page.
@@ -58,6 +61,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+* Added z-index to prev/next navigation controls.
 
 = 1.0.1 =
 * Better installing instruction and descriptions.
