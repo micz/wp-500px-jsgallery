@@ -137,7 +137,7 @@ if (!class_exists('WP500pxjsGallery')) {
     return $options;
   }
 
-function add_settings_link( $links, $file ) {
+function add_settings_link($links){
   $links[] = '<a href="options-general.php?page=wp5jsgal_settings_page">'.__('Settings','wp5jsgal').'</a>';
 	return $links;
 }
