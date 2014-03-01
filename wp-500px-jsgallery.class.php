@@ -1,6 +1,6 @@
 <?
 /* Copyright 2014 Mic (email: m@micz.it)
-Plugin Info: http://micz.it
+Plugin Info: http://micz.it/wordpress-plugin-500px-jsgallery/
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
