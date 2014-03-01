@@ -48,8 +48,8 @@ if (!class_exists('WP500pxjsGallery')) {
       add_action('admin_init', array($that,'register_settings'));
       add_action('admin_menu', array($that,'admin_add_page'));
       add_shortcode('jsg500px', array($that,'getShortcode'));
-      add_filter('plugin_action_links',array($that,'add_settings_link'));
-      load_plugin_textdomain('wp5jsgal',false,basename(dirname( ___FILE___ )).'/lang/');
+      add_filter('plugin_action_links_'.plugin_basename(___FILE___),array($that,'add_settings_link'));
+      load_plugin_textdomain('wp5jsgal',false,basename(dirname(___FILE___)).'/lang/');
       $scripts_loaded=false;
 	  }
 	  
@@ -137,10 +137,9 @@ if (!class_exists('WP500pxjsGallery')) {
     return $options;
   }
 
-  public function add_settings_link($links){
-    $settings_link = '<a href="options-general.php?page=wp5jsgal_settings_page">'.__('Settings','wp5jsgal').'</a>';
-  	array_push($links,$settings_link);
-  	return $links;
+function add_settings_link( $links, $file ) {
+  $links[] = '<a href="options-general.php?page=wp5jsgal_settings_page">'.__('Settings','wp5jsgal').'</a>';
+	return $links;
 }
 //Settings page - END
 
