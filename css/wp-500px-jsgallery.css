@@ -41,9 +41,13 @@ div.wp500pxcontrols a {
 }
 div.ss-controls {
 	float: left;
+	position: relative;
+  z-index: 1001;
 }
 div.nav-controls {
 	float: right;
+	position: relative;
+  z-index: 1001;
 }
 div.slideshow-container {
 	position: relative;
