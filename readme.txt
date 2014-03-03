@@ -50,6 +50,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 == Changelog ==
 
+= 1.1 =
+* 
+
 = 1.0.3 =
 * Fixed missing argument 2 error for settings link in plugins admin page.
 
@@ -64,6 +67,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 * First release.
 
 == Upgrade Notice ==
+
+= 1.1 =
+* 
 
 = 1.0.3 =
 * Fixed missing argument 2 error for settings link in plugins admin page.
