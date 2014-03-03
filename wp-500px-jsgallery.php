@@ -64,15 +64,20 @@ function wp5jsgal_enqueue_scripts() {
     $wp5jsgal_enqueue_scripts=is_page();
   }
     if($wp5jsgal_enqueue_scripts):
-        wp_enqueue_style(
-            'wp5jsgal-main-style',
-            plugins_url( 'css/wp-500px-jsgallery.css' , ___FILE___ )
-        );
-        if (file_exists(get_stylesheet_directory().'/wp-500px-jsgallery.css')){ //Conditionally loading a theme css
+      //Gallery CSS
+      $custom_css_exists=file_exists(get_stylesheet_directory().'/wp-500px-jsgallery.css'); //check if a custom css exists in the current theme directory
+      if(!(($custom_css_exists)&&($wp500pxjsgallery->options[WP500pxjsGallery::_only_custom_css]==1))){
+          wp_enqueue_style(
+              'wp5jsgal-main-style',
+              plugins_url( 'css/wp-500px-jsgallery.css' , ___FILE___ )
+          );
+        }
+        if($custom_css_exists){ //Conditionally loading a theme css
           wp_enqueue_style(
               'wp5jsgal-theme-style',
               get_stylesheet_directory_uri().'/wp-500px-jsgallery.css'
           );
+          true;
         }
         wp_enqueue_script(
             'galleriffic',
