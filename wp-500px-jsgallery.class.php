@@ -46,7 +46,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  const _only_custom_css='_only_custom_css';
 	
 	  // Class Constructor
-	  public function __construct() {
+	  public function __construct(){
 	    global $that;
 	    $that=$this;
   	  $this->options = $this->getDefaultOptions(get_option('wp5jsgal_options'));
@@ -56,7 +56,7 @@ if (!class_exists('WP500pxjsGallery')) {
       add_filter('plugin_action_links_'.plugin_basename(___FILE___),array($that,'add_settings_link'));
       add_filter('plugin_row_meta',array($that,'add_plugin_desc_links'),10,2);
       load_plugin_textdomain('wp5jsgal',false,basename(dirname(___FILE___)).'/lang/');
-      $scripts_loaded=false;
+      $this->scripts_loaded=false;
 	  }
 	  
 //Settings page
