@@ -91,6 +91,7 @@ You can customize the look of the gallery using a custom CSS file.
 The file must be named `wp-500px-jsgallery.css` and copied in your theme root folder, the same where is stored the theme `style.css` file.
 This custom file will be loaded after the standard plugin css file, so you can modify only the elements you need, the other elements will be displayed as usual.
 You can check the standard `wp-500px-jsgallery.css` to see which css elements the gallery is composed of.
+If you check the "Exclusive custom CSS" option in the plugin settings page, will be loaded only your custom CSS file and not the plugin default one.
 
 If you need to modify only the thumbnails or image dimensions, you could do this via a custom css or using the dedicated options in the plugin settings page.
 
