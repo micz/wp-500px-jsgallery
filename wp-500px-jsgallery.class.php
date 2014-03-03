@@ -152,17 +152,17 @@ if (!class_exists('WP500pxjsGallery')) {
 //Settings page - END
 
 //Plugin admin page
-function add_settings_link($links){
-  $links[] = '<a href="options-general.php?page=wp5jsgal_settings_page">'.__('Settings','wp5jsgal').'</a>';
-	return $links;
-}
-
-function add_plugin_desc_links($links,$file){
-  if(strpos($file,plugin_basename(___FILE___))!==false){
-    $links = array_merge($links,array('<a href="'.self::url_donate.'">'.__('Donate','wp5jsgal').'</a>'));
+  function add_settings_link($links){
+    $links[] = '<a href="options-general.php?page=wp5jsgal_settings_page">'.__('Settings','wp5jsgal').'</a>';
+	  return $links;
   }
-  return $links;
-}
+
+  function add_plugin_desc_links($links,$file){
+    if(strpos($file,plugin_basename(___FILE___))!==false){
+      $links = array_merge($links,array('<a href="'.self::url_donate.'">'.__('Donate','wp5jsgal').'</a>'));
+    }
+    return $links;
+  }
 //Plugin admin page - END
 
 //Output shortcode [jsg500px]
@@ -200,6 +200,7 @@ function add_plugin_desc_links($links,$file){
       } //END if 500px username set
       return $output;
 	  }
+//Output shortcode [jsg500px] - END
 	
 	 public function getJsLang(){
 	    $jslang=array();
