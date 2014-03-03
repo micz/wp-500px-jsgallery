@@ -30,6 +30,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public $scripts_loaded;
 	  
 	  const version='1.1alpha';
+	  const custom_css_info_url='http://wordpress.org/plugins/wp-500px-jsgallery/other_notes/';
 	  
 	  //Options constants
 	  const _500px_user='_500px_user';
@@ -112,7 +113,8 @@ if (!class_exists('WP500pxjsGallery')) {
         <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on that page.','wp5jsgal');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Exclusive custom CSS','wp5jsgal');?></th>
-        <td><input type="checkbox" name="wp5jsgal_options[<?=self::_only_custom_css?>]" value="1"<?php if($this->options[self::_only_custom_css]==1){echo ' checked="checked"';} ?>"/> <?esc_html_e('Check this option if you want to load only your custom CSS and not the default one before your one.','wp5jsgal');?></td>
+        <td><input type="checkbox" name="wp5jsgal_options[<?=self::_only_custom_css?>]" value="1"<?php if($this->options[self::_only_custom_css]==1){echo ' checked="checked"';} ?>"/> <?esc_html_e('Check this option if you want to load only your custom CSS and not the default one before your one.','wp5jsgal');?><br/>
+        <a href="<?=self::custom_css_info_url;?>" target="_blank"><?esc_html_e('More info on custom CSS','wp5jsgal');?></a></td>
     </tr>
 </table>
 <input name="Submit" class="button button-primary" type="submit" value="<?php esc_attr_e('Save Changes','wp5jsgal');?>"/>
