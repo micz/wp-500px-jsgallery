@@ -39,6 +39,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  const _thumb_w='_thumb_w';
 	  const _image_h='_image_h';
 	  const _image_w='_image_w';
+	  const _only_custom_css='_only_custom_css';
 	
 	  // Class Constructor
 	  public function __construct() {
@@ -110,6 +111,11 @@ if (!class_exists('WP500pxjsGallery')) {
         <br/><?esc_html_e('To optimize your website loading times, you could write here the page id or page permalink on which you have activated the 500px gallery with the shortcode.','wp5jsgal');?><br/>
         <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on that page.','wp5jsgal');?></td>
     </tr>
+   <tr valign="top"><th scope="row"><?esc_html_e('Exclusive custom CSS','wp5jsgal');?></th>
+        <td><input type="checkbox" name="wp5jsgal_options[<?=self::_only_custom_css?>]" value="1"<?php if($this->options[self::_only_custom_css]==1){echo ' checked="checked"';} ?>"/>
+        <br/><?esc_html_e('To optimize your website loading times, you could write here the page id or page permalink on which you have activated the 500px gallery with the shortcode.','wp5jsgal');?><br/>
+        <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on that page.','wp5jsgal');?></td>
+    </tr>
 </table>
 <input name="Submit" class="button button-primary" type="submit" value="<?php esc_attr_e('Save Changes','wp5jsgal');?>"/>
 </form></div>
@@ -127,7 +133,9 @@ if (!class_exists('WP500pxjsGallery')) {
     $newinput[self::_image_h] = intval(trim($input[self::_image_h]));
     if($newinput[self::_image_h]==0)$newinput[self::_image_h]='';
     $newinput[self::_image_w] = intval(trim($input[self::_image_w]));
-    if($newinput[self::_image_w]==0)$newinput[self::_image_w]='';    
+    if($newinput[self::_image_w]==0)$newinput[self::_image_w]='';
+    $newinput[self::_only_custom_css]=intval(trim($input[self::_only_custom_css]));
+    if($newinput[self::_only_custom_css]!=1)$newinput[self::_only_custom_css]=0;
     return $newinput;
   }
 
