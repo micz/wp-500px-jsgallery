@@ -29,7 +29,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public $that;
 	  public $scripts_loaded;
 	  
-	  const version='1.0.3';
+	  const version='1.1alpha';
 	  
 	  //Options constants
 	  const _500px_user='_500px_user';
