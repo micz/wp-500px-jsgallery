@@ -51,6 +51,7 @@ The photos displayed are only the latest ones, as published in the user feed by 
 == Changelog ==
 
 = 1.1 =
+* Added an option to load exclusively the custom css file and not the default one.
 * 
 
 = 1.0.3 =
@@ -69,6 +70,7 @@ The photos displayed are only the latest ones, as published in the user feed by 
 == Upgrade Notice ==
 
 = 1.1 =
+* Added an option to load exclusively the custom css file and not the default one.
 * 
 
 = 1.0.3 =
