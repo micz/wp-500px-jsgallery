@@ -17,6 +17,8 @@ The gallery is made with galleriffic and the images are retrieved from 500px.com
 
 It's possible also to define a custom css in your template folder to customize completely the gallery.
 
+See the plugin in action here: http://micz.it/fotografia/
+
 
 == Installation ==
 
