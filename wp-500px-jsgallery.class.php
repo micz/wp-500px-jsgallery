@@ -32,7 +32,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  const version='1.1alpha';
 	  
 	  //URL constants
-	  const url_custom_css_info='http://wordpress.org/plugins/wp-500px-jsgallery/other_notes/';
+	  const url_custom_css_info='http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/';
 	  const url_donate='http://micz.it/wordpress-plugin-500px-jsgallery/donate/';
 	  
 	  //Options constants
@@ -87,7 +87,7 @@ if (!class_exists('WP500pxjsGallery')) {
 <h2><?_e('WP 500px jsGallery Settings','wp5jsgal');?></h2>
 <?esc_html_e('Modify here the plugin\'s options.','wp5jsgal');?><br/>
 <b><?esc_html_e('The only mandatory option is the 500px username.','wp5jsgal');?></b>
-<br/><?esc_html_e('You can also use a custom CSS file to modify the 500px gallery look and feel. Check the instruction in the plugin readme.txt file.','wp5jsgal');?>
+<br/><?esc_html_e('You can also use a custom CSS file to modify the 500px gallery look and feel.','wp5jsgal');?> (<a href="<?=self::url_custom_css_info;?>" target="_blank"><?esc_html_e('More info on custom CSS','wp5jsgal');?></a>)
 <form action="options.php" method="post">
 <?php settings_fields('wp5jsgal_options');?>
 <?php //$options = get_option('wp5jsgal_options'); // Using $this->options?>
