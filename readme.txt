@@ -54,7 +54,8 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 = 1.1 =
 * Added an option to load exclusively the custom css file and not the default one.
-* 
+* Is now possible to use the "user500px" shortcode param to set a different 500px username on a page.
+* The styles and scripts can be loaded selectively on more than one page.
 
 = 1.0.3 =
 * Fixed missing argument 2 error for settings link in plugins admin page.
@@ -73,7 +74,8 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 = 1.1 =
 * Added an option to load exclusively the custom css file and not the default one.
-* 
+* Is now possible to use the "user500px" shortcode param to set a different 500px username on a page.
+* The styles and scripts can be loaded selectively on more than one page.
 
 = 1.0.3 =
 * Fixed missing argument 2 error for settings link in plugins admin page.
