@@ -15,7 +15,7 @@ Add your 500px.com photo gallery to a page using the [jsg500px] shortcode.
 This is plugin lets you add your 500px.com gallery to a page in your blog using the [jsg500px] shortcode.
 The gallery is made with galleriffic and the images are retrieved from 500px.com using the user feed.
 
-It's possible also to define a custom css in your template folder to customize completely the gallery.
+It's possible also to define a custom CSS in your template folder to customize completely the gallery.
 
 See the plugin in action here: http://micz.it/fotografia/
 
@@ -26,6 +26,7 @@ See the plugin in action here: http://micz.it/fotografia/
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Put your 500px.com username in the plugin settings page.
 1. Insert the shortcode [jsg500px] in the page you want to show the gallery.
+1. (Optional) Use the "user500px" shortcode param to set a different username for a single page.
 
 
 == Frequently Asked Questions ==
@@ -36,9 +37,8 @@ No. The gallery can be added only on a page using the [jsg500px] shortcode.
 
 = Can I add the gallery to more than one page? =
 
-Yes, but it will be the same 500px.com user gallery and you'll need to let WordPress load the scripts on every page.
-If you use the gallery on only one page, you can load the needed scripts only on that page (there is an option for this in the settings page).
-In a future relaese is planned to pass the 500px.com username also as a shortcode parameter and let you configure more than one page to load the scripts on.
+Yes, and you can specify different 500px.com usernames with the "user500px" shortcode param.
+To optimize your website loading times, with the "Gallery page" option you can also specify all the ids or permalinks pages on which the needed scripts must be loaded.
 
 = Why I didn't see all my 500px photos? =
 
