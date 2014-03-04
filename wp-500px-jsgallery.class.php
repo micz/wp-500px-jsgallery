@@ -77,6 +77,7 @@ if (!class_exists('WP500pxjsGallery')) {
       $output.='<b>'.esc_html__('How to use this plugin:','wp5jsgal').'</b><br/>';
       $output.=esc_html__('1. Set the 500px username and save the changes.','wp5jsgal').'<br/>';
       $output.=esc_html__('2. Use the [jsg500px] shortcode in the page you want to show the 500px gallery on.','wp5jsgal').'<br/>';
+      $output.=esc_html__('3. (Optional) Use the "user500px" shortcode param to set a different username for a single page.','wp5jsgal').'<br/>';
       $output.='</p>';
       echo $output;
     }
