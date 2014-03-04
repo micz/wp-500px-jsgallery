@@ -94,7 +94,10 @@ if (!class_exists('WP500pxjsGallery')) {
 <table class="form-table">
     <tr valign="top"><th scope="row"><?esc_html_e('500px Username','wp5jsgal');?></th>
         <td><input name="wp5jsgal_options[<?=self::_500px_user?>]" type="text" value="<?php echo $this->options[self::_500px_user]; ?>"<?if($this->options[self::_500px_user]==''){echo 'style="border:2px solid red;"';}?>/>
-        <?if($this->options[self::_500px_user]==''){echo '<br/><span style="color:red;font-weight:bold;">'.esc_html__('You must specify a 500px username!','wp5jsgal').'<span>';}?></td>
+        <br/><?if($this->options[self::_500px_user]==''){echo '<span style="color:red;font-weight:bold;">'.esc_html__('You must specify a 500px username here or using the "user500px" shortcode param directly on the page!','wp5jsgal').'<span>';
+        }else{
+          esc_html__('You can also specify a 500px username using the "user500px" shortcode param directly on the page.','wp5jsgal');
+        }?></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Number of thumbnails per page','wp5jsgal');?></th>
         <td><input type="text" name="wp5jsgal_options[<?=self::_page_thumbs?>]" value="<?php echo $this->options[self::_page_thumbs]; ?>"/></td>
@@ -165,7 +168,7 @@ if (!class_exists('WP500pxjsGallery')) {
   }
 //Plugin admin page - END
 
-//Output shortcode [jsg500px]
+//Output shortcode [jsg500px] - param 'user500px'
 	 public function getShortcode($atts){
 	    $output='';
 	    //get user param
@@ -180,7 +183,7 @@ if (!class_exists('WP500pxjsGallery')) {
       }
       if($user500px==''){ //no 500px username set
         if(current_user_can('manage_options')){ //the current user can manage options
-          return '<p><span style="color:red;font-weight:bold;">'.esc_html__('To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px username in the plugin settings!','wp5jsgal').'<span></p>';
+          return '<p><span style="color:red;font-weight:bold;">'.esc_html__('To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px username in the plugin settings or using the "user500px" shortcode param!','wp5jsgal').'<span></p>';
         }else{ //the current can NOT manage options
           return '';
         }
