@@ -117,8 +117,9 @@ if (!class_exists('WP500pxjsGallery')) {
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Gallery page','wp5jsgal');?></th>
         <td><input type="text" name="wp5jsgal_options[<?=self::_pages?>]" value="<?php echo $this->options[self::_pages]; ?>"/>
-        <br/><?esc_html_e('To optimize your website loading times, you could write here the page id or page permalink on which you have activated the 500px gallery with the shortcode.','wp5jsgal');?><br/>
-        <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on that page.','wp5jsgal');?></td>
+        <br/><?esc_html_e('To optimize your website loading times, you could write here the pages id or permalink on which you have activated the 500px gallery with the shortcode.','wp5jsgal');?><br/>
+        <?esc_html_e('The ids or permalinks must be comma separated and can be mixed.','wp5jsgal');?><br/>
+        <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on those pages.','wp5jsgal');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Exclusive custom CSS','wp5jsgal');?></th>
         <td><input type="checkbox" name="wp5jsgal_options[<?=self::_only_custom_css?>]" value="1"<?php if($this->options[self::_only_custom_css]==1){echo ' checked="checked"';} ?>"/> <?esc_html_e('Check this option if you want to load only your custom CSS and not the default one before your one.','wp5jsgal');?><br/>
