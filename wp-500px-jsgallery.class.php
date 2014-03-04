@@ -105,13 +105,13 @@ if (!class_exists('WP500pxjsGallery')) {
    <tr valign="top"><th scope="row"><?esc_html_e('Thumbnails dimensions','wp5jsgal');?></th>
         <td><?esc_html_e('Height','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_thumb_h?>]" value="<?php echo $this->options[self::_thumb_h]; ?>"/> <?esc_html_e('px','wp5jsgal');?><br/>
         <?esc_html_e('Width','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_thumb_w?>]" value="<?php echo $this->options[self::_thumb_w]; ?>"/> <?esc_html_e('px','wp5jsgal');?><br/>
-        <?esc_html_e('The dimensions could be set with the custom css, instead of with these options.','wp5jsgal');?><br/>
+        <?esc_html_e('The dimensions could be set with the custom CSS, instead of with these options.','wp5jsgal');?><br/>
         <?esc_html_e('You can also set only one dimension, the other will be proportional.','wp5jsgal');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Image dimensions','wp5jsgal');?></th>
         <td><?esc_html_e('Max Height','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_image_h?>]" value="<?php echo $this->options[self::_image_h]; ?>"/> <?esc_html_e('px','wp5jsgal');?><br/>
         <?esc_html_e('Max Width','wp5jsgal');?> <input type="text" name="wp5jsgal_options[<?=self::_image_w?>]" value="<?php echo $this->options[self::_image_w]; ?>"/> <?esc_html_e('px','wp5jsgal');?><br/>
-        <?esc_html_e('The dimensions could be set with the custom css, instead of with these options.','wp5jsgal');?><br/>
+        <?esc_html_e('The dimensions could be set with the custom CSS, instead of with these options.','wp5jsgal');?><br/>
         <?esc_html_e('You can also set only one dimension, the other will be proportional.','wp5jsgal');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Gallery page','wp5jsgal');?></th>
