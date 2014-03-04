@@ -107,15 +107,13 @@ function wp5jsgal_enqueue_scripts() {
             array('jquery'),
             WP500pxjsGallery::version
         );
-        if($wp500pxjsgallery->options[WP500pxjsGallery::_500px_user]!=''){
-          wp_enqueue_script(
-              'wp5jsgal-main',
-              plugins_url( 'js/wp-500px-jsgallery.js' , ___FILE___ ),
-              array('jquery','wp5jsgal-rss500px'),
-              WP500pxjsGallery::version, //script version
-              true //loaded before the body closing tag
-          );
-        }
+        wp_enqueue_script(
+            'wp5jsgal-main',
+            plugins_url( 'js/wp-500px-jsgallery.js' , ___FILE___ ),
+            array('jquery','wp5jsgal-rss500px'),
+            WP500pxjsGallery::version, //script version
+            true //loaded before the body closing tag
+        );
         //passing js params
         wp_localize_script('wp5jsgal-rss500px','wp5jsgal_options',$wp500pxjsgallery->getJsParams());
         //localizing js scripts

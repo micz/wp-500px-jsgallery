@@ -168,6 +168,9 @@ if (!class_exists('WP500pxjsGallery')) {
 //Output shortcode [jsg500px]
 	 public function getShortcode($atts){
 	    $output='';
+	    //get user param
+	    extract(shortcode_atts(array('user500px'=>$this->options[self::_500px_user]),$atts));
+	    $user500px=trim(wp_filter_nohtml_kses($user500px));
       if($this->scripts_loaded==false){ //the user is not loading the scripts in this page
         if(current_user_can('manage_options')){ //the current user can manage options
           return '<p><span style="color:red;font-weight:bold;">'.esc_html__('You\'ve set the wrong page id or permalink in the plugin settings, so the WP 500px jsGallery Plugin scripts are not loaded in this page!','wp5jsgal').'<span></p>';
@@ -175,14 +178,22 @@ if (!class_exists('WP500pxjsGallery')) {
           return '';
         }
       }
-      if($this->options[self::_500px_user]==''){ //no 500px username set
+      if($user500px==''){ //no 500px username set
         if(current_user_can('manage_options')){ //the current user can manage options
           return '<p><span style="color:red;font-weight:bold;">'.esc_html__('To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px username in the plugin settings!','wp5jsgal').'<span></p>';
         }else{ //the current can NOT manage options
           return '';
         }
       }else{ //500px username set
-        $output='<div id="wp500pxnojs" style="color:red;font-weight:bold;">'.esc_html__('The WP 500px jsGallery is not working because Javascript is disabled.','wp5jsgal').'</div>
+        if($this->options[self::_500px_user]!=$user500px){
+          $this->options[self::_500px_user]=$user500px;
+          $output.='<script type="text/javascript">
+/* <![CDATA[ */
+wp5jsgal_options["_500px_user"]="'.$user500px.'";
+/* ]]> */
+</script>';
+        }
+        $output.='<div id="wp500pxnojs" style="color:red;font-weight:bold;">'.esc_html__('The WP 500px jsGallery is not working because Javascript is disabled.','wp5jsgal').'</div>
         <div id="wp500pxgallery-main">
             <div id="wp500pxloading" class="loader" style="display:none;"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...','wp5jsgal').'</div>
             <div id="wp500pxgallery" class="wp500pxcontent">
@@ -195,7 +206,7 @@ if (!class_exists('WP500pxjsGallery')) {
           </div>
           <div id="wp500pxthumbs" class="wp500pxnavigation"><ul class="thumbs noscript">';
         $output.='</ul><div class="wp500pxgallery-footer">&nbsp;</div></div><div class="wp500pxgallery-footer">&nbsp;</div>';
-        $output.='<div id="wp500pxlinkprofile">'.esc_html__('Browse all images on 500px:','wp5jsgal').' <a href="http://500px.com/'.$this->options[self::_500px_user].'/">http://500px.com/'.$this->options[self::_500px_user].'/</a></div>';
+        $output.='<div id="wp500pxlinkprofile">'.esc_html__('Browse all images on 500px:','wp5jsgal').' <a href="http://500px.com/'.$user500px.'/">http://500px.com/'.$user500px.'/</a></div>';
         $output.='</div>';
       } //END if 500px username set
       return $output;
