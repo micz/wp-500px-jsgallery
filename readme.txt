@@ -47,7 +47,7 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 == Screenshots ==
 
-1. See the gallery in action.
+1. The gallery in action, see it live here: http://micz.it/fotografia/ .
 2. Plugin settings page.
 
 == Changelog ==
