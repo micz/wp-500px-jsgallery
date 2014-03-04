@@ -133,7 +133,7 @@ if (!class_exists('WP500pxjsGallery')) {
     // The username must be safe text with no HTML tags
     $newinput[self::_500px_user] = trim(wp_filter_nohtml_kses($input[self::_500px_user]));
     $newinput[self::_page_thumbs] = intval(trim($input[self::_page_thumbs]));
-    $newinput[self::_pages] =  trim(wp_filter_nohtml_kses($input[self::_pages]));
+    $newinput[self::_pages] = trim(wp_filter_nohtml_kses($input[self::_pages]));
     $newinput[self::_thumb_h] = intval(trim($input[self::_thumb_h]));
     if($newinput[self::_thumb_h]==0)$newinput[self::_thumb_h]='';
     $newinput[self::_thumb_w] = intval(trim($input[self::_thumb_w]));

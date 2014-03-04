@@ -59,7 +59,7 @@ function wp5jsgal_enqueue_scripts() {
   global $wp500pxjsgallery;
   $wp5jsgal_enqueue_scripts=false;
   if($wp500pxjsgallery->options[WP500pxjsGallery::_pages]!=''){ //if the user has set a single page, enqueue only on that page
-    $wp5jsgal_enqueue_scripts=is_page($wp500pxjsgallery->options[WP500pxjsGallery::_pages]);
+    $wp5jsgal_enqueue_scripts=is_page(explode(',',$wp500pxjsgallery->options[WP500pxjsGallery::_pages]));
   }else{
     $wp5jsgal_enqueue_scripts=is_page();
   }
