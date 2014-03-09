@@ -29,7 +29,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public $that;
 	  public $scripts_loaded;
 	  
-	  const version='1.1alpha';
+	  const version='1.1';
 	  
 	  //URL constants
 	  const url_custom_css_info='http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/';

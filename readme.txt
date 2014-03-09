@@ -4,7 +4,7 @@ Donate link: http://micz.it/wordpress-plugin-500px-jsgallery/donate/
 Tags: gallery, 500px, jquery, javascript, galleriffic, photos, photo, 500px.com
 Requires at least: 3.8.1
 Tested up to: 3.8.1
-Stable tag: 1.1alpha
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
