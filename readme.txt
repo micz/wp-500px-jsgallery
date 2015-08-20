@@ -3,8 +3,8 @@ Contributors: micz
 Donate link: http://micz.it/wordpress-plugin-500px-jsgallery/donate/
 Tags: gallery, 500px, jquery, javascript, galleriffic, photos, photo, 500px.com
 Requires at least: 3.8.1
-Tested up to: 4.1
-Stable tag: 1.1
+Tested up to: 4.3
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 == Changelog ==
 
+= 1.1.1 =
+* CSS fix to show the thumbnails in the correct size in Firefox.
+
 = 1.1 =
 * Added an option to load exclusively the custom css file and not the default one.
 * Is now possible to use the "user500px" shortcode param to set a different 500px username on a page.
@@ -71,6 +74,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 * First release.
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+* CSS fix to show the thumbnails in the correct size in Firefox.
 
 = 1.1 =
 * Added an option to load exclusively the custom css file and not the default one.
@@ -100,4 +106,3 @@ You can check the standard `wp-500px-jsgallery.css` to see which css elements th
 If you check the "Exclusive custom CSS" option in the plugin settings page, will be loaded only your custom CSS file and not the plugin default one.
 
 If you need to modify only the thumbnails or image dimensions, you could do this via a custom css or using the dedicated options in the plugin settings page.
-
