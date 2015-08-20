@@ -4,7 +4,7 @@ Plugin Name: WP 500px jsGallery
 Plugin URI: http://micz.it/wordpress-plugin-500px-jsgallery/
 Description: Add your 500px.com photo gallery to a page using the [jsg500px] shortcode. Read the <a href="http://micz.it/wordpress-plugin-500px-jsgallery/faq/" target="_blank">FAQ</a> and see how to customize the look with a <a href="http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/" target="_blank">custom CSS</a>.
 Author: Mic [m@micz.it]
-Version: 1.1
+Version: 1.1.1
 Text Domain: wp5jsgal
 Author URI: http://micz.it
 License: GPLv2 or later
@@ -26,12 +26,12 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
- 
+
 // Fix the __FILE__ problem with symlinks.
 // Now just use ___FILE___ instead of __FILE__
 
 $___FILE___ = __FILE__;
- 
+
 if ( isset( $plugin ) ) {
 $___FILE___ = $plugin;
 }
@@ -41,7 +41,7 @@ $___FILE___ = $mu_plugin;
 else if ( isset( $network_plugin ) ) {
 $___FILE___ = $network_plugin;
 }
- 
+
 define( '___FILE___', $___FILE___ );
 
 include_once('wp-500px-jsgallery.class.php');
