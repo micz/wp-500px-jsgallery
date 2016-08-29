@@ -106,3 +106,8 @@ You can check the standard `wp-500px-jsgallery.css` to see which css elements th
 If you check the "Exclusive custom CSS" option in the plugin settings page, will be loaded only your custom CSS file and not the plugin default one.
 
 If you need to modify only the thumbnails or image dimensions, you could do this via a custom css or using the dedicated options in the plugin settings page.
+
+== Plugin source files ==
+
+The current working source files are available at https://github.com/micz/wp-500px-jsgallery/
+
