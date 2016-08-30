@@ -67,9 +67,13 @@ function wp5jsgal_enqueue_scripts() {
       //Gallery CSS
       $custom_css_exists=file_exists(get_stylesheet_directory().'/wp-500px-jsgallery.css'); //check if a custom css exists in the current theme directory
       if(!(($custom_css_exists)&&($wp500pxjsgallery->options[WP500pxjsGallery::_only_custom_css]==1))){
+		  $css_v='2';
+		  if($wp500pxjsgallery->options[WP500pxjsGallery::_force_css_v1]==1){
+			  $css_v='';
+		  }
           wp_enqueue_style(
               'wp5jsgal-main-style',
-              plugins_url( 'css/wp-500px-jsgallery.css' , ___FILE___ ),
+              plugins_url('css/wp-500px-jsgallery'.$css_v.'.css' , ___FILE___ ),
               array(),
               WP500pxjsGallery::version
           );

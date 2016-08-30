@@ -33,6 +33,7 @@ if (!class_exists('WP500pxjsGallery')) {
 
 	  //URL constants
 	  const url_custom_css_info='http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/';
+	  const url_force_css_v1='http://micz.it/wordpress-plugin-500px-jsgallery/css-v1/';	/*TODO*/
 	  const url_donate='http://micz.it/wordpress-plugin-500px-jsgallery/donate/';
 
 	  //Options constants
@@ -44,6 +45,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  const _image_h='_image_h';
 	  const _image_w='_image_w';
 	  const _only_custom_css='_only_custom_css';
+	  const _force_css_v1='_force_css_v1';
 
 	  // Class Constructor
 	  public function __construct(){
@@ -121,6 +123,10 @@ if (!class_exists('WP500pxjsGallery')) {
         <?esc_html_e('The ids or permalinks must be comma separated and can be mixed.','wp5jsgal');?><br/>
         <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on those pages.','wp5jsgal');?></td>
     </tr>
+   <tr valign="top"><th scope="row"><?esc_html_e('Use CSS version 1','wp5jsgal');?></th>
+        <td><input type="checkbox" name="wp5jsgal_options[<?=self::_force_css_v1?>]" value="1"<?php if($this->options[self::_force_css_v1]==1){echo ' checked="checked"';} ?>"/> <?esc_html_e('Check this option if you want to use the old version 1 CSS.','wp5jsgal');?><br/>
+        <?esc_html_e('From version 2.0 the CSS is responsive and the thumbnails are displayed under the image.','wp5jsgal');?> <a href="<?=self::url_force_css_v1;?>" target="_blank"><?esc_html_e('More info','wp5jsgal');?></a></td>
+    </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Exclusive custom CSS','wp5jsgal');?></th>
         <td><input type="checkbox" name="wp5jsgal_options[<?=self::_only_custom_css?>]" value="1"<?php if($this->options[self::_only_custom_css]==1){echo ' checked="checked"';} ?>"/> <?esc_html_e('Check this option if you want to load only your custom CSS and not the default one before your one.','wp5jsgal');?><br/>
         <a href="<?=self::url_custom_css_info;?>" target="_blank"><?esc_html_e('More info on custom CSS','wp5jsgal');?></a></td>
@@ -143,6 +149,8 @@ if (!class_exists('WP500pxjsGallery')) {
     if($newinput[self::_image_h]==0)$newinput[self::_image_h]='';
     $newinput[self::_image_w] = intval(trim($input[self::_image_w]));
     if($newinput[self::_image_w]==0)$newinput[self::_image_w]='';
+    $newinput[self::_force_css_v1]=intval(trim($input[self::_force_css_v1]));
+    if($newinput[self::_force_css_v1]!=1)$newinput[self::_force_css_v1]=0;
     $newinput[self::_only_custom_css]=intval(trim($input[self::_only_custom_css]));
     if($newinput[self::_only_custom_css]!=1)$newinput[self::_only_custom_css]=0;
     return $newinput;
