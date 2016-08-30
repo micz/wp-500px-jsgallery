@@ -52,6 +52,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 == Changelog ==
 
+= 2.0 =
+* In progress...
+
 = 1.1.1 =
 * CSS fix to show the thumbnails in the correct size in Firefox.
 
@@ -74,6 +77,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 * First release.
 
 == Upgrade Notice ==
+
+= 2.0 =
+* In progress...
 
 = 1.1.1 =
 * CSS fix to show the thumbnails in the correct size in Firefox.
