@@ -1,242 +1,243 @@
 # Copyright (C) 2014 WP 500px jsGallery
 # This file is distributed under the same license as the WP 500px jsGallery package.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WP 500px jsGallery 1.1alpha\n"
+"Project-Id-Version: WP 500px jsGallery 2.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-500px-jsgallery\n"
-"POT-Creation-Date: 2014-03-04 10:04:45+00:00\n"
+"POT-Creation-Date: 2016-08-30 22:00+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: mciz <m@micz.it>\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html_e;esc_html__;esc_attr__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: wp-500px-jsgallery.class.php\n"
+"X-Poedit-SearchPath-1: wp-500px-jsgallery.php\n"
 
-#: wp-500px-jsgallery.class.php:66
+#: wp-500px-jsgallery.class.php:82
 msgid "Main Settings"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:67
+#: wp-500px-jsgallery.class.php:83
 msgid "500px User"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:72 wp-500px-jsgallery.class.php:87
+#: wp-500px-jsgallery.class.php:88 wp-500px-jsgallery.class.php:103
 msgid "WP 500px jsGallery Settings"
 msgstr ""
 
-#. #-#-#-#-#  wp-500px-jsgallery.pot (WP 500px jsGallery 1.1alpha)  #-#-#-#-#
-#. Plugin Name of the plugin/theme
-#: wp-500px-jsgallery.class.php:72
+#: wp-500px-jsgallery.class.php:88
 msgid "WP 500px jsGallery"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:77
+#: wp-500px-jsgallery.class.php:93
 msgid "How to use this plugin:"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:78
+#: wp-500px-jsgallery.class.php:94
 msgid "1. Set the 500px username and save the changes."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:79
+#: wp-500px-jsgallery.class.php:95
 msgid ""
 "2. Use the [jsg500px] shortcode in the page you want to show the 500px "
 "gallery on."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:80
+#: wp-500px-jsgallery.class.php:96
 msgid ""
 "3. (Optional) Use the \"user500px\" shortcode param to set a different "
 "username for a single page."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:88
+#: wp-500px-jsgallery.class.php:104
 msgid "Modify here the plugin's options."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:89
+#: wp-500px-jsgallery.class.php:105
 msgid "The only mandatory option is the 500px username."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:90
+#: wp-500px-jsgallery.class.php:106
 msgid ""
 "You can also use a custom CSS file to modify the 500px gallery look and feel."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:90 wp-500px-jsgallery.class.php:126
+#: wp-500px-jsgallery.class.php:106 wp-500px-jsgallery.class.php:147
 msgid "More info on custom CSS"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:96
+#: wp-500px-jsgallery.class.php:112
 msgid "500px Username"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:98
+#: wp-500px-jsgallery.class.php:114
 msgid ""
 "You must specify a 500px username here or using the \"user500px\" shortcode "
 "param directly on the page!"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:100
+#: wp-500px-jsgallery.class.php:116
 msgid ""
 "You can also specify a 500px username using the \"user500px\" shortcode "
 "param directly on the page."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:103
+#: wp-500px-jsgallery.class.php:119
 msgid "Number of thumbnails per page"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:106
+#: wp-500px-jsgallery.class.php:122
 msgid "Thumbnails dimensions"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:107
+#: wp-500px-jsgallery.class.php:123
 msgid "Height"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:107 wp-500px-jsgallery.class.php:108
-#: wp-500px-jsgallery.class.php:113 wp-500px-jsgallery.class.php:114
+#: wp-500px-jsgallery.class.php:123 wp-500px-jsgallery.class.php:124
+#: wp-500px-jsgallery.class.php:129 wp-500px-jsgallery.class.php:130
 msgid "px"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:108
+#: wp-500px-jsgallery.class.php:124
 msgid "Width"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:109 wp-500px-jsgallery.class.php:115
+#: wp-500px-jsgallery.class.php:125 wp-500px-jsgallery.class.php:131
 msgid ""
 "The dimensions could be set with the custom CSS, instead of with these "
 "options."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:110 wp-500px-jsgallery.class.php:116
+#: wp-500px-jsgallery.class.php:126 wp-500px-jsgallery.class.php:132
 msgid "You can also set only one dimension, the other will be proportional."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:112
+#: wp-500px-jsgallery.class.php:128
 msgid "Image dimensions"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:113
+#: wp-500px-jsgallery.class.php:129
 msgid "Max Height"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:114
+#: wp-500px-jsgallery.class.php:130
 msgid "Max Width"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:118
+#: wp-500px-jsgallery.class.php:134
 msgid "Gallery page"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:120
+#: wp-500px-jsgallery.class.php:136
 msgid ""
 "To optimize your website loading times, you could write here the pages id or "
 "permalink on which you have activated the 500px gallery with the shortcode."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:121
+#: wp-500px-jsgallery.class.php:137
 msgid "The ids or permalinks must be comma separated and can be mixed."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:122
+#: wp-500px-jsgallery.class.php:138
 msgid ""
 "All the styles and scripts needed by this plugin will be loaded only on "
 "those pages."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:124
+#: wp-500px-jsgallery.class.php:140
+msgid "Use CSS version 1"
+msgstr ""
+
+#: wp-500px-jsgallery.class.php:141
+msgid "Check this option if you want to use the old CSS version 1."
+msgstr ""
+
+#: wp-500px-jsgallery.class.php:142
+msgid ""
+"From version 2.0 the CSS is responsive and the thumbnails are displayed "
+"under the image."
+msgstr ""
+
+#: wp-500px-jsgallery.class.php:143
+msgid "More info on the old CSS version 1"
+msgstr ""
+
+#: wp-500px-jsgallery.class.php:145
 msgid "Exclusive custom CSS"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:125
+#: wp-500px-jsgallery.class.php:146
 msgid ""
 "Check this option if you want to load only your custom CSS and not the "
 "default one before your one."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:129
+#: wp-500px-jsgallery.class.php:150
 msgid "Save Changes"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:161
+#: wp-500px-jsgallery.class.php:183
 msgid "Settings"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:167
+#: wp-500px-jsgallery.class.php:189
 msgid "Donate"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:181
+#: wp-500px-jsgallery.class.php:203
 msgid ""
 "You've set the wrong page id or permalink in the plugin settings, so the WP "
 "500px jsGallery Plugin scripts are not loaded in this page!"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:188
+#: wp-500px-jsgallery.class.php:210
 msgid ""
 "To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px "
 "username in the plugin settings or using the \"user500px\" shortcode param!"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:201
+#: wp-500px-jsgallery.class.php:223
 msgid "The WP 500px jsGallery is not working because Javascript is disabled."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:203
+#: wp-500px-jsgallery.class.php:225
 msgid "Loading images..."
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:214
+#: wp-500px-jsgallery.class.php:236
 msgid "Browse all images on 500px:"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:223
+#: wp-500px-jsgallery.class.php:245
 msgid "See this image at full size on 500px"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:224
+#: wp-500px-jsgallery.class.php:246
 msgid "Play"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:225
+#: wp-500px-jsgallery.class.php:247
 msgid "Pause"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:226
+#: wp-500px-jsgallery.class.php:248
 msgid "Previous"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:227
+#: wp-500px-jsgallery.class.php:249
 msgid "Next"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:228
+#: wp-500px-jsgallery.class.php:250
 msgid "Next &rsaquo;"
 msgstr ""
 
-#: wp-500px-jsgallery.class.php:229
+#: wp-500px-jsgallery.class.php:251
 msgid "&lsaquo; Prev"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "http://micz.it/wordpress-plugin-500px-jsgallery/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Add your 500px.com photo gallery to a page using the [jsg500px] shortcode. "
-"Read the <a href=\"http://micz.it/wordpress-plugin-500px-jsgallery/faq/\" "
-"target=\"_blank\">FAQ</a> and see how to customize the look with a <a href="
-"\"http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/\" target="
-"\"_blank\">custom CSS</a>."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Mic [m@micz.it]"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://micz.it"
 msgstr ""
