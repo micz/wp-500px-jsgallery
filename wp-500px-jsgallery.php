@@ -126,7 +126,16 @@ function wp5jsgal_enqueue_scripts() {
     endif;
 }
 
+function wp5jsgal_plugin_activation(){
+	$wp500pxjstmp=new WP500pxjsGallery();
+	$wp500pxjstmp->activate();
+}
+
 
 add_action('wp_enqueue_scripts', 'wp5jsgal_enqueue_scripts');
 add_action('init', 'wp5jsgal_plugin_init');
+
+//From v2.0 on plugin activation, we need to check if it's a new install or an upgrade
+//On updrage we force the use of CSS v1 to not be disruptive for the gallery layout
+register_activation_hook( __FILE__,'wp5jsgal_plugin_activation');
 ?>

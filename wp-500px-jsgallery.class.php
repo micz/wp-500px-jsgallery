@@ -30,6 +30,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public $scripts_loaded;
 
 	  const version='2.0';
+	  const db_version=2;
 
 	  //URL constants
 	  const url_custom_css_info='http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/';
@@ -46,26 +47,39 @@ if (!class_exists('WP500pxjsGallery')) {
 	  const _image_w='_image_w';
 	  const _only_custom_css='_only_custom_css';
 	  const _force_css_v1='_force_css_v1';
+	  const _db_ver='wp5jsgal_option_db_ver';
 
 	  // Class Constructor
 	  public function __construct(){
 	    global $that;
 	    $that=$this;
-  	  $this->options = $this->getDefaultOptions(get_option('wp5jsgal_options'));
-      add_action('admin_init', array($that,'register_settings'));
-      add_action('admin_menu', array($that,'admin_add_page'));
-      add_shortcode('jsg500px', array($that,'getShortcode'));
-      add_filter('plugin_action_links_'.plugin_basename(___FILE___),array($that,'add_settings_link'));
-      add_filter('plugin_row_meta',array($that,'add_plugin_desc_links'),10,2);
-      load_plugin_textdomain('wp5jsgal',false,basename(dirname(___FILE___)).'/lang/');
-      $this->scripts_loaded=false;
+  	    $this->options = $this->getDefaultOptions(get_option('wp5jsgal_options'));
+        add_action('admin_init', array($that,'register_settings'));
+        add_action('admin_menu', array($that,'admin_add_page'));
+        add_shortcode('jsg500px', array($that,'getShortcode'));
+        add_filter('plugin_action_links_'.plugin_basename(___FILE___),array($that,'add_settings_link'));
+        add_filter('plugin_row_meta',array($that,'add_plugin_desc_links'),10,2);
+        load_plugin_textdomain('wp5jsgal',false,basename(dirname(___FILE___)).'/lang/');
+        $this->scripts_loaded=false;
 	  }
 
-//Settings page
+	  public function activate() {
+		//From v2.0 on plugin activation, we need to check if it's a new install or an upgrade
+		//On updrage we force the use of CSS v1 to not be disruptive for the gallery layout
+		$db_ver_opt=intval(get_option('wp5jsgal_option_db_ver'));
+		if($db_ver_opt<self::db_version){	//It's upgrading!
+			$this->options[self::_force_css_v1]=1;
+			$db_ver_opt=self::db_version;
+			update_option('wp5jsgal_option_db_ver',$db_ver_opt);
+			update_option('wp5jsgal_options',$this->options);
+		}
+	  }
+
+	  //Settings page
 	  public function register_settings(){
 	    global $that;
 	    register_setting('wp5jsgal_options','wp5jsgal_options',array($that,'options_validate'));
-  	  add_settings_section('wp5jsgal_main', esc_html__('Main Settings','wp5jsgal'), array($that,'main_section_text'), 'wp5jsgal_settings_page');
+  	  	add_settings_section('wp5jsgal_main', esc_html__('Main Settings','wp5jsgal'), array($that,'main_section_text'), 'wp5jsgal_settings_page');
 	    add_settings_field('wp5jsgal_user',esc_html__('500px User','wp5jsgal'),null,'wp5jsgal_settings_page','default');
 	  }
 
@@ -158,7 +172,6 @@ if (!class_exists('WP500pxjsGallery')) {
 
   public function getDefaultOptions($options){
     if(intval($options[self::_page_thumbs])==0)$options[self::_page_thumbs]=5;
-
     return $options;
   }
 
