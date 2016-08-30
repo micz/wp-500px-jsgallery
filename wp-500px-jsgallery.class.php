@@ -34,7 +34,7 @@ if (!class_exists('WP500pxjsGallery')) {
 
 	  //URL constants
 	  const url_custom_css_info='http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/';
-	  const url_force_css_v1='http://micz.it/wordpress-plugin-500px-jsgallery/css-v1/';	/*TODO*/
+	  const url_force_css_v1=' http://micz.it/wordpress-plugin-500px-jsgallery/css-versions-explained/';
 	  const url_donate='http://micz.it/wordpress-plugin-500px-jsgallery/donate/';
 
 	  //Options constants
