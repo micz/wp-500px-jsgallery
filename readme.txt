@@ -53,9 +53,8 @@ The photos displayed are only the latest ones, as published in the user feed by 
 == Changelog ==
 
 = 2.0 =
-* 500px link is no more displayed. Now the "See this image at full size on 500px" statement is directly a link.
+* 500px link is no more explicitly displayed. Now the "See this image at full size on 500px" statement is a link itself.
 * New responsive CSS added. To be not disruptive only for upgrade, the "Use CSS version 1" option must be deselected to use the new gallery layout.
-*
 
 = 1.1.1 =
 * CSS fix to show the thumbnails in the correct size in Firefox.
@@ -81,9 +80,8 @@ The photos displayed are only the latest ones, as published in the user feed by 
 == Upgrade Notice ==
 
 = 2.0 =
-* 500px link is no more displayed. Now the "See this image at full size on 500px" statement is directly a link.
+* 500px link is no more explicitly displayed. Now the "See this image at full size on 500px" statement is a link itself.
 * New responsive CSS added. To be not disruptive the "Use CSS version 1" option must be deselected to use the new gallery layout.
-*
 
 = 1.1.1 =
 * CSS fix to show the thumbnails in the correct size in Firefox.
@@ -119,7 +117,7 @@ If you need to modify only the thumbnails or image dimensions, you could do this
 
 == Plugin source files ==
 
-The current working source files are available at https://github.com/micz/wp-500px-jsgallery/
+The source files repository is available at https://github.com/micz/wp-500px-jsgallery/
 
 == Help Translating the Plugin ==
 
