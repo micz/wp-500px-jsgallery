@@ -25,7 +25,7 @@ jQuery(document).ready(function(){
 
     jQuery('div#wp500pxloading').show();
 
-    wp5jsgal_rss500px(wp5jsgal_options._500px_user, function(feed){
+    	wp5jsgal_rss500px(wp5jsgal_options._500px_user, function(feed){
         var contentimg = jQuery(unescape(jQuery(this).find('content').text())).find("img").attr("src");
 
         var entries = feed.entries, feedList = '';
