@@ -18,16 +18,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 jQuery(document).ready(function(){
 
     jQuery('div#wp500pxnojs').remove();
-    
+
     if(wp5jsgal_options._500px_user==''){
       return;
     }
-    
+
     jQuery('div#wp500pxloading').show();
 
-    wp5jsgal_rss500px(wp5jsgal_options._500px_user, function(feed){ 
+    wp5jsgal_rss500px(wp5jsgal_options._500px_user, function(feed){
         var contentimg = jQuery(unescape(jQuery(this).find('content').text())).find("img").attr("src");
-    
+
         var entries = feed.entries, feedList = '';
         for (var i = 0; i < entries.length; i++) {
 
@@ -35,22 +35,22 @@ jQuery(document).ready(function(){
         }
 
         jQuery('div#wp500pxthumbs > ul.thumbs').append(feedList);
-        
+
         var gallery = jQuery('div#wp500pxthumbs').galleriffic({
             numThumbs:                 +wp5jsgal_options._page_thumbs,
             enableTopPager:            true,
             imageContainerSel:         '#wp500pxslideshow',
-		        captionContainerSel:       '#wp500pxcaption',
-		        controlsContainerSel:      '#wp500pxcontrols',
-		        loadingContainerSel:       '#wp500pxloading',
-		        enableHistory:             true,
+		    captionContainerSel:       '#wp500pxcaption',
+		    controlsContainerSel:      '#wp500pxcontrols',
+		    loadingContainerSel:       '#wp500pxloading',
+		    enableHistory:             true,
             playLinkText:              wp5jsgal_langs.gal_playLinkText,
             pauseLinkText:             wp5jsgal_langs.gal_pauseLinkText,
             prevLinkText:              wp5jsgal_langs.gal_prevLinkText,
             nextLinkText:              wp5jsgal_langs.gal_nextLinkText,
             nextPageLinkText:          wp5jsgal_langs.gal_nextPageLinkText,
             prevPageLinkText:          wp5jsgal_langs.gal_prevPageLinkText,
-		        onSlideChange:             function(prevIndex, nextIndex) {
+		    onSlideChange:             function(prevIndex, nextIndex) {
 						// 'this' refers to the gallery, which is an extension of $('#thumbs')
 					  	this.find('ul.thumbs').children()
 							  .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
@@ -74,7 +74,7 @@ jQuery(document).ready(function(){
 						  var slideImage = slide.find('img');
 						  jQuery('div.slideshow-container').css('min-height',slideImage.height()+'px');
 						  jQuery('div.wp500pxcontrols').css('width',slideImage.width()+'px');
-						  
+
 						          //Eventually set thumbs and image h & w
               if((wp5jsgal_options._thumb_h!='')&&(wp5jsgal_options._thumb_h!=0))jQuery('ul.thumbs img').css('height',wp5jsgal_options._thumb_h+'px');
               if((wp5jsgal_options._thumb_w!='')&&(wp5jsgal_options._thumb_w!=0))jQuery('ul.thumbs img').css('width',wp5jsgal_options._thumb_w+'px');
@@ -92,7 +92,7 @@ jQuery(document).ready(function(){
 					fadeSpeed:         'fast',
 					exemptionSelector: '.selected',
 				});
-				
+
 /**** Functions to support integration of galleriffic with the jquery.history plugin ****/
 				// PageLoad function
 				// This function is called when:
@@ -110,18 +110,18 @@ jQuery(document).ready(function(){
 				}
 
 				// Initialize history plugin.
-				// The callback is called at once by present location.hash. 
+				// The callback is called at once by present location.hash.
 				jQuery.historyInit(pageload, "advanced.html");
 
 				// set onlick event for buttons using the jQuery 1.3 live method
 				jQuery("a[rel='history']").live('click', function(e) {
 					if (e.button != 0) return true;
-					
+
 					var hash = this.href;
 					hash = hash.replace(/^.*#/, '');
 
-					// moves to a new page. 
-					// pageload is called at once. 
+					// moves to a new page.
+					// pageload is called at once.
 					// hash don't contain "#", "?"
 					jQuery.historyLoad(hash);
 
