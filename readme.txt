@@ -54,8 +54,8 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 = 2.0 =
 * 500px link is no more displayed. Now the "See this image at full size on 500px" statement is directly a link.
-* New responsive CSS added. To be not disruptive for old installs, the "Use CSS version 1" option must be deselected to use the new CSS.
-* 
+* New responsive CSS added. To be not disruptive only for upgrade, the "Use CSS version 1" option must be deselected to use the new gallery layout.
+*
 
 = 1.1.1 =
 * CSS fix to show the thumbnails in the correct size in Firefox.
@@ -82,8 +82,8 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 = 2.0 =
 * 500px link is no more displayed. Now the "See this image at full size on 500px" statement is directly a link.
-* New responsive CSS added. To be not disruptive for old installs, the "Use CSS version 1" option must be deselected to use the new CSS.
-* 
+* New responsive CSS added. To be not disruptive the "Use CSS version 1" option must be deselected to use the new gallery layout.
+*
 
 = 1.1.1 =
 * CSS fix to show the thumbnails in the correct size in Firefox.
