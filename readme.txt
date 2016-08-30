@@ -117,3 +117,6 @@ If you need to modify only the thumbnails or image dimensions, you could do this
 
 The current working source files are available at https://github.com/micz/wp-500px-jsgallery/
 
+== Help Translating the Plugin ==
+
+You can help translating this plugin easily on POEditor: https://poeditor.com/join/project/353c995b6e98e26de5765909786ca27c
