@@ -115,8 +115,8 @@ msgid "Browse all images on 500px:"
 msgstr "Guarda tutte le immagini su 500px:"
 
 #: wp-500px-jsgallery.class.php:223
-msgid "See this image at full size on 500px:"
-msgstr "Guarda questa immagine su 500px:"
+msgid "See this image at full size on 500px"
+msgstr "Guarda questa immagine su 500px"
 
 #: wp-500px-jsgallery.class.php:224
 msgid "Play"
@@ -143,12 +143,12 @@ msgid "&lsaquo; Prev"
 msgstr "&lsaquo; Prec"
 
 #. Plugin URI of the plugin/theme
-#: 
+#:
 msgid "http://micz.it/wordpress-plugin-500px-jsgallery/"
 msgstr "http://micz.it/wordpress-plugin-500px-jsgallery/"
 
 #. Author URI of the plugin/theme
-#: 
+#:
 msgid "http://micz.it"
 msgstr "http://micz.it"
 
@@ -205,12 +205,12 @@ msgid "To use the WP 500px jsGallery Plugin shortcode, you must specify a 500px 
 msgstr "Per usare lo shortcode del plugin WP 500px jsGallery, devi obbligatoriamente specificare un nome utente del sito 500px.com nella pagina delle impostazioni del plugin oppure usare il pametro \"user500px\" con lo shortcode."
 
 #. Description of the plugin/theme
-#: 
+#:
 msgid "Add your 500px.com photo gallery to a page using the [jsg500px] shortcode. Read the <a href=\"http://micz.it/wordpress-plugin-500px-jsgallery/faq/\" target=\"_blank\">FAQ</a> and see how to customize the look with a <a href=\"http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/\" target=\"_blank\">custom CSS</a>."
 msgstr "Aggiungi la tua galleria di foto 500px.com usando lo shortcode [jsg500px]. Leggi le <a href=\"http://micz.it/wordpress-plugin-500px-jsgallery/faq/\" target=\"_blank\">domande frequenti</a> e guarda come personalizzare la grafica con un <a href=\"http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/\" target=\"_blank\">CSS personalizzato</a>."
 
 #. Author of the plugin/theme
-#: 
+#:
 msgid "Mic [m@micz.it]"
 msgstr "Mic [m@micz.it]"
 

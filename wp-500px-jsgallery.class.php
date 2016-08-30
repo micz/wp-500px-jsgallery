@@ -228,7 +228,7 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
 
 	 public function getJsLang(){
 	    $jslang=array();
-      $jslang['image_link_desc']=esc_attr__('See this image at full size on 500px:','wp5jsgal');
+      $jslang['image_link_desc']=esc_attr__('See this image at full size on 500px','wp5jsgal');
       $jslang['gal_playLinkText']=esc_attr__('Play','wp5jsgal');
       $jslang['gal_pauseLinkText']=esc_attr__('Pause','wp5jsgal');
       $jslang['gal_prevLinkText']=esc_attr__('Previous','wp5jsgal');

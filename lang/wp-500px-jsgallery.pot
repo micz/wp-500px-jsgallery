@@ -193,7 +193,7 @@ msgid "Browse all images on 500px:"
 msgstr ""
 
 #: wp-500px-jsgallery.class.php:223
-msgid "See this image at full size on 500px:"
+msgid "See this image at full size on 500px"
 msgstr ""
 
 #: wp-500px-jsgallery.class.php:224

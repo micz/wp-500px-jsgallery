@@ -18,13 +18,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 div.wp500pxgallery-footer{
-  clear:both;
+  position:absolute;
+  display:none;
 }
 
 div.wp500pxcontent {
-	float: right;
-	display:block;
-	width:64%;
+	float: left;
+	/*display:block;*/
+	width:100%;
 }
 div.wp500pxcontent a, div.wp500pxnavigation a {
 	text-decoration: none;
@@ -34,8 +35,7 @@ div.wp500pxcontent a:focus, div.wp500pxcontent a:hover, div.wp500pxcontent a:act
 	text-decoration: underline;
 }
 div.wp500pxcontrols {
-	margin-top: 5px;
-	margin-bottom: 9px;
+	margin: 5px auto 9px auto;
 	height: 23px;
 }
 div.wp500pxcontrols a {
@@ -70,7 +70,6 @@ div.wp500pxslideshow {
 }
 div.wp500pxslideshow span.image-wrapper {
 	display: block;
-	position: absolute;
 	top: 0;
 	left: 0;
 	line-height:1em;
@@ -86,14 +85,16 @@ div.wp500pxslideshow a.advance-link:hover, div.wp500pxslideshow a.advance-link:a
 div.wp500pxslideshow img {
 	vertical-align: middle;
 	border: 1px solid #ccc;
-	max-width: 640px;
+	/*max-width: 640px;*/
 }
 div.wp500pxcaption-container {
 	position: relative;
 	height: 25px;
+	margin-top: -15px;
+    margin-bottom: 12px;
 }
 span.image-caption {
-	display: block;
+	/*display: block;*/
 	position: absolute;
 	width: 640px;
 	top: 0;
@@ -111,18 +112,21 @@ div.image-desc {
 	padding-top: 12px;
 }
 div.wp500pxnavigation {
-width:32%;
+width:100%;
 float:left;
 }
 ul.thumbs {
 	clear: both;
 	margin: 0;
 	padding: 0;
+    text-align: center;
 }
 ul.thumbs li {
 	padding: 0;
-	margin: 5px 10px 5px 0;
+	margin: 5px 2% 5px 0;
 	list-style: none;
+	width:18%;
+	display:inline-block;
 }
 a.thumb {
 	padding: 2px;
@@ -138,13 +142,16 @@ a.thumb:focus {
 ul.thumbs img {
 	border: none;
 	display: block;
+	margin-bottom:0em;
 }
 div.pagination {
 	clear: both;
 }
 div.wp500pxnavigation div.top {
-	margin-bottom: 0px;
-	height: 31px;
+	margin: 0;
+	height: 0px;
+	position: absolute;
+	display:none;
 }
 div.wp500pxnavigation div.bottom {
 	margin-top: 12px;
@@ -170,3 +177,9 @@ div.pagination span.ellipsis {
 	border: none;
 	padding: 5px 0 3px 2px;
 }
+
+span.wp500pxisg_img_title{font-weight:bold;}
+span.wp500pxisg_img_caption{margin-left:25px;font-size:16px;}
+span.wp500pxisg_img_caption a{text-decoration:underline}
+div.wp500pxcaption-container div.caption{width:100%;}
+div.wp500pxcaption-container span.image-caption{width:100%;text-align:center;}

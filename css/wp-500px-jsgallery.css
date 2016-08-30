@@ -168,3 +168,7 @@ div.pagination span.ellipsis {
 	border: none;
 	padding: 5px 0 3px 2px;
 }
+
+span.wp500pxisg_img_title{font-weight:bold;}
+span.wp500pxisg_img_caption{margin-left:25px;font-size:16px;}
+span.wp500pxisg_img_caption a{text-decoration:underline}
