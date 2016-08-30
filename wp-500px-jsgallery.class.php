@@ -53,7 +53,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public function __construct(){
 	    global $that;
 	    $that=$this;
-  	    $this->options = $this->getDefaultOptions(get_option('wp5jsgal_options'));
+  	    $this->options = $this->sanitizeOptions(get_option('wp5jsgal_options'));
         add_action('admin_init', array($that,'register_settings'));
         add_action('admin_menu', array($that,'admin_add_page'));
         add_shortcode('jsg500px', array($that,'getShortcode'));
@@ -67,11 +67,12 @@ if (!class_exists('WP500pxjsGallery')) {
 		//From v2.0 on plugin activation, we need to check if it's a new install or an upgrade
 		//On updrage we force the use of CSS v1 to not be disruptive for the gallery layout
 		$db_ver_opt=intval(get_option('wp5jsgal_option_db_ver'));
-		if($db_ver_opt<self::db_version){	//It's upgrading!
-			$this->options[self::_force_css_v1]=1;
-			$db_ver_opt=self::db_version;
-			update_option('wp5jsgal_option_db_ver',$db_ver_opt);
-			update_option('wp5jsgal_options',$this->options);
+		if($db_ver_opt<self::db_version){	//It's upgrading, update db_version!
+			update_option('wp5jsgal_option_db_ver',self::db_version);
+			if((get_option('wp5jsgal_options',-1)!=-1)&&($db_ver_opt==0)){ //We need to force CSS v1, coming from plugin version <2.0
+				$this->options[self::_force_css_v1]=1;
+				update_option('wp5jsgal_options',$this->options);
+			}
 		}
 	  }
 
@@ -171,7 +172,7 @@ if (!class_exists('WP500pxjsGallery')) {
     return $newinput;
   }
 
-  public function getDefaultOptions($options){
+  public function sanitizeOptions($options){
     if(intval($options[self::_page_thumbs])==0)$options[self::_page_thumbs]=5;
     return $options;
   }
