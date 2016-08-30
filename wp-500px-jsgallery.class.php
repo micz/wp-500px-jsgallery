@@ -24,17 +24,17 @@ if (!class_exists('WP500pxjsGallery')) {
 	 */
 
 	class WP500pxjsGallery {
-	
+
 	  public $options=array();
 	  public $that;
 	  public $scripts_loaded;
-	  
-	  const version='1.1';
-	  
+
+	  const version='2.0';
+
 	  //URL constants
 	  const url_custom_css_info='http://micz.it/wordpress-plugin-500px-jsgallery/custom-css/';
 	  const url_donate='http://micz.it/wordpress-plugin-500px-jsgallery/donate/';
-	  
+
 	  //Options constants
 	  const _500px_user='_500px_user';
 	  const _page_thumbs='_page_thumbs';
@@ -44,7 +44,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  const _image_h='_image_h';
 	  const _image_w='_image_w';
 	  const _only_custom_css='_only_custom_css';
-	
+
 	  // Class Constructor
 	  public function __construct(){
 	    global $that;
@@ -58,7 +58,7 @@ if (!class_exists('WP500pxjsGallery')) {
       load_plugin_textdomain('wp5jsgal',false,basename(dirname(___FILE___)).'/lang/');
       $this->scripts_loaded=false;
 	  }
-	  
+
 //Settings page
 	  public function register_settings(){
 	    global $that;
@@ -66,12 +66,12 @@ if (!class_exists('WP500pxjsGallery')) {
   	  add_settings_section('wp5jsgal_main', esc_html__('Main Settings','wp5jsgal'), array($that,'main_section_text'), 'wp5jsgal_settings_page');
 	    add_settings_field('wp5jsgal_user',esc_html__('500px User','wp5jsgal'),null,'wp5jsgal_settings_page','default');
 	  }
-	  
+
 	  public function admin_add_page(){
 	    global $that;
       add_options_page(esc_html__('WP 500px jsGallery Settings','wp5jsgal'),esc_html__('WP 500px jsGallery','wp5jsgal'), 'manage_options', 'wp5jsgal_settings_page', array($that,'output_settings_page'));
     }
-	  
+
     public function main_section_text() {
       $output='<p>';
       $output.='<b>'.esc_html__('How to use this plugin:','wp5jsgal').'</b><br/>';
@@ -81,7 +81,7 @@ if (!class_exists('WP500pxjsGallery')) {
       $output.='</p>';
       echo $output;
     }
-	  
+
 	  public function output_settings_page(){
 ?><div>
 <h2><?_e('WP 500px jsGallery Settings','wp5jsgal');?></h2>
@@ -129,7 +129,7 @@ if (!class_exists('WP500pxjsGallery')) {
 <input name="Submit" class="button button-primary" type="submit" value="<?php esc_attr_e('Save Changes','wp5jsgal');?>"/>
 </form></div>
 	  <?}
-	  
+
   public function options_validate($input) {
     // The username must be safe text with no HTML tags
     $newinput[self::_500px_user] = trim(wp_filter_nohtml_kses($input[self::_500px_user]));
@@ -150,7 +150,7 @@ if (!class_exists('WP500pxjsGallery')) {
 
   public function getDefaultOptions($options){
     if(intval($options[self::_page_thumbs])==0)$options[self::_page_thumbs]=5;
-    
+
     return $options;
   }
 
@@ -217,7 +217,7 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
       return $output;
 	  }
 //Output shortcode [jsg500px] - END
-	
+
 	 public function getJsLang(){
 	    $jslang=array();
       $jslang['image_link_desc']=esc_attr__('See this image at full size on 500px:','wp5jsgal');
@@ -229,7 +229,7 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
       $jslang['gal_prevPageLinkText']=esc_attr__('&lsaquo; Prev','wp5jsgal');
       return $jslang;
 	 }
-	 
+
 	 public function getJsParams(){
       $jsparams=array();
       $jsparams[(self::_500px_user)]=$this->options[(self::_500px_user)];
@@ -240,7 +240,7 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
       $jsparams[(self::_image_w)]=$this->options[(self::_image_w)];
       return $jsparams;
 	 }
-	
+
 	  /*public function getImageHTML($imgData){
 	    $output='<li>
             <a class="thumb" name="optionalCustomIdentifier" href="'.$imgData['thumb_url'].'" title="'.$imgData['title'].'">
@@ -252,6 +252,6 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
 	  }*/
 
 	} //END WP500pxjsGallery
-	
+
 } //END if class_exists('WP500pxjsGallery')
 ?>
