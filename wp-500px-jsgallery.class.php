@@ -138,8 +138,9 @@ if (!class_exists('WP500pxjsGallery')) {
         <?esc_html_e('All the styles and scripts needed by this plugin will be loaded only on those pages.','wp5jsgal');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Use CSS version 1','wp5jsgal');?></th>
-        <td><input type="checkbox" name="wp5jsgal_options[<?=self::_force_css_v1?>]" value="1"<?php if($this->options[self::_force_css_v1]==1){echo ' checked="checked"';} ?>"/> <?esc_html_e('Check this option if you want to use the old version 1 CSS.','wp5jsgal');?><br/>
-        <?esc_html_e('From version 2.0 the CSS is responsive and the thumbnails are displayed under the image.','wp5jsgal');?> <a href="<?=self::url_force_css_v1;?>" target="_blank"><?esc_html_e('More info','wp5jsgal');?></a></td>
+        <td><input type="checkbox" name="wp5jsgal_options[<?=self::_force_css_v1?>]" value="1"<?php if($this->options[self::_force_css_v1]==1){echo ' checked="checked"';} ?>"/> <?esc_html_e('Check this option if you want to use the old CSS version 1.','wp5jsgal');?><br/>
+        <?esc_html_e('From version 2.0 the CSS is responsive and the thumbnails are displayed under the image.','wp5jsgal');?><br/>
+        <a href="<?=self::url_force_css_v1;?>" target="_blank"><?esc_html_e('More info on the old CSS version 1','wp5jsgal');?></a></td>
     </tr>
    <tr valign="top"><th scope="row"><?esc_html_e('Exclusive custom CSS','wp5jsgal');?></th>
         <td><input type="checkbox" name="wp5jsgal_options[<?=self::_only_custom_css?>]" value="1"<?php if($this->options[self::_only_custom_css]==1){echo ' checked="checked"';} ?>"/> <?esc_html_e('Check this option if you want to load only your custom CSS and not the default one before your one.','wp5jsgal');?><br/>
