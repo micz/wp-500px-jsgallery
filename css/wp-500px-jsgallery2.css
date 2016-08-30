@@ -1,0 +1,172 @@
+/* Copyright 2014 Mic (email: m@micz.it)
+Plugin Info: http://micz.it
+
+Responsive CSS
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+*/
+
+div.wp500pxgallery-footer{
+  clear:both;
+}
+
+div.wp500pxcontent {
+	float: right;
+	display:block;
+	width:64%;
+}
+div.wp500pxcontent a, div.wp500pxnavigation a {
+	text-decoration: none;
+	color: #777;
+}
+div.wp500pxcontent a:focus, div.wp500pxcontent a:hover, div.wp500pxcontent a:active {
+	text-decoration: underline;
+}
+div.wp500pxcontrols {
+	margin-top: 5px;
+	margin-bottom: 9px;
+	height: 23px;
+}
+div.wp500pxcontrols a {
+	padding: 5px;
+}
+div.ss-controls {
+	float: left;
+	position: relative;
+  z-index: 1001;
+}
+div.nav-controls {
+	float: right;
+	position: relative;
+  z-index: 1001;
+}
+div.slideshow-container {
+	position: relative;
+	clear: both;
+	min-height: 440px;
+}
+div.loader {
+float:left;
+text-align: center;
+width: 100%;
+}
+div#wp500pxlinkprofile{
+float:right;
+text-align:right;
+width:auto;
+}
+div.wp500pxslideshow {
+}
+div.wp500pxslideshow span.image-wrapper {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height:1em;
+}
+div.wp500pxslideshow a.advance-link {
+	display: block;
+	text-align: center;
+	line-height:1em;
+}
+div.wp500pxslideshow a.advance-link:hover, div.wp500pxslideshow a.advance-link:active, div.wp500pxslideshow a.advance-link:visited {
+	text-decoration: none;
+}
+div.wp500pxslideshow img {
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	max-width: 640px;
+}
+div.wp500pxcaption-container {
+	position: relative;
+	height: 25px;
+}
+span.image-caption {
+	display: block;
+	position: absolute;
+	width: 640px;
+	top: 0;
+	left: 0;
+}
+div.wp500pxcaption {
+	padding: 12px;
+}
+div.image-title {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+div.image-desc {
+	line-height: 1.3em;
+	padding-top: 12px;
+}
+div.wp500pxnavigation {
+width:32%;
+float:left;
+}
+ul.thumbs {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+ul.thumbs li {
+	padding: 0;
+	margin: 5px 10px 5px 0;
+	list-style: none;
+}
+a.thumb {
+	padding: 2px;
+	display: block;
+	border: 1px solid #ccc;
+}
+ul.thumbs li.selected a.thumb {
+	background: #000;
+}
+a.thumb:focus {
+	outline: none;
+}
+ul.thumbs img {
+	border: none;
+	display: block;
+}
+div.pagination {
+	clear: both;
+}
+div.wp500pxnavigation div.top {
+	margin-bottom: 0px;
+	height: 31px;
+}
+div.wp500pxnavigation div.bottom {
+	margin-top: 12px;
+}
+div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
+	display: block;
+	float: left;
+	margin-right: 2px;
+	padding: 4px 7px 2px 7px;
+	border: 1px solid #ccc;
+}
+div.pagination a:hover {
+	background-color: #eee;
+	text-decoration: none;
+}
+div.pagination span.current {
+	font-weight: bold;
+	background-color: #000;
+	border-color: #000;
+	color: #fff;
+}
+div.pagination span.ellipsis {
+	border: none;
+	padding: 5px 0 3px 2px;
+}
