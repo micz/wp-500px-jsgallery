@@ -35,15 +35,15 @@ function wp5jsgal_getThumbURL(image_url){
   return image_url.replace('4.jpg','2.jpg');
 }
 
-function wp5jsgal_getImageCaption(img){
+/*function wp5jsgal_getImageCaption(img){
   //return wp5jsgal_langs.image_link_desc+' <a href="'+img.link+'">'+img.link+'</a>';
   return '[<a href="'+img.link+'">'+wp5jsgal_langs.image_link_desc+'</a>]';
-}
+}*/
 
 function wp5jsgal_getImage(img){
   var image_url=wp5jsgal_extractImageURL(img.content);
   var thumb_url=wp5jsgal_getThumbURL(image_url);
-  var image_caption=wp5jsgal_getImageCaption(img);
-  return  '<li><a class="thumb" href="'+image_url+'" title="' + img.title + '"><img src="'+thumb_url+'" alt="' + img.title + '"/></a><div class="caption"><span class="wp500pxisg_img_title">' + img.title + '</span><span class="wp500pxisg_img_caption">'+image_caption+'</span></div></li>';
+  //var image_caption=wp5jsgal_getImageCaption(img);
+  return  '<li><a class="thumb" href="'+image_url+'" title="' + img.title + '"><img src="'+thumb_url+'" alt="' + img.title + '"/></a><div class="caption"><span class="wp500pxisg_img_title"><a href="'+img.link+'" title="'+wp5jsgal_langs.image_link_desc+'" target="_blank">' + img.title + '</a></span></div></li>';
 }
 

@@ -29,7 +29,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public $that;
 	  public $scripts_loaded;
 
-	  const version='2.0';
+	  const version='2.0.1';
 	  const db_version=2;
 
 	  //URL constants
@@ -48,6 +48,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  const _only_custom_css='_only_custom_css';
 	  const _force_css_v1='_force_css_v1';
 	  const _db_ver='wp5jsgal_option_db_ver';
+	  //const _plugin_img_path='_plugin_img_path';
 
 	  // Class Constructor
 	  public function __construct(){
@@ -234,7 +235,7 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
           </div>
           <div id="wp500pxthumbs" class="wp500pxnavigation"><ul class="thumbs noscript">';
         $output.='</ul><div class="wp500pxgallery-footer">&nbsp;</div></div><div class="wp500pxgallery-footer">&nbsp;</div>';
-        $output.='<div id="wp500pxlinkprofile">'.esc_html__('Browse all images on 500px:','wp5jsgal').' <a href="http://500px.com/'.$user500px.'/">http://500px.com/'.$user500px.'/</a></div>';
+        $output.='<div id="wp500pxlinkprofile">'.esc_html__('Browse all images on 500px:','wp5jsgal').' <a href="http://500px.com/'.$user500px.'/" target="_blank">http://500px.com/'.$user500px.'/</a></div>';
         $output.='</div>';
       } //END if 500px username set
       return $output;
@@ -261,6 +262,7 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
       $jsparams[(self::_thumb_w)]=$this->options[(self::_thumb_w)];
       $jsparams[(self::_image_h)]=$this->options[(self::_image_h)];
       $jsparams[(self::_image_w)]=$this->options[(self::_image_w)];
+      //$jsparams[(self::_plugin_img_path)]=plugins_url('img/',___FILE___);
       return $jsparams;
 	 }
 
