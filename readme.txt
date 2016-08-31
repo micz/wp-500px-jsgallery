@@ -56,7 +56,6 @@ The photos displayed are only the latest ones, as published in the user feed by 
 * CSS improvements.
 * Links to 500px.com are now opened in a new window.
 * Link to the image on 500px is now on the image title.
-*
 
 = 2.0 =
 * 500px link is no more explicitly displayed. Now the "See this image at full size on 500px" statement is a link itself.
@@ -89,8 +88,6 @@ The photos displayed are only the latest ones, as published in the user feed by 
 * CSS improvements.
 * Links to 500px.com are now opened in a new window.
 * Link to the image on 500px is now on the image title.
-*
-
 
 = 2.0 =
 * 500px link is no more explicitly displayed. Now the "See this image at full size on 500px" statement is a link itself.
