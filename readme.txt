@@ -52,6 +52,12 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 == Changelog ==
 
+= 2.0.1 =
+* CSS improvements.
+* Links to 500px.com are now opened in a new window.
+* Link to the image on 500px is now on the image title.
+*
+
 = 2.0 =
 * 500px link is no more explicitly displayed. Now the "See this image at full size on 500px" statement is a link itself.
 * New responsive CSS added. To be not disruptive only for upgrade, the "Use CSS version 1" option must be deselected to use the new gallery layout.
@@ -78,6 +84,13 @@ The photos displayed are only the latest ones, as published in the user feed by 
 * First release.
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+* CSS improvements.
+* Links to 500px.com are now opened in a new window.
+* Link to the image on 500px is now on the image title.
+*
+
 
 = 2.0 =
 * 500px link is no more explicitly displayed. Now the "See this image at full size on 500px" statement is a link itself.
