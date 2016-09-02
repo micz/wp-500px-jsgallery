@@ -52,6 +52,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 == Changelog ==
 
+= 2.0.2 =
+* Minor bug fixed.
+
 = 2.0.1 =
 * CSS improvements.
 * Links to 500px.com are now opened in a new window.
@@ -83,6 +86,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 * First release.
 
 == Upgrade Notice ==
+
+= 2.0.2 =
+* Minor bug fixed.
 
 = 2.0.1 =
 * CSS improvements.
