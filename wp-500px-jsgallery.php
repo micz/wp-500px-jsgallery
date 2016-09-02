@@ -116,8 +116,7 @@ function wp5jsgal_enqueue_scripts() {
             'wp5jsgal-main',
             plugins_url( 'js/wp-500px-jsgallery.js' , ___FILE___ ),
             array('jquery','wp5jsgal-rss500px'),
-            WP500pxjsGallery::version, //script version
-            true //loaded before the body closing tag
+            WP500pxjsGallery::version //script version
         );
         //passing js params
         wp_localize_script('wp5jsgal-rss500px','wp5jsgal_options',$wp500pxjsgallery->getJsParams());
