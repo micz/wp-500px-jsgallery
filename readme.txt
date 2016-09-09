@@ -17,7 +17,7 @@ The gallery is made with galleriffic and the images are retrieved from 500px.com
 
 It's possible also to define a custom CSS in your template folder to customize completely the gallery.
 
-See the plugin in action here: http://micz.it/fotografia/
+See the plugin in action here: http://micz.it/fotografia/500px/
 
 
 == Installation ==
@@ -47,7 +47,7 @@ The photos displayed are only the latest ones, as published in the user feed by 
 
 == Screenshots ==
 
-1. The gallery in action, see it live here: http://micz.it/fotografia/ .
+1. The gallery in action, see it live here: http://micz.it/fotografia/500px/ .
 2. Plugin settings page.
 
 == Changelog ==
