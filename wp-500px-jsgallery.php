@@ -145,8 +145,12 @@ function wp5jsgal_rss_callback(){
 		if(!is_wp_error($rss)){ // Checks that the object is created correctly
 			$rss_items = $rss->get_items(0);
 			$output_array=[];
+			$ii=0;
 			foreach($rss_items as $item){
-				$output_array[]=$item->get_description();
+				$output_array[$ii]['content']=$item->get_description();
+				$output_array[$ii]['title']=$item->get_title();
+				$output_array[$ii]['link']=$item-> get_permalink();
+				$ii++;
 			}
 			echo json_encode($output_array);
 		}else{

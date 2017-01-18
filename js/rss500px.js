@@ -47,7 +47,7 @@ function wp5jsgal_getThumbURL(image_url){
 }*/
 
 function wp5jsgal_getImage(img){
-  var image_url=wp5jsgal_extractImageURL(img);
+  var image_url=wp5jsgal_extractImageURL(img.content);
   var thumb_url=wp5jsgal_getThumbURL(image_url);
   //var image_caption=wp5jsgal_getImageCaption(img);
   return  '<li><a class="thumb" href="'+image_url+'" title="' + img.title + '"><img src="'+thumb_url+'" alt="' + img.title + '"/></a><div class="caption"><span class="wp500pxisg_img_title"><a href="'+img.link+'" title="'+wp5jsgal_langs.image_link_desc+'" target="_blank">' + img.title + '</a></span></div></li>';
