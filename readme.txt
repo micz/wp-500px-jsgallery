@@ -4,7 +4,7 @@ Donate link: http://micz.it/wordpress-plugin-500px-jsgallery/donate/
 Tags: gallery, 500px, jquery, javascript, galleriffic, photos, photo, 500px.com
 Requires at least: 3.8.1
 Tested up to: 4.7
-Stable tag: 2.1
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 2. Plugin settings page.
 
 == Changelog ==
+
+= 2.1.1 =
+* Image title bug fixed.
 
 = 2.1 =
 * Google Feed API, that has been dismissed by Google, is not needed anymore. The plugin is working again.
