@@ -1,4 +1,4 @@
-/* Copyright 2014 Mic (email: m@micz.it)
+/* Copyright 2017 Mic (email: m@micz.it)
 Plugin Info: http://micz.it
 
 This program is free software; you can redistribute it and/or modify
@@ -28,7 +28,7 @@ jQuery(document).ready(function(){
     	wp5jsgal_rss500px(wp5jsgal_options._500px_user, function(feed){
         var contentimg = jQuery(unescape(jQuery(this).find('content').text())).find("img").attr("src");
 
-        var entries = feed.entries, feedList = '';
+        var entries = feed, feedList = '';
         for (var i = 0; i < entries.length; i++) {
 
             feedList +=wp5jsgal_getImage(entries[i]);

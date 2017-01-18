@@ -112,6 +112,9 @@ function wp5jsgal_enqueue_scripts() {
             array('jquery'),
             WP500pxjsGallery::version
         );
+        wp_localize_script('wp5jsgal-rss500px','wp5jsgal', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' )
+		));
         wp_enqueue_script(
             'wp5jsgal-main',
             plugins_url( 'js/wp-500px-jsgallery.js' , ___FILE___ ),
@@ -131,9 +134,33 @@ function wp5jsgal_plugin_activation(){
 	$wp500pxjstmp->activate();
 }
 
+//Ajax 500px RSS retrieve
+function wp5jsgal_rss_callback(){
+	$user500px = urlencode ($_GET['user500px']);
+	if(empty($user500px)) die();
+	if (defined('DOING_AJAX' ) && DOING_AJAX){
+		//include_once( ABSPATH . WPINC . '/feed.php' );
+		$rss = fetch_feed('https://500px.com/'.$user500px.'/rss.json');
+		//var_dump($rss);
+		if(!is_wp_error($rss)){ // Checks that the object is created correctly
+			$rss_items = $rss->get_items(0);
+			$output_array=[];
+			foreach($rss_items as $item){
+				$output_array[]=$item->get_description();
+			}
+			echo json_encode($output_array);
+		}else{
+			echo 'Error!';
+		}
+	}
+	die();
+}
+
 
 add_action('wp_enqueue_scripts', 'wp5jsgal_enqueue_scripts');
 add_action('init', 'wp5jsgal_plugin_init');
+add_action( 'wp_ajax_wp5jsgal_rss', 'wp5jsgal_rss_callback');
+add_action( 'wp_ajax_nopriv_wp5jsgal_rss', 'wp5jsgal_rss_callback');
 
 //From v2.0 on plugin activation, we need to check if it's a new install or an upgrade
 //On updrage we force the use of CSS v1 to not be disruptive for the gallery layout
