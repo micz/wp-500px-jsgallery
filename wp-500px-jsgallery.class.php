@@ -29,7 +29,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	  public $that;
 	  public $scripts_loaded;
 
-	  const version='2.0.2';
+	  const version='2.1alpha';
 	  const db_version=2;
 
 	  //URL constants

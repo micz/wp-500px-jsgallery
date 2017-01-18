@@ -3,8 +3,8 @@ Contributors: micz
 Donate link: http://micz.it/wordpress-plugin-500px-jsgallery/donate/
 Tags: gallery, 500px, jquery, javascript, galleriffic, photos, photo, 500px.com
 Requires at least: 3.8.1
-Tested up to: 4.6
-Stable tag: 2.0.2
+Tested up to: 4.7
+Stable tag: 2.1alpha
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ The photos displayed are only the latest ones, as published in the user feed by 
 2. Plugin settings page.
 
 == Changelog ==
+
+= 2.1 =
+*
 
 = 2.0.2 =
 * Minor bug fixed.
