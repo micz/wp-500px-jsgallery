@@ -53,7 +53,7 @@ The photos displayed are only the latest ones, as published in the user feed by 
 == Changelog ==
 
 = 2.1 =
-*
+* Google Feed API, that has been dismissed by Google, is not needed anymore. The plugin is working again.
 
 = 2.0.2 =
 * Minor bug fixed.
