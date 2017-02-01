@@ -26,7 +26,7 @@ if (!class_exists('WP500pxjsGallery')) {
 	class WP500pxjsGallery {
 
 	  public $options=array();
-	  public $that;
+	  public $that_wp5js;
 	  public $scripts_loaded;
 
 	  const version='2.1.2';
@@ -52,14 +52,14 @@ if (!class_exists('WP500pxjsGallery')) {
 
 	  // Class Constructor
 	  public function __construct(){
-	    global $that;
-	    $that=$this;
+	    global $that_wp5js;
+	    $that_wp5js=$this;
   	    $this->options = $this->sanitizeOptions(get_option('wp5jsgal_options'));
-        add_action('admin_init', array($that,'register_settings'));
-        add_action('admin_menu', array($that,'admin_add_page'));
-        add_shortcode('jsg500px', array($that,'getShortcode'));
-        add_filter('plugin_action_links_'.plugin_basename(___FILE___),array($that,'add_settings_link'));
-        add_filter('plugin_row_meta',array($that,'add_plugin_desc_links'),10,2);
+        add_action('admin_init', array($that_wp5js,'register_settings'));
+        add_action('admin_menu', array($that_wp5js,'admin_add_page'));
+        add_shortcode('jsg500px', array($that_wp5js,'getShortcode'));
+        add_filter('plugin_action_links_'.plugin_basename(___FILE___),array($that_wp5js,'add_settings_link'));
+        add_filter('plugin_row_meta',array($that_wp5js,'add_plugin_desc_links'),10,2);
         load_plugin_textdomain('wp-500px-jsgallery',false,basename(dirname(___FILE___)).'/lang/');
         $this->scripts_loaded=false;
 	  }
@@ -79,15 +79,15 @@ if (!class_exists('WP500pxjsGallery')) {
 
 	  //Settings page
 	  public function register_settings(){
-	    global $that;
-	    register_setting('wp5jsgal_options','wp5jsgal_options',array($that,'options_validate'));
-  	  	add_settings_section('wp5jsgal_main', esc_html__('Main Settings','wp-500px-jsgallery'), array($that,'main_section_text'), 'wp5jsgal_settings_page');
+	    global $that_wp5js;
+	    register_setting('wp5jsgal_options','wp5jsgal_options',array($that_wp5js,'options_validate'));
+  	  	add_settings_section('wp5jsgal_main', esc_html__('Main Settings','wp-500px-jsgallery'), array($that_wp5js,'main_section_text'), 'wp5jsgal_settings_page');
 	    add_settings_field('wp5jsgal_user',esc_html__('500px User','wp-500px-jsgallery'),null,'wp5jsgal_settings_page','default');
 	  }
 
 	  public function admin_add_page(){
-	    global $that;
-      add_options_page(esc_html__('WP 500px jsGallery Settings','wp-500px-jsgallery'),esc_html__('WP 500px jsGallery','wp-500px-jsgallery'), 'manage_options', 'wp5jsgal_settings_page', array($that,'output_settings_page'));
+	    global $that_wp5js;
+      add_options_page(esc_html__('WP 500px jsGallery Settings','wp-500px-jsgallery'),esc_html__('WP 500px jsGallery','wp-500px-jsgallery'), 'manage_options', 'wp5jsgal_settings_page', array($that_wp5js,'output_settings_page'));
     }
 
     public function main_section_text() {
