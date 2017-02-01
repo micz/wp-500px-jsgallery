@@ -29,21 +29,21 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 // Fix the __FILE__ problem with symlinks.
-// Now just use ___FILE___ instead of __FILE__
+// Now just use ___FILE_wp5js___ instead of __FILE__
 
-$___FILE___ = __FILE__;
+$___FILE_wp5js___ = __FILE__;
 
 if ( isset( $plugin ) ) {
-$___FILE___ = $plugin;
+$___FILE_wp5js___ = $plugin;
 }
 else if ( isset( $mu_plugin ) ) {
-$___FILE___ = $mu_plugin;
+$___FILE_wp5js___ = $mu_plugin;
 }
 else if ( isset( $network_plugin ) ) {
-$___FILE___ = $network_plugin;
+$___FILE_wp5js___ = $network_plugin;
 }
 
-define( '___FILE___', $___FILE___ );
+define( '___FILE_wp5js___', $___FILE_wp5js___ );
 
 include_once('wp-500px-jsgallery.class.php');
 $wp500pxjsgallery='';
@@ -74,7 +74,7 @@ function wp5jsgal_enqueue_scripts() {
 		  }
           wp_enqueue_style(
               'wp5jsgal-main-style',
-              plugins_url('css/wp-500px-jsgallery'.$css_v.'.css' , ___FILE___ ),
+              plugins_url('css/wp-500px-jsgallery'.$css_v.'.css' , ___FILE_wp5js___ ),
               array(),
               WP500pxjsGallery::version
           );
@@ -90,25 +90,25 @@ function wp5jsgal_enqueue_scripts() {
         }
         wp_enqueue_script(
             'galleriffic',
-            plugins_url( 'js/jquery.galleriffic.js' , ___FILE___ ),
+            plugins_url( 'js/jquery.galleriffic.js' , ___FILE_wp5js___ ),
             array('jquery'),
             '2.0.1micz'
         );
         wp_enqueue_script(
             'history',
-            plugins_url( 'js/jquery.history.js' , ___FILE___ ),
+            plugins_url( 'js/jquery.history.js' , ___FILE_wp5js___ ),
             array('jquery'),
             '1.0.0'
         );
         wp_enqueue_script(
             'opacityrollover',
-            plugins_url( 'js/jquery.opacityrollover.js' , ___FILE___ ),
+            plugins_url( 'js/jquery.opacityrollover.js' , ___FILE_wp5js___ ),
             array('jquery'),
             '1.0.0'
         );
         wp_enqueue_script(
             'wp5jsgal-rss500px',
-            plugins_url( 'js/rss500px.js' , ___FILE___ ),
+            plugins_url( 'js/rss500px.js' , ___FILE_wp5js___ ),
             array('jquery'),
             WP500pxjsGallery::version
         );
@@ -117,7 +117,7 @@ function wp5jsgal_enqueue_scripts() {
 		));
         wp_enqueue_script(
             'wp5jsgal-main',
-            plugins_url( 'js/wp-500px-jsgallery.js' , ___FILE___ ),
+            plugins_url( 'js/wp-500px-jsgallery.js' , ___FILE_wp5js___ ),
             array('jquery','wp5jsgal-rss500px'),
             WP500pxjsGallery::version //script version
         );

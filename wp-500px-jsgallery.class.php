@@ -58,9 +58,9 @@ if (!class_exists('WP500pxjsGallery')) {
         add_action('admin_init', array($that_wp5js,'register_settings'));
         add_action('admin_menu', array($that_wp5js,'admin_add_page'));
         add_shortcode('jsg500px', array($that_wp5js,'getShortcode'));
-        add_filter('plugin_action_links_'.plugin_basename(___FILE___),array($that_wp5js,'add_settings_link'));
+        add_filter('plugin_action_links_'.plugin_basename(___FILE_wp5js___),array($that_wp5js,'add_settings_link'));
         add_filter('plugin_row_meta',array($that_wp5js,'add_plugin_desc_links'),10,2);
-        load_plugin_textdomain('wp-500px-jsgallery',false,basename(dirname(___FILE___)).'/lang/');
+        load_plugin_textdomain('wp-500px-jsgallery',false,basename(dirname(___FILE_wp5js___)).'/lang/');
         $this->scripts_loaded=false;
 	  }
 
@@ -187,7 +187,7 @@ if (!class_exists('WP500pxjsGallery')) {
   }
 
   function add_plugin_desc_links($links,$file){
-    if(strpos($file,plugin_basename(___FILE___))!==false){
+    if(strpos($file,plugin_basename(___FILE_wp5js___))!==false){
       $links = array_merge($links,array('<a href="'.self::url_donate.'">'.__('Donate','wp-500px-jsgallery').'</a>'));
     }
     return $links;
@@ -224,7 +224,7 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
         }
         $output.='<div id="wp500pxnojs" style="color:red;font-weight:bold;">'.esc_html__('The WP 500px jsGallery is not working because Javascript is disabled.','wp-500px-jsgallery').'</div>
         <div id="wp500pxgallery-main">
-            <div id="wp500pxloading" class="loader" style="display:none;"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...','wp-500px-jsgallery').'</div>
+            <div id="wp500pxloading" class="loader" style="display:none;"><img src="'.plugins_url('img/loadingAnimation.gif',___FILE_wp5js___).'" width="208" height="13"/><br/>'.esc_html__('Loading images...','wp-500px-jsgallery').'</div>
             <div id="wp500pxgallery" class="wp500pxcontent">
             <div id="wp500pxcontrols" class="wp500pxcontrols"></div>
             <div class="slideshow-container">
@@ -262,7 +262,7 @@ wp5jsgal_options["_500px_user"]="'.$user500px.'";
       $jsparams[(self::_thumb_w)]=$this->options[(self::_thumb_w)];
       $jsparams[(self::_image_h)]=$this->options[(self::_image_h)];
       $jsparams[(self::_image_w)]=$this->options[(self::_image_w)];
-      //$jsparams[(self::_plugin_img_path)]=plugins_url('img/',___FILE___);
+      //$jsparams[(self::_plugin_img_path)]=plugins_url('img/',___FILE_wp5js___);
       return $jsparams;
 	 }
 
