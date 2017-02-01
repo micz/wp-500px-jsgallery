@@ -102,7 +102,7 @@ if (!class_exists('WP500pxjsGallery')) {
 
 	  public function output_settings_page(){
 ?><div>
-<h2><?_e('WP 500px jsGallery Settings','wp-500px-jsgallery');?></h2>
+<h2><?_e('WP 500px jsGallery Settings','wp-500px-jsgallery');?>&nbsp;&nbsp;&nbsp;<span style="font-size:12px;font-weight:normal;">v<?echo self::version;?></span></h2>
 <?esc_html_e('Modify here the plugin\'s options.','wp-500px-jsgallery');?><br/>
 <b><?esc_html_e('The only mandatory option is the 500px username.','wp-500px-jsgallery');?></b>
 <br/><?esc_html_e('You can also use a custom CSS file to modify the 500px gallery look and feel.','wp-500px-jsgallery');?> (<a href="<?=self::url_custom_css_info;?>" target="_blank"><?esc_html_e('More info on custom CSS','wp-500px-jsgallery');?></a>)
