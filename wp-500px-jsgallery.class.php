@@ -105,48 +105,48 @@ if (!class_exists('WP500pxjsGallery')) {
 <h2><?php _e('WP 500px jsGallery Settings','wp-500px-jsgallery');?>&nbsp;&nbsp;&nbsp;<span style="font-size:12px;font-weight:normal;">v<?php echo self::version;?></span></h2>
 <?php esc_html_e('Modify here the plugin\'s options.','wp-500px-jsgallery');?><br/>
 <b><?php esc_html_e('The only mandatory option is the 500px username.','wp-500px-jsgallery');?></b>
-<br/><?php esc_html_e('You can also use a custom CSS file to modify the 500px gallery look and feel.','wp-500px-jsgallery');?> (<a href="<?php =self::url_custom_css_info;?>" target="_blank"><?php esc_html_e('More info on custom CSS','wp-500px-jsgallery');?></a>)
+<br/><?php esc_html_e('You can also use a custom CSS file to modify the 500px gallery look and feel.','wp-500px-jsgallery');?> (<a href="<?php echo self::url_custom_css_info;?>" target="_blank"><?php esc_html_e('More info on custom CSS','wp-500px-jsgallery');?></a>)
 <form action="options.php" method="post">
 <?php settings_fields('wp5jsgal_options');?>
 <?php //$options = get_option('wp5jsgal_options'); // Using $this->options?>
 <?php do_settings_sections('wp5jsgal_settings_page');?>
 <table class="form-table">
     <tr valign="top"><th scope="row"><?php esc_html_e('500px Username','wp-500px-jsgallery');?></th>
-        <td><input name="wp5jsgal_options[<?php =self::_500px_user?>]" type="text" value="<?php echo $this->options[self::_500px_user]; ?>"<?php if($this->options[self::_500px_user]==''){echo 'style="border:2px solid red;"';}?>/>
+        <td><input name="wp5jsgal_options[<?php echo self::_500px_user?>]" type="text" value="<?php echo $this->options[self::_500px_user]; ?>"<?php if($this->options[self::_500px_user]==''){echo 'style="border:2px solid red;"';}?>/>
         <br/><?php if($this->options[self::_500px_user]==''){echo '<span style="color:red;font-weight:bold;">'.esc_html__('You must specify a 500px username here or using the "user500px" shortcode param directly on the page!','wp-500px-jsgallery').'<span>';
         }else{
           esc_html__('You can also specify a 500px username using the "user500px" shortcode param directly on the page.','wp-500px-jsgallery');
         }?></td>
     </tr>
    <tr valign="top"><th scope="row"><?php esc_html_e('Number of thumbnails per page','wp-500px-jsgallery');?></th>
-        <td><input type="text" name="wp5jsgal_options[<?php =self::_page_thumbs?>]" value="<?php echo $this->options[self::_page_thumbs]; ?>"/></td>
+        <td><input type="text" name="wp5jsgal_options[<?php echo self::_page_thumbs?>]" value="<?php echo $this->options[self::_page_thumbs]; ?>"/></td>
     </tr>
    <tr valign="top"><th scope="row"><?php esc_html_e('Thumbnails dimensions','wp-500px-jsgallery');?></th>
-        <td><?php esc_html_e('Height','wp-500px-jsgallery');?> <input type="text" name="wp5jsgal_options[<?php =self::_thumb_h?>]" value="<?php echo $this->options[self::_thumb_h]; ?>"/> <?php esc_html_e('px','wp-500px-jsgallery');?><br/>
-        <?php esc_html_e('Width','wp-500px-jsgallery');?> <input type="text" name="wp5jsgal_options[<?php =self::_thumb_w?>]" value="<?php echo $this->options[self::_thumb_w]; ?>"/> <?php esc_html_e('px','wp-500px-jsgallery');?><br/>
+        <td><?php esc_html_e('Height','wp-500px-jsgallery');?> <input type="text" name="wp5jsgal_options[<?php echo self::_thumb_h?>]" value="<?php echo $this->options[self::_thumb_h]; ?>"/> <?php esc_html_e('px','wp-500px-jsgallery');?><br/>
+        <?php esc_html_e('Width','wp-500px-jsgallery');?> <input type="text" name="wp5jsgal_options[<?php echo self::_thumb_w?>]" value="<?php echo $this->options[self::_thumb_w]; ?>"/> <?php esc_html_e('px','wp-500px-jsgallery');?><br/>
         <?php esc_html_e('The dimensions could be set with the custom CSS, instead of with these options.','wp-500px-jsgallery');?><br/>
         <?php esc_html_e('You can also set only one dimension, the other will be proportional.','wp-500px-jsgallery');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?php esc_html_e('Image dimensions','wp-500px-jsgallery');?></th>
-        <td><?php esc_html_e('Max Height','wp-500px-jsgallery');?> <input type="text" name="wp5jsgal_options[<?php =self::_image_h?>]" value="<?php echo $this->options[self::_image_h]; ?>"/> <?php esc_html_e('px','wp-500px-jsgallery');?><br/>
-        <?php esc_html_e('Max Width','wp-500px-jsgallery');?> <input type="text" name="wp5jsgal_options[<?php =self::_image_w?>]" value="<?php echo $this->options[self::_image_w]; ?>"/> <?php esc_html_e('px','wp-500px-jsgallery');?><br/>
+        <td><?php esc_html_e('Max Height','wp-500px-jsgallery');?> <input type="text" name="wp5jsgal_options[<?php echo self::_image_h?>]" value="<?php echo $this->options[self::_image_h]; ?>"/> <?php esc_html_e('px','wp-500px-jsgallery');?><br/>
+        <?php esc_html_e('Max Width','wp-500px-jsgallery');?> <input type="text" name="wp5jsgal_options[<?php echo self::_image_w?>]" value="<?php echo $this->options[self::_image_w]; ?>"/> <?php esc_html_e('px','wp-500px-jsgallery');?><br/>
         <?php esc_html_e('The dimensions could be set with the custom CSS, instead of with these options.','wp-500px-jsgallery');?><br/>
         <?php esc_html_e('You can also set only one dimension, the other will be proportional.','wp-500px-jsgallery');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?php esc_html_e('Gallery page','wp-500px-jsgallery');?></th>
-        <td><input type="text" name="wp5jsgal_options[<?php =self::_pages?>]" value="<?php echo $this->options[self::_pages]; ?>"/>
+        <td><input type="text" name="wp5jsgal_options[<?php echo self::_pages?>]" value="<?php echo $this->options[self::_pages]; ?>"/>
         <br/><?php esc_html_e('To optimize your website loading times, you could write here the pages id or permalink on which you have activated the 500px gallery with the shortcode.','wp-500px-jsgallery');?><br/>
         <?php esc_html_e('The ids or permalinks must be comma separated and can be mixed.','wp-500px-jsgallery');?><br/>
         <?php esc_html_e('All the styles and scripts needed by this plugin will be loaded only on those pages.','wp-500px-jsgallery');?></td>
     </tr>
    <tr valign="top"><th scope="row"><?php esc_html_e('Use CSS version 1','wp-500px-jsgallery');?></th>
-        <td><input type="checkbox" name="wp5jsgal_options[<?php =self::_force_css_v1?>]" value="1"<?php if($this->options[self::_force_css_v1]==1){echo ' checked="checked"';} ?>"/> <?php esc_html_e('Check this option if you want to use the old CSS version 1.','wp-500px-jsgallery');?><br/>
+        <td><input type="checkbox" name="wp5jsgal_options[<?php echo self::_force_css_v1?>]" value="1"<?php if($this->options[self::_force_css_v1]==1){echo ' checked="checked"';} ?>"/> <?php esc_html_e('Check this option if you want to use the old CSS version 1.','wp-500px-jsgallery');?><br/>
         <?php esc_html_e('From version 2.0 the CSS is responsive and the thumbnails are displayed under the image.','wp-500px-jsgallery');?><br/>
-        <a href="<?php =self::url_force_css_v1;?>" target="_blank"><?php esc_html_e('More info on the old CSS version 1','wp-500px-jsgallery');?></a></td>
+        <a href="<?php echo self::url_force_css_v1;?>" target="_blank"><?php esc_html_e('More info on the old CSS version 1','wp-500px-jsgallery');?></a></td>
     </tr>
    <tr valign="top"><th scope="row"><?php esc_html_e('Exclusive custom CSS','wp-500px-jsgallery');?></th>
-        <td><input type="checkbox" name="wp5jsgal_options[<?php =self::_only_custom_css?>]" value="1"<?php if($this->options[self::_only_custom_css]==1){echo ' checked="checked"';} ?>"/> <?php esc_html_e('Check this option if you want to load only your custom CSS and not the default one before your one.','wp-500px-jsgallery');?><br/>
-        <a href="<?php =self::url_custom_css_info;?>" target="_blank"><?php esc_html_e('More info on custom CSS','wp-500px-jsgallery');?></a></td>
+        <td><input type="checkbox" name="wp5jsgal_options[<?php echo self::_only_custom_css?>]" value="1"<?php if($this->options[self::_only_custom_css]==1){echo ' checked="checked"';} ?>"/> <?php esc_html_e('Check this option if you want to load only your custom CSS and not the default one before your one.','wp-500px-jsgallery');?><br/>
+        <a href="<?php echo self::url_custom_css_info;?>" target="_blank"><?php esc_html_e('More info on custom CSS','wp-500px-jsgallery');?></a></td>
     </tr>
 </table>
 <input name="Submit" class="button button-primary" type="submit" value="<?php esc_attr_e('Save Changes','wp-500px-jsgallery');?>"/>
